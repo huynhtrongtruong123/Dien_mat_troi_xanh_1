@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Nối & Tư Vấn | Công ty TNHH Điện mặt trời XANH</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Color Palette */
+        :root {
+            --primary-color: #f39c12; /* Sun Yellow */
+            --secondary-color: #27ae60; /* Eco Green */
+            --dark-bg: #2c3e50;
+            --light-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-composite {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-graphic {
+            height: 60px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-info h1 {
+            color: #2b3990;
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .brand-info h1 span {
+            color: #F4C744;
+        }
+
+        .brand-info .brand-sub {
+            font-size: 12px;
+            color: #7f8c8d;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-bg);
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 30px;
+            border-left: 2px solid #eee;
+            padding-left: 20px;
+        }
+
+        .flag {
+            cursor: pointer;
+            font-size: 24px;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+            user-select: none;
+        }
+
+        .flag:hover {
+            opacity: 0.8;
+        }
+
+        .flag.active {
+            opacity: 1;
+        }
+
+        /* Hero Banner */
+        .connect-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('1.png') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .connect-hero h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .connect-hero p {
+            font-size: 17px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: -30px auto 60px;
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+
+        .connect-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 30px;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-card h3 {
+            color: var(--dark-bg);
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .company-badge {
+            background-color: #f4f6f7;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 22px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .company-badge h4 {
+            font-size: 15px;
+            color: var(--dark-bg);
+            margin-bottom: 2px;
+        }
+
+        .company-badge p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            font-size: 20px;
+            background: #fff8eb;
+            color: var(--primary-color);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .info-text h4 {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-text p, .info-text a {
+            font-size: 15px;
+            color: var(--dark-bg);
+            font-weight: 600;
+            text-decoration: none;
+            line-height: 1.4;
+        }
+
+        .info-text a:hover {
+            color: var(--primary-color);
+        }
+
+        .connect-channels {
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .connect-channels h4 {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .channel-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-channel {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 10px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            transition: opacity 0.3s;
+        }
+
+        .btn-channel.zalo { background-color: #0068ff; }
+        .btn-channel.hotline { background-color: var(--secondary-color); }
+        .btn-channel:hover { opacity: 0.9; }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-card h3 {
+            color: var(--dark-bg);
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-bg);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 15px;
+            color: #333;
+            background-color: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s, opacity 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #d68910;
+        }
+
+        .submit-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #eafaf1;
+            color: #27ae60;
+            border: 1px solid #a9dfbf;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #fdedec;
+            color: #e74c3c;
+            border: 1px solid #fadbd8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: auto;
+        }
+
+        footer h3 {
+            color: #F4C744;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .footer-sub {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .connect-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .lang-switcher {
+                margin-left: 0;
+                border-left: none;
+                border-top: 2px solid #eee;
+                padding-left: 0;
+                padding-top: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .brand-composite {
+                flex-direction: column;
+                text-align: center;
+            }
+            .connect-hero h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <a href="index.html" class="brand-composite">
+            <img src="image_1.png" alt="Điện mặt trời XANH Logo" class="logo-graphic">
+            <div class="brand-info">
+                <h1>Điện mặt trời <span>XANH</span></h1>
+                <span class="brand-sub trans" data-en="Solar Energy Company" data-vi="Hệ thống điện mặt trời">Hệ thống điện mặt trời</span>
+            </div>
+        </a>
+
+        <div class="nav-container">
+            <nav>
+                <a href="index.html#home" class="trans" data-en="Home" data-vi="Trang Chủ">Home</a>
+                <a href="index.html#services" class="trans" data-en="Services" data-vi="Dịch Vụ">Services</a>
+                <a href="index.html#about" class="trans" data-en="About" data-vi="Giới Thiệu">About</a>
+                <a href="connect.html" class="active trans" data-en="Connect" data-vi="Kết Nối">Connect</a>
+            </nav>
+            <div class="lang-switcher">
+                <span class="flag active" onclick="changeLang('en')" id="btn-en" title="English">🇬🇧</span>
+                <span class="flag" onclick="changeLang('vi')" id="btn-vi" title="Tiếng Việt">🇻🇳</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Connect Hero Section -->
+    <section class="connect-hero">
+        <h2 class="trans" data-en="Connect with Điện Mặt Trời XANH" data-vi="Kết Nối Cùng Điện Mặt Trời XANH">Connect with Điện Mặt Trời XANH</h2>
+        <p class="trans" data-en="Get in touch with our engineering offices in Ho Chi Minh City & Gia Lai for comprehensive solar system consultations." data-vi="Liên hệ với văn phòng kỹ sư tại TP.HCM & Gia Lai để được tư vấn thiết kế và lắp đặt hệ thống điện mặt trời toàn diện.">Get in touch with our engineering offices in Ho Chi Minh City & Gia Lai for comprehensive solar system consultations.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="connect-grid">
+            
+            <!-- Left Column: Company & Office Details -->
+            <div class="info-card">
+                <div>
+                    <h3 class="trans" data-en="Office & Branch Information" data-vi="Hệ Thống Văn Phòng & Chi Nhánh">Office & Branch Information</h3>
+                    
+                    <div class="company-badge">
+                        <h4>Công ty TNHH Điện mặt trời XANH</h4>
+                        <p class="trans" data-en="Solar Energy Systems & Solutions" data-vi="Hệ thống điện mặt trời chuyên nghiệp">Hệ thống điện mặt trời chuyên nghiệp</p>
+                    </div>
+
+                    <!-- Main Office (VP) -->
+                    <div class="info-item">
+                        <div class="info-icon">🏢</div>
+                        <div class="info-text">
+                            <h4 class="trans" data-en="Head Office (VP)" data-vi="Văn Phòng Đại Diện (VP)">Head Office (VP)</h4>
+                            <p>364 Cộng Hòa, P.13, Tân Bình, TP.HCM</p>
+                        </div>
+                    </div>
+
+                    <!-- Branch Office (CN) -->
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4 class="trans" data-en="Branch Office (CN)" data-vi="Chi Nhánh (CN)">Branch Office (CN)</h4>
+                            <p>Tổ 47, Khu phố 5, P.Quy Nhơn Nam, Gia Lai</p>
+                        </div>
+                    </div>
+
+                    <!-- Direct Hotline -->
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4 class="trans" data-en="Hotline Consultation" data-vi="Hotline Tư Vấn">Hotline Consultation</h4>
+                            <p><a href="tel:+84787691089">+84 787 691 089</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-text">
+                            <h4 class="trans" data-en="Working Hours" data-vi="Giờ Làm Việc">Working Hours</h4>
+                            <p class="trans" data-en="Mon - Sat: 8:00 AM - 6:00 PM" data-vi="Thứ 2 - Thứ 7: 8:00 - 18:00">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Contact Buttons -->
+                <div class="connect-channels">
+                    <h4 class="trans" data-en="Direct Consultation" data-vi="Kết Nối Nhanh">Direct Consultation</h4>
+                    <div class="channel-buttons">
+                        <a href="tel:+84787691089" class="btn-channel hotline trans" data-en="Call Hotline" data-vi="Gọi Hotline">Call Hotline</a>
+                        <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="btn-channel zalo">Zalo Chat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Consultation & Connection Form -->
+            <div class="form-card">
+                <h3 class="trans" data-en="Request a Connection" data-vi="Gửi Yêu Cầu Kết Nối">Request a Connection</h3>
+                <p class="form-subtitle trans" data-en="Fill in your project details and our engineers in TP.HCM or Gia Lai will connect with you." data-vi="Điền thông tin bên dưới, kỹ sư tại TP.HCM hoặc Gia Lai sẽ liên hệ hỗ trợ bạn sớm nhất.">Fill in your project details and our engineers in TP.HCM or Gia Lai will connect with you.</p>
+
+                <form id="connectForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName" class="trans" data-en="Full Name *" data-vi="Họ và Tên *">Full Name *</label>
+                            <input type="text" id="fullName" required placeholder="Nguyễn Văn A" class="trans-input" data-en-placeholder="John Doe" data-vi-placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="trans" data-en="Phone Number *" data-vi="Số Điện Thoại *">Phone Number *</label>
+                            <input type="tel" id="phone" required placeholder="0787 691 089">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="trans" data-en="Email Address" data-vi="Địa Chỉ Email">Email Address</label>
+                        <input type="email" id="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectType" class="trans" data-en="Solar System Type" data-vi="Loại Hệ Thống">Solar System Type</label>
+                            <select id="projectType">
+                                <option value="Residential Solar" class="trans" data-en="Residential Solar" data-vi="Điện mặt trời hộ gia đình">Residential Solar</option>
+                                <option value="Commercial Solar & Factory" class="trans" data-en="Commercial Solar & Factory" data-vi="Doanh nghiệp / Nhà xưởng">Commercial Solar & Factory</option>
+                                <option value="Battery Backup / Hybrid" class="trans" data-en="Battery Backup / Hybrid" data-vi="Hệ thống lưu trữ & Hybrid">Battery Backup / Hybrid</option>
+                                <option value="General Inquiry" class="trans" data-en="General Inquiry" data-vi="Tư vấn hệ thống khác">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="officePreference" class="trans" data-en="Preferred Office" data-vi="Văn Phòng Tiếp Nhận">Preferred Office</label>
+                            <select id="officePreference">
+                                <option value="VP TP.HCM (Tân Bình)" class="trans" data-en="VP TP.HCM (Tân Bình)" data-vi="VP TP.HCM (364 Cộng Hòa, Tân Bình)">VP TP.HCM (364 Cộng Hòa, Tân Bình)</option>
+                                <option value="CN Gia Lai (Quy Nhơn Nam)" class="trans" data-en="CN Gia Lai (Quy Nhơn Nam)" data-vi="CN Gia Lai (Quy Nhơn Nam)">CN Gia Lai (Quy Nhơn Nam)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="trans" data-en="Installation Address" data-vi="Địa Chỉ Lắp Đặt Cụ Thể">Installation Address</label>
+                        <input type="text" id="location" placeholder="Địa chỉ nhà / doanh nghiệp..." class="trans-input" data-en-placeholder="Installation address..." data-vi-placeholder="Địa chỉ nhà / doanh nghiệp...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="trans" data-en="Notes / System Requirements" data-vi="Yêu Cầu Chi Tiết / Ghi Chú">Notes / System Requirements</label>
+                        <textarea id="message" placeholder="Mô tả công suất mong muốn, diện tích mái..." class="trans-input" data-en-placeholder="Describe your roof type or capacity requirements..." data-vi-placeholder="Mô tả công suất mong muốn, diện tích mái hoặc câu hỏi của bạn..."></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="submit-btn trans" data-en="Send Connection Request" data-vi="Gửi Yêu Cầu Kết Nối">Send Connection Request</button>
+
+                    <div id="successMsg" class="success-message trans" 
+                         data-en="✓ Thank you! Your request has been received. Our team will contact you shortly." 
+                         data-vi="✓ Cảm ơn bạn! Yêu cầu kết nối đã được gửi thành công. Đội ngũ kỹ sư của Công ty TNHH Điện mặt trời XANH sẽ liên hệ hỗ trợ sớm nhất.">
+                        ✓ Thank you! Your request has been received. Our team will contact you shortly.
+                    </div>
+
+                    <div id="errorMsg" class="error-message trans"
+                         data-en="✕ An error occurred while sending. Please call our hotline directly."
+                         data-vi="✕ Đã xảy ra lỗi khi gửi. Vui lòng liên hệ trực tiếp hotline để được hỗ trợ.">
+                        ✕ An error occurred while sending. Please call our hotline directly.
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3 class="trans" data-en="Công ty TNHH Điện mặt trời XANH" data-vi="Công ty TNHH Điện mặt trời XANH">Công ty TNHH Điện mặt trời XANH</h3>
+        <p class="footer-sub trans" data-en="Solar Energy Systems & Solutions" data-vi="Hệ thống điện mặt trời chuyên nghiệp">Hệ thống điện mặt trời chuyên nghiệp</p>
+        <p><strong>VP:</strong> 364 Cộng Hòa, P.13, Tân Bình, TP.HCM</p>
+        <p><strong>CN:</strong> Tổ 47, Khu phố 5, P.Quy Nhơn Nam, Gia Lai</p>
+        <p><strong>Email:</strong> contact@dienmattroixanh.vn | <strong>Hotline:</strong> +84 787 691 089</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #95a5a6;">&copy; 2026 Công ty TNHH Điện mặt trời XANH. All rights reserved.</p>
+    </footer>
+
+    <!-- Script Section -->
+    <script>
+        // Google Apps Script Web App Endpoint
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwk5SENDikDcAmBlmPquoToiwepSFxfIOcXk2a87BIKVBh_7t7DlNJnHZX39DHbXcL5Lg/exec";
+
+        let currentLang = 'en';
+
+        // Language Switcher Function
+        function changeLang(lang) {
+            currentLang = lang;
+
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-vi').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            const elements = document.querySelectorAll('.trans');
+            elements.forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.innerText = text;
+                }
+            });
+
+            const inputs = document.querySelectorAll('.trans-input');
+            inputs.forEach(input => {
+                const placeholder = input.getAttribute('data-' + lang + '-placeholder');
+                if (placeholder) {
+                    input.setAttribute('placeholder', placeholder);
+                }
+            });
+        }
+
+        // Asynchronous Form Submission to Google Apps Script / Google Sheets
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const successBox = document.getElementById('successMsg');
+            const errorBox = document.getElementById('errorMsg');
+
+            // Hide previous alerts
+            successBox.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            // Set loading state on button
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = (currentLang === 'vi') ? 'Đang gửi...' : 'Sending...';
+            submitBtn.disabled = true;
+
+            // Collect form inputs
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                projectType: document.getElementById('projectType').value,
+                officePreference: document.getElementById('officePreference').value,
+                location: document.getElementById('location').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                // Send JSON payload to Google Apps Script
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Standard for Google Apps Script Web App requests
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                // Display confirmation message and reset form
+                successBox.style.display = 'block';
+                document.getElementById('connectForm').reset();
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                errorBox.style.display = 'block';
+                errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                // Restore button state
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

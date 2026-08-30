@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Điện Mặt Trời Xanh | Renewable Energy Solutions</title>
+  <style>
+    /* Basic Reset & Typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Color Palette */
+    :root {
+      --primary-color: #f39c12; /* Sun Yellow */
+      --primary-hover: #d68910;
+      --secondary-color: #27ae60; /* Eco Green */
+      --dark-bg: #1e293b;
+      --dark-card: #0f172a;
+      --light-bg: #f8fafc;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Navigation and Logo Styling */
+    header {
+      background-color: #ffffff;
+      padding: 16px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand-composite {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-graphic {
+      height: 60px;
+      width: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .brand-composite h1 {
+      color: #1e3a8a;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-composite h1 span {
+      color: var(--primary-color);
+    }
+
+    /* Nav Links & Language Switcher */
+    .nav-container {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark-bg);
+      margin-left: 24px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.25s ease;
+      position: relative;
+    }
+    nav a:hover, nav a.active {
+      color: var(--primary-color);
+    }
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 30px;
+      border-left: 2px solid var(--border-color);
+      padding-left: 20px;
+    }
+    .flag {
+      cursor: pointer;
+      font-size: 24px;
+      opacity: 0.45;
+      transition: all 0.25s ease;
+      user-select: none;
+      display: inline-block;
+    }
+    .flag:hover {
+      opacity: 0.85;
+      transform: scale(1.1);
+    }
+    .flag.active {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    /* Hero Section with Solar Landscape Background Image */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.45) 50%, rgba(15, 23, 42, 0.75) 100%),
+                  url("1.png") center/cover no-repeat;
+      color: #ffffff;
+      text-align: center;
+      padding: 140px 20px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 580px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fef08a;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h2 {
+      font-size: 52px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      max-width: 850px;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 36px;
+      max-width: 700px;
+      line-height: 1.6;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      color: #f1f5f9;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 16px 36px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6);
+    }
+
+    /* Highlights Bar */
+    .highlights-bar {
+      background: white;
+      padding: 30px 10%;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .highlight-item h4 {
+      font-size: 28px;
+      color: #1e3a8a;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .highlight-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 80px 10%;
+      background-color: var(--light-bg);
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: var(--dark-bg);
+      margin-bottom: 12px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 50px auto;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .service-card:nth-child(2) .service-icon {
+      background: #f0fdf4;
+      color: #16a34a;
+    }
+
+    .service-card:nth-child(3) .service-icon {
+      background: #fffbeb;
+      color: #d97706;
+    }
+
+    .service-card h3 {
+      color: var(--dark-bg);
+      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* About & Map Section */
+    .about {
+      padding: 80px 10%;
+      background-color: white;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .about-intro {
+      max-width: 750px;
+      margin: 0 auto 50px auto;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .about-grid {
+      display: flex;
+      gap: 36px;
+      align-items: stretch;
+      text-align: left;
+    }
+
+    .about-info {
+      flex: 1;
+      background: var(--light-bg);
+      padding: 36px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-info h3 {
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-row {
+      margin-bottom: 16px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .info-row strong {
+      color: var(--dark-bg);
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .info-row span, .info-row a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .map-container {
+      flex: 1.2;
+      min-height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-card);
+      color: #94a3b8;
+      text-align: center;
+      padding: 50px 20px 30px;
+      border-top: 1px solid #334155;
+    }
+
+    footer h3 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .about-grid {
+        flex-direction: column;
+      }
+      .hero h2 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 16px 5%;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .lang-switcher {
+        margin-left: 0;
+        border-left: none;
+        border-top: 2px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 12px;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .hero {
+        padding: 100px 20px 80px;
+      }
+      .hero h2 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 17px;
+      }
+      .services, .about {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <a href="#home" class="brand-composite">
+      <img src="image_1.png" alt="Điện Mặt Trời Xanh Logo" class="logo-graphic">
+      <h1>Điện Mặt Trời <span>Xanh</span></h1>
+    </a>
+
+    <div class="nav-container">
+      <nav>
+        <a href="#home" class="trans" data-en="Home" data-vi="Trang Chủ">Home</a>
+        <a href="#services" class="trans" data-en="Services" data-vi="Dịch Vụ">Services</a>
+        <a href="#about" class="trans" data-en="About" data-vi="Giới Thiệu">About</a>
+        <a href="connect.html" class="trans" data-en="Connect" data-vi="Kết Nối">Connect</a>
+      </nav>
+      <div class="lang-switcher">
+        <span class="flag active" onclick="changeLang('en')" id="btn-en" title="English">🇬🇧</span>
+        <span class="flag" onclick="changeLang('vi')" id="btn-vi" title="Tiếng Việt">🇻🇳</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Solar Landscape Background Image -->
+  <section id="home" class="hero">
+    <div class="hero-badge trans" data-en="⚡ Sustainable & Clean Energy Solutions" data-vi="⚡ Giải Pháp Năng Lượng Sạch & Bền Vững">
+      ⚡ Sustainable & Clean Energy Solutions
+    </div>
+    <h2 class="trans" data-en="Power Your Future with Solar Energy" data-vi="Thắp Sáng Tương Lai Với Điện Mặt Trời">
+      Power Your Future with Solar Energy
+    </h2>
+    <p class="trans" data-en="Reduce your electricity bills and carbon footprint with our premium residential and commercial solar installations." data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp lắp đặt điện mặt trời dân dụng và thương mại cao cấp.">
+      Reduce your electricity bills and carbon footprint with our premium residential and commercial solar installations.
+    </p>
+    <a href="connect.html" class="cta-button trans" data-en="Connect / Get a Free Quote →" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →">
+      Connect / Get a Free Quote →
+    </a>
+  </section>
+
+  <!-- Highlights Bar -->
+  <div class="highlights-bar">
+    <div class="highlight-item">
+      <h4>25+</h4>
+      <p class="trans" data-en="Completed Projects" data-vi="Dự Án Hoàn Thành">Completed Projects</p>
+    </div>
+    <div class="highlight-item">
+      <h4>100%</h4>
+      <p class="trans" data-en="Tier-1 Equipment" data-vi="Thiết Bị Chính Hãng">Tier-1 Equipment</p>
+    </div>
+    <div class="highlight-item">
+      <h4>10-25 Yrs</h4>
+      <p class="trans" data-en="Equipment Warranty" data-vi="Bảo Hành Thiết Bị">Equipment Warranty</p>
+    </div>
+    <div class="highlight-item">
+      <h4>24/7</h4>
+      <p class="trans" data-en="Support & Monitoring" data-vi="Hỗ Trợ & Giám Sát">Support & Monitoring</p>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2 class="section-title trans" data-en="Our Solar Solutions" data-vi="Các Giải Pháp Điện Mặt Trời">Our Solar Solutions</h2>
+    <p class="section-subtitle trans" data-en="Engineered for maximum efficiency, longevity, and high return on investment." data-vi="Được thiết kế tối ưu hiệu suất, độ bền cao và mang lại hiệu quả đầu tư vượt trội.">Engineered for maximum efficiency, longevity, and high return on investment.</p>
+    
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3 class="trans" data-en="Residential Solar" data-vi="Điện Mặt Trời Dân Dụng">Residential Solar</h3>
+        <p class="trans" data-en="Custom-designed rooftop solar systems built to maximize energy production and drastically cut monthly electric bills for your home." data-vi="Hệ thống điện mặt trời áp mái được thiết kế tùy chỉnh nhằm tối đa hóa sản lượng điện và giảm đáng kể tiền điện hàng tháng cho ngôi nhà của bạn.">Custom-designed rooftop solar systems built to maximize energy production and drastically cut monthly electric bills for your home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3 class="trans" data-en="Commercial Solar" data-vi="Điện Mặt Trời Doanh Nghiệp">Commercial Solar</h3>
+        <p class="trans" data-en="Large-scale solar integrations to help factories, workshops, and businesses reduce overhead and achieve ESG sustainability goals." data-vi="Tích hợp năng lượng mặt trời quy mô lớn giúp nhà xưởng, doanh nghiệp giảm chi phí vận hành và đạt được các mục tiêu phát triển bền vững.">Large-scale solar integrations to help factories, workshops, and businesses reduce overhead and achieve ESG sustainability goals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔋</div>
+        <h3 class="trans" data-en="Battery Backup & Hybrid" data-vi="Hệ Thống Lưu Trữ Hybrid">Battery Backup & Hybrid</h3>
+        <p class="trans" data-en="Store your excess solar power to keep your critical loads running seamlessly during power outages or nighttime peak hours." data-vi="Lưu trữ nguồn điện dư thừa để duy trì nguồn điện liên tục cho gia đình, cơ sở kinh doanh khi mất điện lưới hoặc sử dụng vào ban đêm.">Store your excess solar power to keep your critical loads running seamlessly during power outages or nighttime peak hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section with Embedded Google Map -->
+  <section id="about" class="about">
+    <h2 class="section-title trans" data-en="About Điện Mặt Trời Xanh" data-vi="Về Điện Mặt Trời Xanh">About Điện Mặt Trời Xanh</h2>
+    <p class="about-intro trans" data-en="We are dedicated to providing sustainable, clean energy solutions with top-tier solar equipment and expert engineering installation services across Vietnam." data-vi="Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị điện mặt trời chất lượng cao và dịch vụ kỹ thuật lắp đặt chuyên nghiệp.">We are dedicated to providing sustainable, clean energy solutions with top-tier solar equipment and expert engineering installation services across Vietnam.</p>
+    
+    <div class="about-grid">
+      <div class="about-info">
+        <h3 class="trans" data-en="📍 Location & Contact Details" data-vi="📍 Địa Điểm & Thông Tin Liên Hệ">📍 Location & Contact Details</h3>
+        
+        <div class="info-row">
+          <strong class="trans" data-en="Company Name" data-vi="Tên Doanh Nghiệp">Company Name</strong>
+          <span class="trans" data-en="Công ty TNHH Điện Mặt Trời Xanh" data-vi="Công ty TNHH Điện Mặt Trời Xanh">Công ty TNHH Điện Mặt Trời Xanh</span>
+        </div>
+
+        <div class="info-row">
+          <strong class="trans" data-en="Address" data-vi="Địa chỉ">Address</strong>
+          <span>Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000</span>
+        </div>
+
+        <div class="info-row">
+          <strong class="trans" data-en="Hotline / Phone" data-vi="Điện thoại / Hotline">Hotline / Phone</strong>
+          <a href="tel:+84787691089">+84 787 691 089</a>
+        </div>
+
+        <div class="info-row">
+          <strong class="trans" data-en="Email" data-vi="Email">Email</strong>
+          <a href="mailto:contact@dienmattroixanh.vn">contact@dienmattroixanh.vn</a>
+        </div>
+
+        <div class="info-row">
+          <strong class="trans" data-en="Specialization" data-vi="Lĩnh vực hoạt động">Specialization</strong>
+          <span class="trans" data-en="Solar equipment supply, EPC installation & hybrid renewable energy solutions" data-vi="Cung cấp thiết bị điện mặt trời, tổng thầu EPC và giải pháp năng lượng tái tạo hybrid">Solar equipment supply, EPC installation & hybrid renewable energy solutions</span>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe 
+          title="Điện Mặt Trời Xanh Location Map"
+          src="https://maps.google.com/maps?q=%C4%90i%E1%BB%87n+M%E1%BA%B7t+Tr%E1%BB%9Di+Xanh,+T%E1%BB%95+47+khu+ph%E1%BB%91+30,+Quy+Nh%C6%A1n+Nam,+Gia+Lai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <h3 class="trans" data-en="Công ty TNHH Điện Mặt Trời Xanh" data-vi="Công ty TNHH Điện Mặt Trời Xanh">Công ty TNHH Điện Mặt Trời Xanh</h3>
+    <p class="trans" data-en="Address: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000" data-vi="Địa chỉ: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000">Address: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000</p>
+    <p>Email: <a href="mailto:contact@dienmattroixanh.vn" style="color: #cbd5e1;">contact@dienmattroixanh.vn</a> | Hotline: <a href="tel:+84787691089" style="color: #f59e0b; font-weight: bold;">+84 787 691 089</a></p>
+    <div class="footer-bottom">
+      &copy; 2026 Điện Mặt Trời Xanh. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Language Switcher Script -->
+  <script>
+    function changeLang(lang) {
+      document.getElementById('btn-en').classList.remove('active');
+      document.getElementById('btn-vi').classList.remove('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+
+      const elements = document.querySelectorAll('.trans');
+      elements.forEach(el => {
+        el.innerText = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
+</html>
