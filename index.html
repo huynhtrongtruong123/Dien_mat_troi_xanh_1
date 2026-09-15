@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Điện Mặt Trời Xanh | Renewable Energy Solutions</title>
+  <title>Điện Mặt Trời Xanh | Giải Pháp Năng Lượng Tái Tạo</title>
   <style>
+    /* Smooth Anchor Scrolling & Offset for Sticky Header */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
     /* Basic Reset & Typography */
     * {
       margin: 0;
@@ -18,6 +24,7 @@
       --primary-color: #f39c12; /* Sun Yellow */
       --primary-hover: #d68910;
       --secondary-color: #27ae60; /* Eco Green */
+      --secondary-hover: #219653;
       --dark-bg: #1e293b;
       --dark-card: #0f172a;
       --light-bg: #f8fafc;
@@ -27,6 +34,7 @@
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
       --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
       --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+      --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
 
     body {
@@ -35,18 +43,20 @@
       line-height: 1.6;
     }
 
-    /* Navigation and Logo Styling */
+    /* Sticky "Frosted Glass" Header */
     header {
-      background-color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       padding: 16px 10%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: var(--shadow-sm);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
     }
 
     .brand-composite {
@@ -56,79 +66,101 @@
       text-decoration: none;
     }
 
+    /* Top Left Company Logo with Background Removed */
     .logo-graphic {
-      height: 60px;
+      height: 56px;
       width: auto;
       border-radius: 6px;
       object-fit: contain;
+      background: transparent;
+      mix-blend-mode: multiply;
     }
 
-    .brand-composite h1 {
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-info h1 {
       color: #1e3a8a;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
+      line-height: 1.2;
       letter-spacing: -0.5px;
     }
 
-    .brand-composite h1 span {
+    .brand-info h1 span {
       color: var(--primary-color);
     }
 
-    /* Nav Links & Language Switcher */
+    .brand-info .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     .nav-container {
       display: flex;
       align-items: center;
     }
+
     nav a {
       text-decoration: none;
       color: var(--dark-bg);
-      margin-left: 24px;
+      margin-left: 20px;
       font-weight: 600;
       font-size: 15px;
       transition: color 0.25s ease;
       position: relative;
     }
+
     nav a:hover, nav a.active {
-      color: var(--primary-color);
+      color: var(--secondary-color);
     }
+
     .lang-switcher {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-left: 30px;
+      margin-left: 25px;
       border-left: 2px solid var(--border-color);
-      padding-left: 20px;
+      padding-left: 18px;
     }
+
     .flag {
       cursor: pointer;
-      font-size: 24px;
+      font-size: 22px;
       opacity: 0.45;
       transition: all 0.25s ease;
       user-select: none;
       display: inline-block;
     }
+
     .flag:hover {
       opacity: 0.85;
       transform: scale(1.1);
     }
+
     .flag.active {
       opacity: 1;
       transform: scale(1.15);
     }
 
-    /* Hero Section with Solar Landscape Background Image */
+    /* Hero Section */
     .hero {
       position: relative;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.45) 50%, rgba(15, 23, 42, 0.75) 100%),
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.70) 0%, rgba(15, 23, 42, 0.50) 50%, rgba(15, 23, 42, 0.80) 100%),
                   url("1.png") center/cover no-repeat;
       color: #ffffff;
       text-align: center;
-      padding: 140px 20px 120px;
+      padding: 130px 20px 110px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 580px;
+      min-height: 560px;
     }
 
     .hero-badge {
@@ -143,13 +175,13 @@
       font-size: 14px;
       font-weight: 600;
       color: #fef08a;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .hero h2 {
-      font-size: 52px;
+      font-size: 48px;
       font-weight: 800;
       margin-bottom: 20px;
       line-height: 1.2;
@@ -159,38 +191,39 @@
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 36px;
-      max-width: 700px;
+      font-size: 19px;
+      margin-bottom: 34px;
+      max-width: 720px;
       line-height: 1.6;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
       color: #f1f5f9;
     }
 
+    /* Primary Solar CTA Standout Button */
     .cta-button {
-      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: white;
-      padding: 16px 36px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 8px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: inline-block;
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+      background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+      color: white;
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .cta-button:hover {
-      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6);
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 10px 25px rgba(39, 174, 96, 0.55);
     }
 
     /* Highlights Bar */
     .highlights-bar {
       background: white;
-      padding: 30px 10%;
+      padding: 28px 10%;
       box-shadow: var(--shadow-sm);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -212,15 +245,16 @@
       font-weight: 600;
     }
 
-    /* Services Section */
-    .services {
-      padding: 80px 10%;
-      background-color: var(--light-bg);
+    /* Commitments Section */
+    .commitments-section {
+      padding: 70px 10%;
+      background: #ffffff;
       text-align: center;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .section-title {
-      font-size: 36px;
+      font-size: 34px;
       color: var(--dark-bg);
       margin-bottom: 12px;
       font-weight: 800;
@@ -228,39 +262,87 @@
     }
 
     .section-subtitle {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 50px auto;
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      text-align: left;
+    }
+
+    .commitment-card {
+      background: var(--light-bg);
+      padding: 26px 22px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .commitment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .commitment-card.c1 { border-left: 4px solid #27ae60; }
+    .commitment-card.c2 { border-left: 4px solid #f39c12; }
+    .commitment-card.c3 { border-left: 4px solid #2563eb; }
+    .commitment-card.c4 { border-left: 4px solid #8e44ad; }
+
+    .commitment-card h4 {
+      color: #1e3a8a;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .commitment-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Solutions & Services Section with Interactive Hover Cards */
+    .services {
+      padding: 80px 10%;
+      background-color: var(--light-bg);
+      text-align: center;
     }
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
     }
 
     .service-card {
       background: white;
-      padding: 40px 30px;
+      padding: 36px 26px;
       border-radius: 12px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       text-align: left;
       display: flex;
       flex-direction: column;
     }
 
     .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary-color);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(39, 174, 96, 0.2);
+      border-color: var(--secondary-color);
     }
 
     .service-icon {
-      width: 54px;
-      height: 54px;
+      width: 52px;
+      height: 52px;
       border-radius: 10px;
       background: #eff6ff;
       color: #2563eb;
@@ -281,17 +363,153 @@
       color: #d97706;
     }
 
+    .service-card:nth-child(4) .service-icon {
+      background: #fdf2f8;
+      color: #db2777;
+    }
+
     .service-card h3 {
       color: var(--dark-bg);
-      margin-bottom: 12px;
-      font-size: 20px;
+      margin-bottom: 10px;
+      font-size: 19px;
       font-weight: 700;
     }
 
     .service-card p {
       color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 15px;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    /* Detailed Turnkey Installation Packages Section */
+    .packages-section {
+      padding: 80px 10%;
+      background: #ffffff;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .package-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .package-card:hover {
+      border-color: var(--secondary-color);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .package-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+
+    .badge-blue { background: #e0f2fe; color: #0369a1; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+    .badge-amber { background: #fef3c7; color: #b45309; }
+
+    .package-card h3 {
+      font-size: 18px;
+      color: var(--dark-bg);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .package-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .package-link {
+      color: var(--secondary-color);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s ease;
+    }
+
+    .package-link:hover {
+      color: var(--secondary-hover);
+      gap: 8px;
+    }
+
+    /* Brands Banner with Logo Showcase */
+    .brands-section {
+      padding: 55px 10%;
+      background: var(--light-bg);
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brands-section h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .brand-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px 36px;
+      align-items: center;
+    }
+
+    /* Seamless Card Style for Logos Only */
+    .brand-pill.no-bg {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease;
+    }
+
+    .brand-pill.no-bg:hover {
+      transform: scale(1.08);
+    }
+
+    .brand-logo-img {
+      height: 54px;
+      width: auto;
+      max-width: 170px;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      mix-blend-mode: multiply;
     }
 
     /* About & Map Section */
@@ -299,13 +517,12 @@
       padding: 80px 10%;
       background-color: white;
       text-align: center;
-      border-top: 1px solid var(--border-color);
     }
 
     .about-intro {
       max-width: 750px;
       margin: 0 auto 50px auto;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.7;
       color: var(--text-muted);
     }
@@ -320,7 +537,7 @@
     .about-info {
       flex: 1;
       background: var(--light-bg);
-      padding: 36px;
+      padding: 34px;
       border-radius: 12px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-color);
@@ -332,7 +549,7 @@
     .about-info h3 {
       color: var(--secondary-color);
       margin-bottom: 20px;
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -376,6 +593,322 @@
       border: 0;
     }
 
+    /* ============================================================ */
+    /* Integrated Connect & Consultation Section (#connect)        */
+    /* ============================================================ */
+    .connect-section {
+      background-color: var(--light-bg);
+      border-top: 1px solid var(--border-color);
+      padding-bottom: 80px;
+    }
+
+    .connect-hero-banner {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.92) 100%),
+                  url('1.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .connect-hero-banner h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .connect-hero-banner p {
+      font-size: 17px;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #f1f5f9;
+    }
+
+    .connect-main-container {
+      max-width: 1200px;
+      margin: -35px auto 0;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 30px;
+    }
+
+    /* Info Card */
+    .info-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-card h3 {
+      color: #1e3a8a;
+      font-size: 22px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+      font-weight: 700;
+    }
+
+    .company-badge {
+      background-color: var(--light-bg);
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .company-badge h4 {
+      font-size: 15px;
+      color: #1e3a8a;
+      margin-bottom: 2px;
+      font-weight: 700;
+    }
+
+    .company-badge p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .connect-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .connect-icon {
+      font-size: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .connect-text h4 {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .connect-text p, .connect-text a {
+      font-size: 15px;
+      color: var(--text-main);
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .connect-text a:hover {
+      color: var(--secondary-color);
+    }
+
+    .connect-channels {
+      margin-top: 15px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .connect-channels h4 {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .channel-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-channel {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 12px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-channel.zalo { background-color: #0068ff; }
+    .btn-channel.hotline { background-color: var(--secondary-color); }
+    .btn-channel:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* Form Card */
+    .form-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-card h3 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .form-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark-bg);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 15px;
+      color: #333;
+      background-color: #fff;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 95px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.25s ease;
+      margin-top: 10px;
+      box-shadow: 0 4px 14px rgba(39, 174, 96, 0.35);
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(39, 174, 96, 0.45);
+    }
+
+    .submit-btn:disabled {
+      background: #bdc3c7;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .success-message {
+      display: none;
+      background-color: #eafaf1;
+      color: #27ae60;
+      border: 1px solid #a9dfbf;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .error-message {
+      display: none;
+      background-color: #fdedec;
+      color: #e74c3c;
+      border: 1px solid #fadbd8;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    /* Floating Zalo Quick Button */
+    .floating-zalo {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      background-color: #0068ff;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 4px 16px rgba(0, 104, 255, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-zalo:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 22px rgba(0, 104, 255, 0.6);
+    }
+
     /* Footer */
     footer {
       background-color: var(--dark-card);
@@ -387,17 +920,29 @@
 
     footer h3 {
       color: #ffffff;
-      font-size: 20px;
-      margin-bottom: 16px;
+      font-size: 22px;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .footer-sub {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
     }
 
     footer p {
-      margin: 8px 0;
+      margin: 6px 0;
       font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer p strong {
+      color: #e2e8f0;
     }
 
     .footer-bottom {
-      margin-top: 30px;
+      margin-top: 25px;
       padding-top: 20px;
       border-top: 1px solid #1e293b;
       font-size: 13px;
@@ -409,8 +954,15 @@
       .about-grid {
         flex-direction: column;
       }
+      .connect-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
       .hero h2 {
-        font-size: 38px;
+        font-size: 36px;
       }
     }
 
@@ -432,59 +984,76 @@
         padding-top: 12px;
       }
       nav a {
-        margin: 0 10px;
+        margin: 0 8px;
       }
       .hero {
-        padding: 100px 20px 80px;
+        padding: 90px 20px 70px;
       }
       .hero h2 {
-        font-size: 32px;
+        font-size: 30px;
       }
       .hero p {
-        font-size: 17px;
+        font-size: 16px;
       }
-      .services, .about {
+      .commitments-section, .services, .packages-section, .about {
         padding: 60px 5%;
+      }
+      .brand-logos {
+        gap: 16px 24px;
+      }
+      .connect-hero-banner h2 {
+        font-size: 26px;
+      }
+      .floating-zalo {
+        bottom: 18px;
+        right: 18px;
+        padding: 10px 16px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Header / Navigation with Sticky Frosted Glass -->
   <header>
     <a href="#home" class="brand-composite">
       <img src="image_1.png" alt="Điện Mặt Trời Xanh Logo" class="logo-graphic">
-      <h1>Điện Mặt Trời <span>Xanh</span></h1>
+      <div class="brand-info">
+        <h1>Điện Mặt Trời <span>Xanh</span></h1>
+        <span class="brand-sub trans" data-vi="Tiên Phong Năng Lượng Sạch" data-en="Pioneering Clean Energy">Tiên Phong Năng Lượng Sạch</span>
+      </div>
     </a>
 
     <div class="nav-container">
       <nav>
-        <a href="#home" class="trans" data-en="Home" data-vi="Trang Chủ">Home</a>
-        <a href="#services" class="trans" data-en="Services" data-vi="Dịch Vụ">Services</a>
-        <a href="#about" class="trans" data-en="About" data-vi="Giới Thiệu">About</a>
-        <a href="connect.html" class="trans" data-en="Connect" data-vi="Kết Nối">Connect</a>
+        <a href="#home" class="trans" data-vi="Trang Chủ" data-en="Home">Trang Chủ</a>
+        <a href="#commitments" class="trans" data-vi="Cam Kết" data-en="Commitment">Cam Kết</a>
+        <a href="#services" class="trans" data-vi="Giải Pháp" data-en="Solutions">Giải Pháp</a>
+        <a href="#packages" class="trans" data-vi="Gói Lắp Đặt" data-en="Packages">Gói Lắp Đặt</a>
+        <a href="#about" class="trans" data-vi="Giới Thiệu" data-en="About">Giới Thiệu</a>
+        <a href="#connect" class="trans" data-vi="Kết Nối" data-en="Connect">Kết Nối</a>
       </nav>
       <div class="lang-switcher">
-        <span class="flag active" onclick="changeLang('en')" id="btn-en" title="English">🇬🇧</span>
-        <span class="flag" onclick="changeLang('vi')" id="btn-vi" title="Tiếng Việt">🇻🇳</span>
+        <span class="flag active" onclick="changeLang('vi')" id="btn-vi" title="Tiếng Việt">🇻🇳</span>
+        <span class="flag" onclick="changeLang('en')" id="btn-en" title="English">🇬🇧</span>
       </div>
     </div>
   </header>
 
   <!-- Hero Section with Solar Landscape Background Image -->
   <section id="home" class="hero">
-    <div class="hero-badge trans" data-en="⚡ Sustainable & Clean Energy Solutions" data-vi="⚡ Giải Pháp Năng Lượng Sạch & Bền Vững">
-      ⚡ Sustainable & Clean Energy Solutions
+    <div class="hero-badge trans" data-vi="⚡ Giải Pháp Năng Lượng Sạch & Bền Vững" data-en="⚡ Sustainable & Clean Energy Solutions">
+      ⚡ Giải Pháp Năng Lượng Sạch & Bền Vững
     </div>
-    <h2 class="trans" data-en="Power Your Future with Solar Energy" data-vi="Thắp Sáng Tương Lai Với Điện Mặt Trời">
-      Power Your Future with Solar Energy
+    <h2 class="trans" data-vi="Thắp Sáng Tương Lai Với Điện Mặt Trời" data-en="Power Your Future with Solar Energy">
+      Thắp Sáng Tương Lai Với Điện Mặt Trời
     </h2>
-    <p class="trans" data-en="Reduce your electricity bills and carbon footprint with our premium residential and commercial solar installations." data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp lắp đặt điện mặt trời dân dụng và thương mại cao cấp.">
-      Reduce your electricity bills and carbon footprint with our premium residential and commercial solar installations.
+    <p class="trans" data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu." data-en="Reduce your electricity bills and carbon footprint with our premium residential, commercial, and agricultural solar installations.">
+      Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu.
     </p>
-    <a href="connect.html" class="cta-button trans" data-en="Connect / Get a Free Quote →" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →">
-      Connect / Get a Free Quote →
+    <a href="#connect" class="cta-button trans" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →" data-en="Connect / Get a Free Quote →">
+      Kết Nối / Nhận Báo Giá Miễn Phí →
     </a>
   </section>
 
@@ -492,78 +1061,199 @@
   <div class="highlights-bar">
     <div class="highlight-item">
       <h4>25+</h4>
-      <p class="trans" data-en="Completed Projects" data-vi="Dự Án Hoàn Thành">Completed Projects</p>
+      <p class="trans" data-vi="Dự Án Hoàn Thành" data-en="Completed Projects">Dự Án Hoàn Thành</p>
     </div>
     <div class="highlight-item">
       <h4>100%</h4>
-      <p class="trans" data-en="Tier-1 Equipment" data-vi="Thiết Bị Chính Hãng">Tier-1 Equipment</p>
+      <p class="trans" data-vi="Thiết Bị Chính Hãng" data-en="Tier-1 Equipment">Thiết Bị Chính Hãng</p>
     </div>
     <div class="highlight-item">
       <h4>10-25 Yrs</h4>
-      <p class="trans" data-en="Equipment Warranty" data-vi="Bảo Hành Thiết Bị">Equipment Warranty</p>
+      <p class="trans" data-vi="Bảo Hành Thiết Bị" data-en="Equipment Warranty">Bảo Hành Thiết Bị</p>
     </div>
     <div class="highlight-item">
       <h4>24/7</h4>
-      <p class="trans" data-en="Support & Monitoring" data-vi="Hỗ Trợ & Giám Sát">Support & Monitoring</p>
+      <p class="trans" data-vi="Hỗ Trợ & Giám Sát" data-en="Support & Monitoring">Hỗ Trợ & Giám Sát</p>
     </div>
   </div>
 
-  <!-- Services Section -->
+  <!-- Core Commitments Section -->
+  <section id="commitments" class="commitments-section">
+    <h2 class="section-title trans" data-vi="Cam Kết Chất Lượng Dịch Vụ" data-en="Why Choose Điện Mặt Trời Xanh">Cam Kết Chất Lượng Dịch Vụ</h2>
+    <p class="section-subtitle trans" data-vi="Tiêu chuẩn kỹ thuật cao đảm bảo an toàn, độ bền vận hành và tối đa hóa thời gian hoàn vốn cho dự án của bạn." data-en="Our engineering standards guarantee safety, long-term durability, and optimal return on investment.">Tiêu chuẩn kỹ thuật cao đảm bảo an toàn, độ bền vận hành và tối đa hóa thời gian hoàn vốn cho dự án của bạn.</p>
+    
+    <div class="commitments-grid">
+      <div class="commitment-card c1">
+        <h4><span class="trans" data-vi="✓ 100% Chính Hãng" data-en="✓ Tier-1 Equipment">✓ 100% Chính Hãng</span></h4>
+        <p class="trans" data-vi="100% thiết bị pin và inverter nhập khẩu chính ngạch đầy đủ chứng nhận CO/CQ từ các thương hiệu hàng đầu thế giới." data-en="100% genuine imported products with full CO/CQ certification from world-leading solar manufacturers.">100% thiết bị pin và inverter nhập khẩu chính ngạch đầy đủ chứng nhận CO/CQ từ các thương hiệu hàng đầu thế giới.</p>
+      </div>
+      <div class="commitment-card c2">
+        <h4><span class="trans" data-vi="⚙ Thi Công Chuẩn Kỹ Thuật" data-en="⚙ Engineering Precision">⚙ Thi Công Chuẩn Kỹ Thuật</span></h4>
+        <p class="trans" data-vi="Đội ngũ kỹ sư tay nghề cao đảm bảo tiến độ, thẩm mỹ khung giàn và an toàn tuyệt đối theo tiêu chuẩn điện lực." data-en="Experienced electrical engineers ensure rapid construction, electrical safety compliance, and aesthetic roof finishing.">Đội ngũ kỹ sư tay nghề cao đảm bảo tiến độ, thẩm mỹ khung giàn và an toàn tuyệt đối theo tiêu chuẩn điện lực.</p>
+      </div>
+      <div class="commitment-card c3">
+        <h4><span class="trans" data-vi="💰 Giá Cả Minh Bạch" data-en="💰 Transparent Pricing">💰 Giá Cả Minh Bạch</span></h4>
+        <p class="trans" data-vi="Báo giá trọn gói minh bạch, khảo sát mái miễn phí tận nơi và cam kết không phát sinh bất kỳ chi phí ẩn nào." data-en="Clear turnkey pricing with no hidden costs, offering competitive investment rates and free on-site roof surveys.">Báo giá trọn gói minh bạch, khảo sát mái miễn phí tận nơi và cam kết không phát sinh bất kỳ chi phí ẩn nào.</p>
+      </div>
+      <div class="commitment-card c4">
+        <h4><span class="trans" data-vi="🛡 Giám Sát & Bảo Trì 24/7" data-en="🛡 24/7 Smart Monitoring">🛡 Giám Sát & Bảo Trì 24/7</span></h4>
+        <p class="trans" data-vi="Giám sát sản lượng thời gian thực qua điện thoại, bảo hành thiết bị 10 - 25 năm cùng hỗ trợ kỹ thuật định kỳ." data-en="Continuous system monitoring via mobile app with warranty up to 10–25 years and swift technical support.">Giám sát sản lượng thời gian thực qua điện thoại, bảo hành thiết bị 10 - 25 năm cùng hỗ trợ kỹ thuật định kỳ.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions & Services Section with Interactive Hover Cards -->
   <section id="services" class="services">
-    <h2 class="section-title trans" data-en="Our Solar Solutions" data-vi="Các Giải Pháp Điện Mặt Trời">Our Solar Solutions</h2>
-    <p class="section-subtitle trans" data-en="Engineered for maximum efficiency, longevity, and high return on investment." data-vi="Được thiết kế tối ưu hiệu suất, độ bền cao và mang lại hiệu quả đầu tư vượt trội.">Engineered for maximum efficiency, longevity, and high return on investment.</p>
+    <h2 class="section-title trans" data-vi="Các Giải Pháp Toàn Diện" data-en="Our Solar Solutions">Các Giải Pháp Toàn Diện</h2>
+    <p class="section-subtitle trans" data-vi="Được thiết kế tối ưu cho hộ gia đình, doanh nghiệp nhà xưởng và phục vụ sản xuất nông nghiệp." data-en="Custom engineered for residential homes, commercial enterprises, and agriculture.">Được thiết kế tối ưu cho hộ gia đình, doanh nghiệp nhà xưởng và phục vụ sản xuất nông nghiệp.</p>
     
     <div class="service-grid">
       <div class="service-card">
         <div class="service-icon">🏠</div>
-        <h3 class="trans" data-en="Residential Solar" data-vi="Điện Mặt Trời Dân Dụng">Residential Solar</h3>
-        <p class="trans" data-en="Custom-designed rooftop solar systems built to maximize energy production and drastically cut monthly electric bills for your home." data-vi="Hệ thống điện mặt trời áp mái được thiết kế tùy chỉnh nhằm tối đa hóa sản lượng điện và giảm đáng kể tiền điện hàng tháng cho ngôi nhà của bạn.">Custom-designed rooftop solar systems built to maximize energy production and drastically cut monthly electric bills for your home.</p>
+        <h3 class="trans" data-vi="Điện Mặt Trời Dân Dụng" data-en="Residential Solar">Điện Mặt Trời Dân Dụng</h3>
+        <p class="trans" data-vi="Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên." data-en="Custom rooftop systems designed to maximize daytime solar production and drastically cut monthly electricity bills.">Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🏢</div>
-        <h3 class="trans" data-en="Commercial Solar" data-vi="Điện Mặt Trời Doanh Nghiệp">Commercial Solar</h3>
-        <p class="trans" data-en="Large-scale solar integrations to help factories, workshops, and businesses reduce overhead and achieve ESG sustainability goals." data-vi="Tích hợp năng lượng mặt trời quy mô lớn giúp nhà xưởng, doanh nghiệp giảm chi phí vận hành và đạt được các mục tiêu phát triển bền vững.">Large-scale solar integrations to help factories, workshops, and businesses reduce overhead and achieve ESG sustainability goals.</p>
+        <h3 class="trans" data-vi="Nhà Xưởng & Doanh Nghiệp" data-en="Commercial & Industrial">Nhà Xưởng & Doanh Nghiệp</h3>
+        <p class="trans" data-vi="Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG." data-en="Large-scale rooftop integrations to reduce manufacturing overhead and achieve ESG green compliance goals.">Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🔋</div>
-        <h3 class="trans" data-en="Battery Backup & Hybrid" data-vi="Hệ Thống Lưu Trữ Hybrid">Battery Backup & Hybrid</h3>
-        <p class="trans" data-en="Store your excess solar power to keep your critical loads running seamlessly during power outages or nighttime peak hours." data-vi="Lưu trữ nguồn điện dư thừa để duy trì nguồn điện liên tục cho gia đình, cơ sở kinh doanh khi mất điện lưới hoặc sử dụng vào ban đêm.">Store your excess solar power to keep your critical loads running seamlessly during power outages or nighttime peak hours.</p>
+        <h3 class="trans" data-vi="Hệ Thống Lưu Trữ Hybrid" data-en="Battery Backup & Hybrid">Hệ Thống Lưu Trữ Hybrid</h3>
+        <p class="trans" data-vi="Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm." data-en="Store excess solar energy into lithium batteries for uninterrupted 24/7 power during outages and evening peaks.">Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm.</p>
       </div>
+      <div class="service-card">
+        <div class="service-icon">🌾</div>
+        <h3 class="trans" data-vi="Bơm Tưới Nông Nghiệp" data-en="Agricultural Solar Pumping">Bơm Tưới Nông Nghiệp</h3>
+        <p class="trans" data-vi="Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu." data-en="Direct solar pumping systems for farms, orchards, and irrigation in remote regions with unstable or absent grid power.">Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Turnkey Installation Packages Section -->
+  <section id="packages" class="packages-section">
+    <h2 class="section-title trans" data-vi="Các Gói Lắp Đặt Tiêu Biểu" data-en="Featured Installation Packages">Các Gói Lắp Đặt Tiêu Biểu</h2>
+    <p class="section-subtitle trans" data-vi="Các cấu hình công suất phổ biến được tính toán phù hợp với nhu cầu phụ tải thực tế của khách hàng." data-en="Popular capacity configurations tailored to your specific power consumption.">Các cấu hình công suất phổ biến được tính toán phù hợp với nhu cầu phụ tải thực tế của khách hàng.</p>
+
+    <div class="package-grid">
+      <!-- Package 1: Zero Export Residential -->
+      <div class="package-card">
+        <span class="package-badge badge-blue trans" data-vi="HỆ BÁM TẢI" data-en="ZERO EXPORT / GRID-TIED">HỆ BÁM TẢI</span>
+        <h3 class="trans" data-vi="Gói Bám Tải 5kWp - 10kWp" data-en="Package 5kWp - 10kWp">Gói Bám Tải 5kWp - 10kWp</h3>
+        <p class="trans" data-vi="Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày." data-en="Ideal for residential households with monthly bills from 1.5 - 3.5 million VND using appliances during daytime.">Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày.</p>
+        <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
+      </div>
+
+      <!-- Package 2: Commercial Zero Export -->
+      <div class="package-card">
+        <span class="package-badge badge-blue trans" data-vi="HỆ DOANH NGHIỆP" data-en="COMMERCIAL / INDUSTRIAL">HỆ DOANH NGHIỆP</span>
+        <h3 class="trans" data-vi="Gói Doanh Nghiệp 15kWp - 50kWp" data-en="Package 15kWp - 50kWp">Gói Doanh Nghiệp 15kWp - 50kWp</h3>
+        <p class="trans" data-vi="Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh." data-en="Tailored for workshops, stores, and small factories to offset high daytime peak commercial electricity rates.">Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh.</p>
+        <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
+      </div>
+
+      <!-- Package 3: Hybrid Residential -->
+      <div class="package-card">
+        <span class="package-badge badge-green trans" data-vi="HỆ HYBRID CÓ LƯU TRỮ" data-en="HYBRID + STORAGE">HỆ HYBRID CÓ LƯU TRỮ</span>
+        <h3 class="trans" data-vi="Hybrid 5kW - 10kW (Lưu 10-16kWh)" data-en="Hybrid 5kW - 10kW (Storage 10-16kWh)">Hybrid 5kW - 10kW (Storage 10-16kWh)</h3>
+        <p class="trans" data-vi="Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị." data-en="Ensures seamless 24/7 power for homes and villas. Automatic transfer switch prevents disruption during blackouts.">Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị.</p>
+        <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
+      </div>
+
+      <!-- Package 4: Solar Pumping -->
+      <div class="package-card">
+        <span class="package-badge badge-amber trans" data-vi="BƠM NĂNG LƯỢNG MẶT TRỜI" data-en="AGRICULTURAL PUMPING">BƠM NĂNG LƯỢNG MẶT TRỜI</span>
+        <h3 class="trans" data-vi="Hệ Bơm Tưới 3HP - 10HP" data-en="Solar Pumping 3HP - 10HP">Hệ Bơm Tưới 3HP - 10HP</h3>
+        <p class="trans" data-vi="Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa." data-en="Automatic water pumping directly from sunlight for farms and orchards, eliminating fuel costs and grid connection fees.">Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa.</p>
+        <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Brand Partners Strip (Logos Only) -->
+  <section class="brands-section">
+    <h3 class="trans" data-vi="Thương Hiệu Thiết Bị Hàng Đầu Đồng Hành" data-en="Trusted Tier-1 Equipment Partners">Thương Hiệu Thiết Bị Hàng Đầu Đồng Hành</h3>
+    <div class="brand-logos">
+      <!-- 1. Solis Inverters -->
+      <span class="brand-pill no-bg" title="Solis Inverters">
+        <img src="solis.png" alt="Solis Inverters" class="brand-logo-img" onerror="this.src='solis.jpg'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 2. Deye ESS -->
+      <span class="brand-pill no-bg" title="Deye ESS">
+        <img src="Deye.png" alt="Deye ESS" class="brand-logo-img" onerror="this.src='deye.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 3. Luxpower -->
+      <span class="brand-pill no-bg" title="Luxpower">
+        <img src="Luxpower.png" alt="Luxpower" class="brand-logo-img" onerror="this.src='luxpower.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 4. Sungrow -->
+      <span class="brand-pill no-bg" title="Sungrow">
+        <img src="sungrow.png" alt="Sungrow" class="brand-logo-img" onerror="this.src='Sungrow.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 5. GoodWe -->
+      <span class="brand-pill no-bg" title="GoodWe">
+        <img src="goodwe.png" alt="GoodWe" class="brand-logo-img" onerror="this.src='GoodWe.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 6. TCL Solar -->
+      <span class="brand-pill no-bg" title="TCL Solar">
+        <img src="TCL.png" alt="TCL Solar" class="brand-logo-img" onerror="this.src='tcl.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 7. Canadian Solar -->
+      <span class="brand-pill no-bg" title="Canadian Solar">
+        <img src="canadiansolar.png" alt="Canadian Solar" class="brand-logo-img" onerror="this.src='CanadianSolar.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 8. LONGi Solar -->
+      <span class="brand-pill no-bg" title="LONGi Solar">
+        <img src="longi.png" alt="LONGi Solar" class="brand-logo-img" onerror="this.src='LONGi.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
+
+      <!-- 9. Pylontech Battery -->
+      <span class="brand-pill no-bg" title="Pylontech Battery">
+        <img src="Pylontech.png" alt="Pylontech Battery" class="brand-logo-img" onerror="this.src='pylontech.png'; this.onerror=function(){this.style.display='none';}">
+      </span>
     </div>
   </section>
 
   <!-- About Section with Embedded Google Map -->
   <section id="about" class="about">
-    <h2 class="section-title trans" data-en="About Điện Mặt Trời Xanh" data-vi="Về Điện Mặt Trời Xanh">About Điện Mặt Trời Xanh</h2>
-    <p class="about-intro trans" data-en="We are dedicated to providing sustainable, clean energy solutions with top-tier solar equipment and expert engineering installation services across Vietnam." data-vi="Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị điện mặt trời chất lượng cao và dịch vụ kỹ thuật lắp đặt chuyên nghiệp.">We are dedicated to providing sustainable, clean energy solutions with top-tier solar equipment and expert engineering installation services across Vietnam.</p>
+    <h2 class="section-title trans" data-vi="Về Điện Mặt Trời Xanh" data-en="About Điện Mặt Trời Xanh">Về Điện Mặt Trời Xanh</h2>
+    <p class="about-intro trans" data-vi="Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị chính hãng và dịch vụ kỹ thuật lắp đặt chuyên nghiệp." data-en="We are dedicated to delivering high-efficiency renewable energy systems with certified equipment and professional engineering standards across Vietnam.">Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị chính hãng và dịch vụ kỹ thuật lắp đặt chuyên nghiệp.</p>
     
     <div class="about-grid">
       <div class="about-info">
-        <h3 class="trans" data-en="📍 Location & Contact Details" data-vi="📍 Địa Điểm & Thông Tin Liên Hệ">📍 Location & Contact Details</h3>
+        <h3 class="trans" data-vi="📍 Địa Điểm & Thông Tin Liên Hệ" data-en="📍 Location & Contact Details">📍 Địa Điểm & Thông Tin Liên Hệ</h3>
         
         <div class="info-row">
-          <strong class="trans" data-en="Company Name" data-vi="Tên Doanh Nghiệp">Company Name</strong>
-          <span class="trans" data-en="Công ty TNHH Điện Mặt Trời Xanh" data-vi="Công ty TNHH Điện Mặt Trời Xanh">Công ty TNHH Điện Mặt Trời Xanh</span>
+          <strong class="trans" data-vi="Tên Doanh Nghiệp" data-en="Company Name">Tên Doanh Nghiệp</strong>
+          <span>Công ty TNHH Điện Mặt Trời Xanh</span>
         </div>
 
         <div class="info-row">
-          <strong class="trans" data-en="Address" data-vi="Địa chỉ">Address</strong>
+          <strong class="trans" data-vi="Địa chỉ" data-en="Address">Địa chỉ</strong>
           <span>Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000</span>
         </div>
 
         <div class="info-row">
-          <strong class="trans" data-en="Hotline / Phone" data-vi="Điện thoại / Hotline">Hotline / Phone</strong>
+          <strong class="trans" data-vi="Điện thoại / Hotline" data-en="Hotline / Phone">Điện thoại / Hotline</strong>
           <a href="tel:+84787691089">+84 787 691 089</a>
         </div>
 
         <div class="info-row">
-          <strong class="trans" data-en="Email" data-vi="Email">Email</strong>
+          <strong class="trans" data-vi="Email" data-en="Email">Email</strong>
           <a href="mailto:contact@dienmattroixanh.vn">contact@dienmattroixanh.vn</a>
         </div>
 
         <div class="info-row">
-          <strong class="trans" data-en="Specialization" data-vi="Lĩnh vực hoạt động">Specialization</strong>
-          <span class="trans" data-en="Solar equipment supply, EPC installation & hybrid renewable energy solutions" data-vi="Cung cấp thiết bị điện mặt trời, tổng thầu EPC và giải pháp năng lượng tái tạo hybrid">Solar equipment supply, EPC installation & hybrid renewable energy solutions</span>
+          <strong class="trans" data-vi="Lĩnh vực hoạt động" data-en="Specialization">Lĩnh vực hoạt động</strong>
+          <span class="trans" data-vi="Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp" data-en="Solar equipment supply, EPC installation, Hybrid ESS & agricultural pumping">Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp</span>
         </div>
       </div>
 
@@ -579,27 +1269,248 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ============================================================ -->
+  <!-- Integrated Connect & Interactive Consultation Section (#connect) -->
+  <!-- ============================================================ -->
+  <section id="connect" class="connect-section">
+    <div class="connect-hero-banner">
+      <h2 class="trans" data-vi="Kết Nối Cùng Điện Mặt Trời XANH" data-en="Connect with Điện Mặt Trời XANH">Kết Nối Cùng Điện Mặt Trời XANH</h2>
+      <p class="trans" data-vi="Liên hệ với văn phòng kỹ sư tại TP.HCM & Gia Lai để được tư vấn thiết kế và lắp đặt hệ thống điện mặt trời toàn diện." data-en="Get in touch with our engineering offices in Ho Chi Minh City & Gia Lai for comprehensive solar system consultations.">Liên hệ với văn phòng kỹ sư tại TP.HCM & Gia Lai để được tư vấn thiết kế và lắp đặt hệ thống điện mặt trời toàn diện.</p>
+    </div>
+
+    <div class="connect-main-container">
+      <div class="connect-grid">
+        
+        <!-- Left Column: Company & Office Details -->
+        <div class="info-card">
+          <div>
+            <h3 class="trans" data-vi="Hệ Thống Văn Phòng & Chi Nhánh" data-en="Office & Branch Information">Hệ Thống Văn Phòng & Chi Nhánh</h3>
+            
+            <div class="company-badge">
+              <h4>Công ty TNHH Điện mặt trời XANH</h4>
+              <p class="trans" data-vi="Hệ thống điện mặt trời chuyên nghiệp" data-en="Solar Energy Systems & Solutions">Hệ thống điện mặt trời chuyên nghiệp</p>
+            </div>
+
+            <!-- Main Office (VP) -->
+            <div class="connect-item">
+              <div class="connect-icon">🏢</div>
+              <div class="connect-text">
+                <h4 class="trans" data-vi="Văn Phòng Đại Diện (VP)" data-en="Head Office (VP)">Văn Phòng Đại Diện (VP)</h4>
+                <p>364 Cộng Hòa, P.13, Tân Bình, TP.HCM</p>
+              </div>
+            </div>
+
+            <!-- Branch Office (CN) -->
+            <div class="connect-item">
+              <div class="connect-icon">📍</div>
+              <div class="connect-text">
+                <h4 class="trans" data-vi="Chi Nhánh (CN)" data-en="Branch Office (CN)">Chi Nhánh (CN)</h4>
+                <p>Tổ 47, Khu phố 5, P.Quy Nhơn Nam, Gia Lai</p>
+              </div>
+            </div>
+
+            <!-- Direct Hotline -->
+            <div class="connect-item">
+              <div class="connect-icon">📞</div>
+              <div class="connect-text">
+                <h4 class="trans" data-vi="Hotline Tư Vấn" data-en="Hotline Consultation">Hotline Tư Vấn</h4>
+                <p><a href="tel:+84787691089">+84 787 691 089</a></p>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="connect-item">
+              <div class="connect-icon">⏰</div>
+              <div class="connect-text">
+                <h4 class="trans" data-vi="Giờ Làm Việc" data-en="Working Hours">Giờ Làm Việc</h4>
+                <p class="trans" data-vi="Thứ 2 - Thứ 7: 8:00 - 18:00" data-en="Mon - Sat: 8:00 AM - 6:00 PM">Thứ 2 - Thứ 7: 8:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Contact Buttons with Direct Zalo Link -->
+          <div class="connect-channels">
+            <h4 class="trans" data-vi="Kết Nối Nhanh" data-en="Direct Consultation">Kết Nối Nhanh</h4>
+            <div class="channel-buttons">
+              <a href="tel:+84787691089" class="btn-channel hotline trans" data-vi="Gọi Hotline" data-en="Call Hotline">📞 Gọi Hotline</a>
+              <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="btn-channel zalo">💬 Zalo Chat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Consultation & Connection Form -->
+        <div class="form-card">
+          <h3 class="trans" data-vi="Gửi Yêu Cầu Kết Nối" data-en="Request a Connection">Gửi Yêu Cầu Kết Nối</h3>
+          <p class="form-subtitle trans" data-vi="Điền thông tin bên dưới, kỹ sư tại TP.HCM hoặc Gia Lai sẽ liên hệ hỗ trợ bạn sớm nhất." data-en="Fill in your project details and our engineers in TP.HCM or Gia Lai will connect with you.">Điền thông tin bên dưới, kỹ sư tại TP.HCM hoặc Gia Lai sẽ liên hệ hỗ trợ bạn sớm nhất.</p>
+
+          <form id="connectForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName" class="trans" data-vi="Họ và Tên *" data-en="Full Name *">Họ và Tên *</label>
+                <input type="text" id="fullName" required placeholder="Nguyễn Văn A" class="trans-input" data-vi-placeholder="Nguyễn Văn A" data-en-placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="phone" class="trans" data-vi="Số Điện Thoại *" data-en="Phone Number *">Số Điện Thoại *</label>
+                <input type="tel" id="phone" required placeholder="0787 691 089">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="trans" data-vi="Địa Chỉ Email" data-en="Email Address">Địa Chỉ Email</label>
+              <input type="email" id="email" placeholder="example@gmail.com">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="projectType" class="trans" data-vi="Loại Hệ Thống" data-en="Solar System Type">Loại Hệ Thống</label>
+                <select id="projectType">
+                  <option value="Residential Solar" class="trans" data-vi="Điện mặt trời hộ gia đình" data-en="Residential Solar">Điện mặt trời hộ gia đình</option>
+                  <option value="Commercial Solar & Factory" class="trans" data-vi="Doanh nghiệp / Nhà xưởng" data-en="Commercial Solar & Factory">Doanh nghiệp / Nhà xưởng</option>
+                  <option value="Battery Backup / Hybrid" class="trans" data-vi="Hệ thống lưu trữ & Hybrid" data-en="Battery Backup / Hybrid">Hệ thống lưu trữ & Hybrid</option>
+                  <option value="General Inquiry" class="trans" data-vi="Tư vấn hệ thống khác" data-en="General Inquiry">Tư vấn hệ thống khác</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="officePreference" class="trans" data-vi="Văn Phòng Tiếp Nhận" data-en="Preferred Office">Văn Phòng Tiếp Nhận</label>
+                <select id="officePreference">
+                  <option value="VP TP.HCM (Tân Bình)" class="trans" data-vi="VP TP.HCM (364 Cộng Hòa, Tân Bình)" data-en="VP TP.HCM (Tân Bình)">VP TP.HCM (364 Cộng Hòa, Tân Bình)</option>
+                  <option value="CN Gia Lai (Quy Nhơn Nam)" class="trans" data-vi="CN Gia Lai (Quy Nhơn Nam)" data-en="CN Gia Lai (Quy Nhơn Nam)">CN Gia Lai (Quy Nhơn Nam)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location" class="trans" data-vi="Địa Chỉ Lắp Đặt Cụ Thể" data-en="Installation Address">Địa Chỉ Lắp Đặt Cụ Thể</label>
+              <input type="text" id="location" placeholder="Địa chỉ nhà / doanh nghiệp..." class="trans-input" data-vi-placeholder="Địa chỉ nhà / doanh nghiệp..." data-en-placeholder="Installation address...">
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="trans" data-vi="Yêu Cầu Chi Tiết / Ghi Chú" data-en="Notes / System Requirements">Yêu Cầu Chi Tiết / Ghi Chú</label>
+              <textarea id="message" placeholder="Mô tả công suất mong muốn, diện tích mái hoặc câu hỏi của bạn..." class="trans-input" data-vi-placeholder="Mô tả công suất mong muốn, diện tích mái hoặc câu hỏi của bạn..." data-en-placeholder="Describe your roof type or capacity requirements..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn trans" data-vi="Gửi Yêu Cầu Kết Nối" data-en="Send Connection Request">Gửi Yêu Cầu Kết Nối</button>
+
+            <div id="successMsg" class="success-message trans" 
+                 data-vi="✓ Cảm ơn bạn! Yêu cầu kết nối đã được gửi thành công. Đội ngũ kỹ sư của Công ty TNHH Điện mặt trời XANH sẽ liên hệ hỗ trợ sớm nhất."
+                 data-en="✓ Thank you! Your request has been received. Our team will contact you shortly.">
+              ✓ Cảm ơn bạn! Yêu cầu kết nối đã được gửi thành công. Đội ngũ kỹ sư của Công ty TNHH Điện mặt trời XANH sẽ liên hệ hỗ trợ sớm nhất.
+            </div>
+
+            <div id="errorMsg" class="error-message trans"
+                 data-vi="✕ Đã xảy ra lỗi khi gửi. Vui lòng liên hệ trực tiếp hotline để được hỗ trợ."
+                 data-en="✕ An error occurred while sending. Please call our hotline directly.">
+              ✕ Đã xảy ra lỗi khi gửi. Vui lòng liên hệ trực tiếp hotline để được hỗ trợ.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Matches Source Image Specifications) -->
   <footer id="contact">
-    <h3 class="trans" data-en="Công ty TNHH Điện Mặt Trời Xanh" data-vi="Công ty TNHH Điện Mặt Trời Xanh">Công ty TNHH Điện Mặt Trời Xanh</h3>
-    <p class="trans" data-en="Address: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000" data-vi="Địa chỉ: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000">Address: Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000</p>
-    <p>Email: <a href="mailto:contact@dienmattroixanh.vn" style="color: #cbd5e1;">contact@dienmattroixanh.vn</a> | Hotline: <a href="tel:+84787691089" style="color: #f59e0b; font-weight: bold;">+84 787 691 089</a></p>
+    <h3 class="trans" data-vi="Công ty TNHH Điện mặt trời XANH" data-en="Công ty TNHH Điện mặt trời XANH">Công ty TNHH Điện mặt trời XANH</h3>
+    <p class="footer-sub trans" data-vi="Hệ thống điện mặt trời chuyên nghiệp" data-en="Solar Energy Systems & Solutions">Hệ thống điện mặt trời chuyên nghiệp</p>
+    <p><strong>VP:</strong> 364 Cộng Hòa, P.13, Tân Bình, TP.HCM</p>
+    <p><strong>CN:</strong> Tổ 47, Khu phố 5, P.Quy Nhơn Nam, Gia Lai</p>
+    <p><strong>Email:</strong> <a href="mailto:contact@dienmattroixanh.vn" style="color: #cbd5e1;">contact@dienmattroixanh.vn</a> | <strong>Hotline:</strong> <a href="tel:+84787691089" style="color: #27ae60; font-weight: bold;">+84 787 691 089</a></p>
     <div class="footer-bottom">
-      &copy; 2026 Điện Mặt Trời Xanh. All rights reserved.
+      &copy; 2026 Công ty TNHH Điện mặt trời XANH. All rights reserved.
     </div>
   </footer>
 
-  <!-- Language Switcher Script -->
+  <!-- Floating Zalo Quick-Chat Button -->
+  <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-zalo">
+    <span>💬</span> <span class="trans" data-vi="Chat Zalo" data-en="Chat on Zalo">Chat Zalo</span>
+  </a>
+
+  <!-- Script Section -->
   <script>
+    // Google Apps Script Web App Endpoint
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwk5SENDikDcAmBlmPquoToiwepSFxfIOcXk2a87BIKVBh_7t7DlNJnHZX39DHbXcL5Lg/exec";
+
+    // Default language is Vietnamese
+    let currentLang = 'vi';
+
+    // Language Switcher Function
     function changeLang(lang) {
-      document.getElementById('btn-en').classList.remove('active');
+      currentLang = lang;
+
       document.getElementById('btn-vi').classList.remove('active');
+      document.getElementById('btn-en').classList.remove('active');
       document.getElementById('btn-' + lang).classList.add('active');
 
       const elements = document.querySelectorAll('.trans');
       elements.forEach(el => {
-        el.innerText = el.getAttribute('data-' + lang);
+        const text = el.getAttribute('data-' + lang);
+        if (text) {
+          el.innerText = text;
+        }
       });
+
+      const inputs = document.querySelectorAll('.trans-input');
+      inputs.forEach(input => {
+        const placeholder = input.getAttribute('data-' + lang + '-placeholder');
+        if (placeholder) {
+          input.setAttribute('placeholder', placeholder);
+        }
+      });
+    }
+
+    // Asynchronous Form Submission to Google Apps Script Web App
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      const submitBtn = document.getElementById('submitBtn');
+      const successBox = document.getElementById('successMsg');
+      const errorBox = document.getElementById('errorMsg');
+
+      // Hide previous alerts
+      successBox.style.display = 'none';
+      errorBox.style.display = 'none';
+
+      // Set loading state on button
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = (currentLang === 'vi') ? 'Đang gửi...' : 'Sending...';
+      submitBtn.disabled = true;
+
+      // Collect form inputs
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        projectType: document.getElementById('projectType').value,
+        officePreference: document.getElementById('officePreference').value,
+        location: document.getElementById('location').value,
+        message: document.getElementById('message').value
+      };
+
+      try {
+        // Send JSON payload to Google Apps Script Web App
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        // Display confirmation message and reset form
+        successBox.style.display = 'block';
+        document.getElementById('connectForm').reset();
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      } catch (error) {
+        console.error('Submission error:', error);
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      }
     }
   </script>
 </body>
