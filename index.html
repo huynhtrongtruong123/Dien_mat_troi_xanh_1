@@ -148,19 +148,110 @@
       transform: scale(1.15);
     }
 
-    /* Hero Section */
+    /* Hero Section with Automated Background Slideshow */
     .hero {
       position: relative;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.70) 0%, rgba(15, 23, 42, 0.50) 50%, rgba(15, 23, 42, 0.80) 100%),
-                  url("1.png") center/cover no-repeat;
+      overflow: hidden;
+      background-color: #0f172a;
       color: #ffffff;
       text-align: center;
-      padding: 130px 20px 110px;
+      padding: 125px 20px 105px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 560px;
+      min-height: 640px;
+    }
+
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: scale(1.05) translateX(20px);
+      transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1), transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: opacity, transform;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+      z-index: 2;
+    }
+
+    /* Secondly Main Page Image: Zoomed out & centered to show all people focusing on laptop */
+    .hero-slide.hero-slide-team {
+      background-position: center 48%;
+      background-size: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.50) 50%, rgba(15, 23, 42, 0.82) 100%);
+      z-index: 3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .hero-controls {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 5;
+    }
+
+    .hero-dot {
+      width: 32px;
+      height: 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.35);
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      outline: none;
+      padding: 0;
+    }
+
+    .hero-dot:hover {
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .hero-dot.active {
+      background: #27ae60;
+      width: 52px;
+      box-shadow: 0 0 12px rgba(39, 174, 96, 0.7);
     }
 
     .hero-badge {
@@ -460,6 +551,266 @@
       gap: 8px;
     }
 
+    /* Real Project Showcase & Gallery Buttons */
+    .featured-project-card {
+      border-color: #27ae60 !important;
+      box-shadow: 0 4px 16px rgba(39, 174, 96, 0.12) !important;
+      position: relative;
+    }
+
+    .project-showcase-box {
+      background: #ffffff;
+      border: 1px solid #dcfce7;
+      border-radius: 10px;
+      padding: 12px;
+      margin: 10px 0 14px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .project-showcase-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .project-verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      align-self: flex-start;
+      background: #eafaf1;
+      color: #27ae60;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid #a9dfbf;
+      text-transform: uppercase;
+    }
+
+    .project-tabs-switcher {
+      display: flex;
+      gap: 6px;
+      margin: 4px 0;
+    }
+
+    .project-tab-btn {
+      flex: 1;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .project-tab-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .project-tab-btn.active {
+      background: #27ae60;
+      color: #ffffff;
+      border-color: #219653;
+      box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
+    }
+
+    .package-gallery-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      padding: 8px 14px;
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #86efac;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .package-gallery-btn:hover {
+      background: #22c55e;
+      color: #ffffff;
+      border-color: #16a34a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    }
+
+    .project-owner-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1e3a8a;
+      line-height: 1.3;
+    }
+
+    .project-gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .project-gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 105px;
+      cursor: pointer;
+      background: #0f172a;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    }
+
+    .project-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      color: white;
+      font-size: 20px;
+    }
+
+    .project-gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .project-gallery-item .gallery-tag {
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 4px;
+      border-radius: 4px;
+      text-align: center;
+      pointer-events: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .project-showcase-loc {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 850px;
+      width: 100%;
+      background: #0f172a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      animation: lightboxZoom 0.25s ease-out;
+    }
+
+    @keyframes lightboxZoom {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      display: block;
+      background: #020617;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: #e74c3c;
+    }
+
+    .lightbox-caption {
+      padding: 14px 20px;
+      color: #f1f5f9;
+      font-size: 14px;
+      font-weight: 600;
+      background: #0f172a;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     /* Brands Banner with Logo Showcase */
     .brands-section {
       padding: 55px 10%;
@@ -591,6 +942,340 @@
       height: 100%;
       min-height: 380px;
       border: 0;
+    }
+
+    /* Document CTA Button in Company Introduction */
+    .about-doc-cta-wrap {
+      margin: 22px auto 32px auto;
+      text-align: center;
+    }
+
+    .btn-doc-intro {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+      color: #ffffff;
+      padding: 13px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 4px 16px rgba(39, 174, 96, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-doc-intro:hover {
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 22px rgba(39, 174, 96, 0.5);
+    }
+
+    .btn-doc-intro .doc-icon {
+      font-size: 18px;
+    }
+
+    .btn-doc-intro .doc-arrow {
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-doc-intro:hover .doc-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    /* Company Introduction Financial Connection Section */
+    .about-finance-wrap {
+      margin: 35px 0 45px 0;
+      background: #ffffff;
+      border: 1px solid #dcfce7;
+      border-radius: 18px;
+      padding: 35px 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-finance-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 30px auto;
+    }
+
+    .finance-badge {
+      display: inline-block;
+      background: #eafaf1;
+      color: #27ae60;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid #a9dfbf;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .finance-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .finance-subtitle {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .finance-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 25px;
+    }
+
+    .finance-card {
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .finance-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-shinhan {
+      border-top: 4px solid #0284c7;
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+    }
+
+    .card-homecredit {
+      border-top: 4px solid #e11d48;
+      background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%);
+    }
+
+    .finance-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .partner-logo-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      padding: 6px 16px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      height: 56px;
+      min-width: 110px;
+      transition: all 0.25s ease;
+    }
+
+    .partner-logo-tag:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .partner-logo-img {
+      max-height: 48px;
+      max-width: 140px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .partner-logo-img.logo-shinhan {
+      max-height: 48px;
+    }
+
+    .partner-logo-img.logo-homecredit {
+      max-height: 40px;
+    }
+
+    .finance-highlight-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .finance-highlight-tag.tag-hc {
+      background: #ffe4e6;
+      color: #be123c;
+      border-color: #fecdd3;
+    }
+
+    .partner-offer-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1e3a8a;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .three-zero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .zero-pill {
+      background: #ffffff;
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      padding: 10px 6px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+    }
+
+    .zero-num {
+      display: block;
+      font-size: 20px;
+      font-weight: 800;
+      color: #0284c7;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .zero-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #475569;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .hc-benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .hc-benefit-item {
+      background: #ffffff;
+      border: 1px solid #fecdd3;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.06);
+    }
+
+    .hc-benefit-item .hc-icon {
+      font-size: 16px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .hc-benefit-item .hc-text strong {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #9f1239;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .hc-benefit-item .hc-text span {
+      display: block;
+      font-size: 10.5px;
+      color: #64748b;
+      line-height: 1.3;
+    }
+
+    .finance-desc {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .finance-perks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .perk-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .perk-item .perk-icon {
+      color: #0284c7;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .finance-cta-row {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .finance-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+      color: #ffffff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 4px 14px rgba(243, 156, 18, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .finance-cta-btn:hover {
+      background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.45);
+    }
+
+    @media (max-width: 900px) {
+      .finance-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .hc-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .three-zero-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ============================================================ */
@@ -884,12 +1569,53 @@
       text-align: center;
     }
 
-    /* Floating Zalo Quick Button */
-    .floating-zalo {
+    /* Floating Quick Contact & Social Icons */
+    .floating-contact-group {
       position: fixed;
       bottom: 24px;
       right: 24px;
       z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .floating-social-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .floating-social-icon.tiktok {
+      background-color: #010101;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .floating-social-icon.facebook {
+      background-color: #1877f2;
+      box-shadow: 0 4px 16px rgba(24, 119, 242, 0.45);
+    }
+
+    .floating-social-icon:hover {
+      transform: translateY(-3px) scale(1.08);
+    }
+
+    .floating-social-icon.tiktok:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+    }
+
+    .floating-social-icon.facebook:hover {
+      box-shadow: 0 8px 22px rgba(24, 119, 242, 0.65);
+    }
+
+    .floating-zalo {
       background-color: #0068ff;
       color: white;
       display: flex;
@@ -902,6 +1628,7 @@
       font-size: 15px;
       box-shadow: 0 4px 16px rgba(0, 104, 255, 0.45);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
+      white-space: nowrap;
     }
 
     .floating-zalo:hover {
@@ -987,13 +1714,17 @@
         margin: 0 8px;
       }
       .hero {
-        padding: 90px 20px 70px;
+        padding: 95px 18px 75px;
+        min-height: 590px;
       }
       .hero h2 {
         font-size: 30px;
       }
       .hero p {
         font-size: 16px;
+      }
+      .hero-slide.hero-slide-team {
+        background-position: 48% 48% !important;
       }
       .commitments-section, .services, .packages-section, .about {
         padding: 60px 5%;
@@ -1004,11 +1735,25 @@
       .connect-hero-banner h2 {
         font-size: 26px;
       }
-      .floating-zalo {
+      .floating-contact-group {
         bottom: 18px;
         right: 18px;
+        gap: 8px;
+      }
+      .floating-social-icon {
+        width: 38px;
+        height: 38px;
+      }
+      .floating-zalo {
         padding: 10px 16px;
         font-size: 14px;
+      }
+      .btn-doc-intro {
+        width: 100%;
+        max-width: 380px;
+        padding: 12px 18px;
+        font-size: 14px;
+        justify-content: center;
       }
     }
   </style>
@@ -1031,6 +1776,7 @@
         <a href="#commitments" class="trans" data-vi="Cam Kết" data-en="Commitment">Cam Kết</a>
         <a href="#services" class="trans" data-vi="Giải Pháp" data-en="Solutions">Giải Pháp</a>
         <a href="#packages" class="trans" data-vi="Gói Lắp Đặt" data-en="Packages">Gói Lắp Đặt</a>
+        <a href="du-an-thuc-te.html" class="trans" data-vi="Dự Án Thực Tế" data-en="Real Projects">Dự Án Thực Tế</a>
         <a href="#about" class="trans" data-vi="Giới Thiệu" data-en="About">Giới Thiệu</a>
         <a href="#connect" class="trans" data-vi="Kết Nối" data-en="Connect">Kết Nối</a>
       </nav>
@@ -1041,20 +1787,37 @@
     </div>
   </header>
 
-  <!-- Hero Section with Solar Landscape Background Image -->
+  <!-- Hero Section with Automated Background Slideshow (1.png & 10.jpg) -->
   <section id="home" class="hero">
-    <div class="hero-badge trans" data-vi="⚡ Giải Pháp Năng Lượng Sạch & Bền Vững" data-en="⚡ Sustainable & Clean Energy Solutions">
-      ⚡ Giải Pháp Năng Lượng Sạch & Bền Vững
+    <div class="hero-slider">
+      <!-- Primary Main Page Image: Solar Landscape (1.png) -->
+      <div class="hero-slide active" style="background-image: url('1.png');" data-index="0"></div>
+      <!-- Secondary Main Page Image: Team & Technical Excellence (10.jpg) -->
+      <div class="hero-slide hero-slide-team" style="background-image: url('10.jpg');" data-index="1"></div>
+      <!-- Contrast Overlay Gradient -->
+      <div class="hero-overlay"></div>
     </div>
-    <h2 class="trans" data-vi="Thắp Sáng Tương Lai Với Điện Mặt Trời" data-en="Power Your Future with Solar Energy">
-      Thắp Sáng Tương Lai Với Điện Mặt Trời
-    </h2>
-    <p class="trans" data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu." data-en="Reduce your electricity bills and carbon footprint with our premium residential, commercial, and agricultural solar installations.">
-      Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu.
-    </p>
-    <a href="#connect" class="cta-button trans" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →" data-en="Connect / Get a Free Quote →">
-      Kết Nối / Nhận Báo Giá Miễn Phí →
-    </a>
+
+    <div class="hero-content">
+      <div class="hero-badge trans" data-vi="⚡ Giải Pháp Năng Lượng Sạch & Bền Vững" data-en="⚡ Sustainable & Clean Energy Solutions">
+        ⚡ Giải Pháp Năng Lượng Sạch & Bền Vững
+      </div>
+      <h2 class="trans" data-vi="Thắp Sáng Tương Lai Với Điện Mặt Trời" data-en="Power Your Future with Solar Energy">
+        Thắp Sáng Tương Lai Với Điện Mặt Trời
+      </h2>
+      <p class="trans" data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu." data-en="Reduce your electricity bills and carbon footprint with our premium residential, commercial, and agricultural solar installations.">
+        Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu.
+      </p>
+      <a href="#connect" class="cta-button trans" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →" data-en="Connect / Get a Free Quote →">
+        Kết Nối / Nhận Báo Giá Miễn Phí →
+      </a>
+    </div>
+
+    <!-- Navigation Dots for Slideshow -->
+    <div class="hero-controls">
+      <button class="hero-dot active" onclick="setHeroSlide(0)" title="Hình ảnh 1: Dự Án Điện Mặt Trời" aria-label="Slide 1"></button>
+      <button class="hero-dot" onclick="setHeroSlide(1)" title="Hình ảnh 2: Đội Ngũ Kỹ Sư Điện Mặt Trời XANH" aria-label="Slide 2"></button>
+    </div>
   </section>
 
   <!-- Highlights Bar -->
@@ -1142,6 +1905,7 @@
         <span class="package-badge badge-blue trans" data-vi="HỆ BÁM TẢI" data-en="ZERO EXPORT / GRID-TIED">HỆ BÁM TẢI</span>
         <h3 class="trans" data-vi="Gói Bám Tải 5kWp - 10kWp" data-en="Package 5kWp - 10kWp">Gói Bám Tải 5kWp - 10kWp</h3>
         <p class="trans" data-vi="Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày." data-en="Ideal for residential households with monthly bills from 1.5 - 3.5 million VND using appliances during daytime.">Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày.</p>
+        <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
 
@@ -1150,14 +1914,70 @@
         <span class="package-badge badge-blue trans" data-vi="HỆ DOANH NGHIỆP" data-en="COMMERCIAL / INDUSTRIAL">HỆ DOANH NGHIỆP</span>
         <h3 class="trans" data-vi="Gói Doanh Nghiệp 15kWp - 50kWp" data-en="Package 15kWp - 50kWp">Gói Doanh Nghiệp 15kWp - 50kWp</h3>
         <p class="trans" data-vi="Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh." data-en="Tailored for workshops, stores, and small factories to offset high daytime peak commercial electricity rates.">Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh.</p>
+        <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
 
       <!-- Package 3: Hybrid Residential -->
-      <div class="package-card">
+      <div class="package-card featured-project-card">
         <span class="package-badge badge-green trans" data-vi="HỆ HYBRID CÓ LƯU TRỮ" data-en="HYBRID + STORAGE">HỆ HYBRID CÓ LƯU TRỮ</span>
         <h3 class="trans" data-vi="Hybrid 5kW - 10kW (Lưu 10-16kWh)" data-en="Hybrid 5kW - 10kW (Storage 10-16kWh)">Hybrid 5kW - 10kW (Storage 10-16kWh)</h3>
         <p class="trans" data-vi="Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị." data-en="Ensures seamless 24/7 power for homes and villas. Automatic transfer switch prevents disruption during blackouts.">Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị.</p>
+
+        <!-- Real Project Showcase for Hybrid Systems -->
+        <div class="project-showcase-box">
+          <div class="project-showcase-header">
+            <span class="project-verified-badge trans" data-vi="✓ DỰ ÁN THỰC TẾ TIÊU BIỂU" data-en="✓ FEATURED REAL PROJECT">✓ DỰ ÁN THỰC TẾ TIÊU BIỂU</span>
+            
+            <!-- Project Tabs Switcher -->
+            <div class="project-tabs-switcher">
+              <button type="button" class="project-tab-btn active" onclick="switchProjectCard('khuong', this)">Ông Đinh Ngọc Khương</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('van', this)">Ông Nguyễn Đình Văn</button>
+            </div>
+          </div>
+
+          <!-- Project 1: Ong Dinh Ngoc Khuong (Active Default) -->
+          <div id="projectShowcaseKhuong" class="project-showcase-content">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: ÔNG ĐINH NGỌC KHƯƠNG" data-en="Client: MR. DINH NGOC KHUONG">Chủ hộ: ÔNG ĐINH NGỌC KHƯƠNG</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('ong_dinh_ngoc_khuong_1.jpg', 'Dự án Hybrid Ông Đinh Ngọc Khương - Nghiệm thu bàn giao Inverter Hybrid & Pin Lithium tại 122 Lê Duẩn, An Nhơn, Gia Lai (03/08/2026)')" title="Xem ảnh lớn">
+                <img src="ong_dinh_ngoc_khuong_1.jpg" onerror="this.src='1788572634651_2847267288133469314_2847267288133469314_76bccf3381a43332e5f04eca8433af48.jpg'" alt="Bàn giao Inverter Hybrid và pin lithium cùng Ông Đinh Ngọc Khương" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Bàn giao nghiệm thu" data-en="System Handover">Bàn giao nghiệm thu</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('ong_dinh_ngoc_khuong_2.jpg', 'Dự án Hybrid Ông Đinh Ngọc Khương - Lắp đặt hệ dàn pin mặt trời trên mái ngói đỏ 2 hướng đón nắng')" title="Xem ảnh lớn">
+                <img src="ong_dinh_ngoc_khuong_2.jpg" onerror="this.src='1788572634661_2847267288133469314_2847267288133469314_61b36cbb18f741729afc381e79fc3f71.jpg'" alt="Dàn pin áp mái ngói nhà Ông Đinh Ngọc Khương" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn pin áp mái ngói" data-en="Rooftop Tile Array">Dàn pin áp mái ngói</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 122 Lê Duẩn, P. An Nhơn, Gia Lai • Hệ thống Hybrid 15 tấm pin & lưu trữ Lithium 16kWh." data-en="📍 122 Le Duan, An Nhon, Gia Lai • Hybrid 15 panels & 16kWh Lithium storage.">
+              📍 122 Lê Duẩn, P. An Nhơn, Gia Lai • Hệ thống Hybrid 15 tấm pin & lưu trữ Lithium 16kWh.
+            </div>
+          </div>
+
+          <!-- Project 2: Ong Nguyen Dinh Van -->
+          <div id="projectShowcaseVan" class="project-showcase-content" style="display: none;">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: ÔNG NGUYỄN ĐÌNH VĂN" data-en="Client: MR. NGUYEN DINH VAN">Chủ hộ: ÔNG NGUYỄN ĐÌNH VĂN</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('ong_nguyen_dinh_van_mai_pin.jpg', 'Dự án Hybrid Ông Nguyễn Đình Văn - Lắp đặt hệ dàn 11 tấm pin mặt trời trên mái tôn')" title="Xem ảnh lớn">
+                <img src="ong_nguyen_dinh_van_mai_pin.jpg" onerror="this.src='1789631816189_2847267288133469314_2847267288133469314_955bb3f398d1dc49835f88a05336789b.jpg'" alt="Dự án điện mặt trời Hybrid mái nhà Ông Nguyễn Đình Văn" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn pin áp mái tôn" data-en="Rooftop Array">Dàn pin áp mái tôn</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('ong_nguyen_dinh_van_inverter.jpg', 'Dự án Hybrid Ông Nguyễn Đình Văn - Nghiệm thu bàn giao biến tần Inverter Hybrid & pin lưu trữ Lithium')" title="Xem ảnh lớn">
+                <img src="ong_nguyen_dinh_van_inverter.jpg" onerror="this.src='1789631816159_2847267288133469314_2847267288133469314_df1b7ad4dee4af27ef458d3267cf031f.jpg'" alt="Bàn giao hệ thống Inverter Hybrid cho Ông Nguyễn Đình Văn" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Bàn giao nghiệm thu" data-en="System Handover">Bàn giao nghiệm thu</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Quy Nhơn Tây, Gia Lai • Hệ thống Hybrid có lưu trữ Lithium đã bàn giao vận hành an toàn." data-en="📍 Quy Nhon Tay, Gia Lai • Hybrid solar & Lithium storage system safely commissioned.">
+              📍 Quy Nhơn Tây, Gia Lai • Hệ thống Hybrid có lưu trữ Lithium đã bàn giao vận hành an toàn.
+            </div>
+          </div>
+        </div>
+
+        <a href="du-an-thuc-te.html#hybrid" class="package-gallery-btn trans" data-vi="📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →" data-en="📸 View All Real Project Photos →">📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
 
@@ -1166,6 +1986,7 @@
         <span class="package-badge badge-amber trans" data-vi="BƠM NĂNG LƯỢNG MẶT TRỜI" data-en="AGRICULTURAL PUMPING">BƠM NĂNG LƯỢNG MẶT TRỜI</span>
         <h3 class="trans" data-vi="Hệ Bơm Tưới 3HP - 10HP" data-en="Solar Pumping 3HP - 10HP">Hệ Bơm Tưới 3HP - 10HP</h3>
         <p class="trans" data-vi="Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa." data-en="Automatic water pumping directly from sunlight for farms and orchards, eliminating fuel costs and grid connection fees.">Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa.</p>
+        <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
     </div>
@@ -1222,14 +2043,157 @@
     </div>
   </section>
 
-  <!-- About Section with Embedded Google Map -->
+  <!-- About Section with Company Introduction & Document Button -->
   <section id="about" class="about">
     <h2 class="section-title trans" data-vi="Về Điện Mặt Trời Xanh" data-en="About Điện Mặt Trời Xanh">Về Điện Mặt Trời Xanh</h2>
-    <p class="about-intro trans" data-vi="Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị chính hãng và dịch vụ kỹ thuật lắp đặt chuyên nghiệp." data-en="We are dedicated to delivering high-efficiency renewable energy systems with certified equipment and professional engineering standards across Vietnam.">Chúng tôi tận tâm cung cấp các giải pháp năng lượng sạch, bền vững với thiết bị chính hãng và dịch vụ kỹ thuật lắp đặt chuyên nghiệp.</p>
-    
+    <p class="about-intro trans" 
+       data-vi="Công ty TNHH Điện Mặt Trời Xanh là đơn vị tổng thầu EPC uy tín hàng đầu trong lĩnh vực năng lượng mặt trời. Chúng tôi cung cấp giải pháp trọn gói từ tư vấn giải pháp, khảo sát thực địa, thiết kế bản vẽ kỹ thuật chuẩn EVN, cung ứng thiết bị chính hãng Tier-1 đến thi công lắp đặt hệ thống áp mái dân dụng, nhà xưởng doanh nghiệp, giải pháp lưu trữ Hybrid cao cấp và bơm tưới nông nghiệp, cam kết an toàn, tối ưu hiệu suất và bảo hành dài hạn." 
+       data-en="Dien Mat Troi Xanh Co., Ltd is a premier turnkey solar EPC contractor delivering high-efficiency renewable energy solutions. We provide end-to-end services from specialized consultation, on-site survey, EVN-standard engineering design, genuine Tier-1 hardware supply, to full installation of residential & commercial rooftop systems, advanced Hybrid battery storage, and solar agricultural pumping, backed by strict safety compliance and long-term performance warranties.">
+      Công ty TNHH Điện Mặt Trời Xanh là đơn vị tổng thầu EPC uy tín hàng đầu trong lĩnh vực năng lượng mặt trời. Chúng tôi cung cấp giải pháp trọn gói từ tư vấn giải pháp, khảo sát thực địa, thiết kế bản vẽ kỹ thuật chuẩn EVN, cung ứng thiết bị chính hãng Tier-1 đến thi công lắp đặt hệ thống áp mái dân dụng, nhà xưởng doanh nghiệp, giải pháp lưu trữ Hybrid cao cấp và bơm tưới nông nghiệp, cam kết an toàn, tối ưu hiệu suất và bảo hành dài hạn.
+    </p>
+
+    <!-- Document Button in Company Introduction -->
+    <div class="about-doc-cta-wrap">
+      <a href="https://docs.google.com/document/d/1PFmbom4pe3kLmcLwHxVqNNvR76lratEAaeBEjO6_BQA/edit?tab=t.0" target="_blank" rel="noopener noreferrer" class="btn-doc-intro" title="Xem Hồ Sơ Giới Thiệu & Năng Lực">
+        <span class="doc-icon">📄</span>
+        <span class="trans" data-vi="Xem Hồ Sơ Giới Thiệu &amp; Năng Lực Công Ty" data-en="View Company Profile &amp; Capability Dossier">Xem Hồ Sơ Giới Thiệu &amp; Năng Lực Công Ty</span>
+        <span class="doc-arrow">↗</span>
+      </a>
+    </div>
+
+    <!-- Financial Connection & Strategic Consumer Financing Partners -->
+    <div class="about-finance-wrap">
+      <div class="about-finance-header">
+        <span class="finance-badge trans" data-vi="⚡ LIÊN KẾT TÀI CHÍNH CHIẾN LƯỢC" data-en="⚡ STRATEGIC FINANCIAL PARTNERSHIPS">⚡ LIÊN KẾT TÀI CHÍNH CHIẾN LƯỢC</span>
+        <h3 class="finance-title trans" data-vi="Giải Pháp Hỗ Trợ Tài Chính &amp; Trả Góp Ưu Đãi 0% Lãi Suất" data-en="Financial Solutions &amp; 0% Interest Installment Partnerships">Giải Pháp Hỗ Trợ Tài Chính &amp; Trả Góp Ưu Đãi 0% Lãi Suất</h3>
+        <p class="finance-subtitle trans" 
+           data-vi="Điện Mặt Trời Xanh tự hào liên kết cùng các tổ chức tài chính hàng đầu như Shinhan Finance và Home Credit, mang đến các gói tài chính đột phá giúp mọi gia đình và hộ kinh doanh dễ dàng sở hữu điện mặt trời mà không lo áp lực vốn đầu tư." 
+           data-en="Điện Mặt Trời Xanh proudly partners with premier finance institutions including Shinhan Finance and Home Credit, delivering innovative financing solutions so homes and businesses can adopt solar power without upfront capital burdens.">
+          Điện Mặt Trời Xanh tự hào liên kết cùng các tổ chức tài chính hàng đầu như Shinhan Finance và Home Credit, mang đến các gói tài chính đột phá giúp mọi gia đình và hộ kinh doanh dễ dàng sở hữu điện mặt trời mà không lo áp lực vốn đầu tư.
+        </p>
+      </div>
+
+      <div class="finance-cards-grid">
+        <!-- Partner 1: Shinhan Finance -->
+        <div class="finance-card card-shinhan">
+          <div>
+            <div class="finance-card-top">
+              <div class="partner-logo-tag" title="Shinhan Finance">
+                <img src="bank logos/1789722957046_262815549644605092_4786737948673183596_a4158e0bfc442137c6d0cc878bb34005.jpg" 
+                     onerror="this.src='bank logos/shinhan_finance_logo.jpg'; this.onerror=function(){this.src='shinhan_finance_logo.jpg';}" 
+                     alt="Shinhan Finance" 
+                     class="partner-logo-img logo-shinhan">
+              </div>
+              <span class="finance-highlight-tag trans" data-vi="CHÍNH SÁCH '3 KHÔNG'" data-en="'3 ZERO' POLICY">CHÍNH SÁCH "3 KHÔNG"</span>
+            </div>
+
+            <h4 class="partner-offer-title trans" data-vi="Trợ Giá 0% Lãi Suất Cho Hệ Thống Dưới 100 Triệu VNĐ" data-en="0% Subsidized Interest for Systems Under 100M VND">Trợ Giá 0% Lãi Suất Cho Hệ Thống Dưới 100 Triệu VNĐ</h4>
+
+            <div class="three-zero-grid">
+              <div class="zero-pill">
+                <span class="zero-num">0%</span>
+                <span class="zero-label trans" data-vi="Lãi Suất Trợ Giá" data-en="Subsidized Rate">Lãi Suất Trợ Giá</span>
+              </div>
+              <div class="zero-pill">
+                <span class="zero-num">0đ</span>
+                <span class="zero-label trans" data-vi="Trả Trước Ban Đầu" data-en="Down Payment">Trả Trước Ban Đầu</span>
+              </div>
+              <div class="zero-pill">
+                <span class="zero-num">0đ</span>
+                <span class="zero-label trans" data-vi="Phí Phụ Trội / Ẩn" data-en="Extra Surcharges">Phí Phụ Trội / Ẩn</span>
+              </div>
+            </div>
+
+            <p class="finance-desc trans"
+               data-vi="Điện Mặt Trời Xanh hợp tác cùng Shinhan Finance trợ giá 100% lãi suất cho khách hàng khi lắp đặt hệ thống điện mặt trời có tổng chi phí không quá 100 triệu VNĐ. Khách hàng lắp đặt dùng ngay với 0 đồng trả trước và 0 phí phụ trội, lấy chính số tiền điện tiết kiệm mỗi tháng để trả dần."
+               data-en="Điện Mặt Trời Xanh co-subsidizes 100% of interest costs with Shinhan Finance for solar systems valued up to 100 million VND. Customers get 0 VND down payment and 0 extra surcharges, using monthly electricity bill savings to easily offset installment payments.">
+              Điện Mặt Trời Xanh hợp tác cùng Shinhan Finance trợ giá 100% lãi suất cho khách hàng khi lắp đặt hệ thống điện mặt trời có tổng chi phí không quá 100 triệu VNĐ. Khách hàng lắp đặt dùng ngay với 0 đồng trả trước và 0 phí phụ trội, lấy chính số tiền điện tiết kiệm mỗi tháng để trả dần.
+            </p>
+
+            <div class="finance-perks-list">
+              <div class="perk-item">
+                <span class="perk-icon">✓</span>
+                <span class="trans" data-vi="Áp dụng trọn gói cho hệ thống điện mặt trời ≤ 100.000.000 VNĐ" data-en="Applicable for turnkey solar systems ≤ 100,000,000 VND">Áp dụng trọn gói cho hệ thống điện mặt trời ≤ 100.000.000 VNĐ</span>
+              </div>
+              <div class="perk-item">
+                <span class="perk-icon">✓</span>
+                <span class="trans" data-vi="Thủ tục thẩm định minh bạch, bảo mật thông tin tối đa" data-en="Transparent appraisal process & maximum information security">Thủ tục thẩm định minh bạch, bảo mật thông tin tối đa</span>
+              </div>
+              <div class="perk-item">
+                <span class="perk-icon">✓</span>
+                <span class="trans" data-vi="Thi công lắp đặt và nghiệm thu hoàn thiện nhanh chóng" data-en="Prompt turnkey installation & official commissioning">Thi công lắp đặt và nghiệm thu hoàn thiện nhanh chóng</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partner 2: Home Credit & Home PayLater -->
+        <div class="finance-card card-homecredit">
+          <div>
+            <div class="finance-card-top">
+              <div class="partner-logo-tag" title="Home Credit">
+                <img src="bank logos/1789723068986_262815549644605092_4786737948673183596_e6e20f2159b5bd942e016eed9b7429f2.jpg" 
+                     onerror="this.src='bank logos/home_credit_logo.jpg'; this.onerror=function(){this.src='home_credit_logo.jpg';}" 
+                     alt="Home Credit" 
+                     class="partner-logo-img logo-homecredit">
+              </div>
+              <span class="finance-highlight-tag tag-hc trans" data-vi="DUYỆT SIÊU TỐC 3 - 10 PHÚT" data-en="FAST 3 - 10 MIN APPROVAL">DUYỆT SIÊU TỐC 3 - 10 PHÚT</span>
+            </div>
+
+            <h4 class="partner-offer-title trans" data-vi="Trả Góp Tiêu Dùng Linh Hoạt &amp; Home PayLater" data-en="Flexible Consumer Installments &amp; Home PayLater">Trả Góp Tiêu Dùng Linh Hoạt &amp; Home PayLater</h4>
+
+            <div class="hc-benefits-grid">
+              <div class="hc-benefit-item">
+                <div class="hc-icon">⚡</div>
+                <div class="hc-text">
+                  <strong class="trans" data-vi="Duyệt Online 3 - 10 Phút" data-en="3 - 10 Min Approval">Duyệt Online 3 - 10 Phút</strong>
+                  <span class="trans" data-vi="Hồ sơ số hóa tự động, nhận kết quả tức thì" data-en="Digital scoring with instant results">Hồ sơ số hóa tự động, nhận kết quả tức thì</span>
+                </div>
+              </div>
+              <div class="hc-benefit-item">
+                <div class="hc-icon">🪪</div>
+                <div class="hc-text">
+                  <strong class="trans" data-vi="Chỉ Cần CCCD Gắn Chip" data-en="Chip ID Card Only">Chỉ Cần CCCD Gắn Chip</strong>
+                  <span class="trans" data-vi="Không thế chấp tài sản, không cần chứng minh thu nhập" data-en="No collateral, no income proof needed">Không thế chấp tài sản, không cần chứng minh thu nhập</span>
+                </div>
+              </div>
+              <div class="hc-benefit-item">
+                <div class="hc-icon">📅</div>
+                <div class="hc-text">
+                  <strong class="trans" data-vi="Kỳ Hạn 3 - 18 Tháng" data-en="3 - 18 Month Terms">Kỳ Hạn 3 - 18 Tháng</strong>
+                  <span class="trans" data-vi="Tự do lựa chọn kỳ hạn trả góp phù hợp túi tiền" data-en="Customize installment terms to fit your budget">Tự do lựa chọn kỳ hạn trả góp phù hợp túi tiền</span>
+                </div>
+              </div>
+              <div class="hc-benefit-item">
+                <div class="hc-icon">💳</div>
+                <div class="hc-text">
+                  <strong class="trans" data-vi="Tích Hợp Home PayLater" data-en="Home PayLater Solution">Tích Hợp Home PayLater</strong>
+                  <span class="trans" data-vi="Mua trước trả sau thông minh cho thiết bị &amp; vật tư" data-en="Smart Buy-Now-Pay-Later for solar hardware">Mua trước trả sau thông minh cho thiết bị &amp; vật tư</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="finance-desc trans"
+               data-vi="Liên kết cùng Home Credit mang đến giải pháp tài chính tiêu dùng tối ưu cho mọi khách hàng. Quy trình xét duyệt siêu nhanh chóng cùng hình thức Mua trước trả sau (Home PayLater) giúp quý khách sở hữu ngay nguồn điện mặt trời tự chủ 24/7."
+               data-en="Strategic partnership with Home Credit offers streamlined consumer financing. The rapid 3-10 minute approval process and Home PayLater integration enable effortless solar adoption with seamless monthly payments.">
+              Liên kết cùng Home Credit mang đến giải pháp tài chính tiêu dùng tối ưu cho mọi khách hàng. Quy trình xét duyệt siêu nhanh chóng cùng hình thức Mua trước trả sau (Home PayLater) giúp quý khách sở hữu ngay nguồn điện mặt trời tự chủ 24/7.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial CTA Link -->
+      <div class="finance-cta-row">
+        <a href="#connect" class="finance-cta-btn trans" data-vi="⚡ Đăng Ký Nhận Tư Vấn Gói Trả Góp 0% Ngay" data-en="⚡ Request 0% Installment Consultation">
+          ⚡ Đăng Ký Nhận Tư Vấn Gói Trả Góp 0% Ngay
+        </a>
+      </div>
+    </div>
+
+    <!-- About Grid: Company Contact & Location Map -->
     <div class="about-grid">
       <div class="about-info">
-        <h3 class="trans" data-vi="📍 Địa Điểm & Thông Tin Liên Hệ" data-en="📍 Location & Contact Details">📍 Địa Điểm & Thông Tin Liên Hệ</h3>
+        <h3 class="trans" data-vi="📍 Địa Điểm &amp; Thông Tin Liên Hệ" data-en="📍 Location &amp; Contact Details">📍 Địa Điểm &amp; Thông Tin Liên Hệ</h3>
         
         <div class="info-row">
           <strong class="trans" data-vi="Tên Doanh Nghiệp" data-en="Company Name">Tên Doanh Nghiệp</strong>
@@ -1237,8 +2201,13 @@
         </div>
 
         <div class="info-row">
-          <strong class="trans" data-vi="Địa chỉ" data-en="Address">Địa chỉ</strong>
+          <strong class="trans" data-vi="Địa chỉ Trụ Sở" data-en="Address">Địa chỉ Trụ Sở</strong>
           <span>Tổ 47 khu phố 30, Quy Nhơn Nam, Gia Lai 550000</span>
+        </div>
+
+        <div class="info-row">
+          <strong class="trans" data-vi="Văn Phòng Đại Diện (TP.HCM)" data-en="Representative Office (HCMC)">Văn Phòng Đại Diện (TP.HCM)</strong>
+          <span>364 Cộng Hòa, Phường 13, Quận Tân Bình, TP.HCM</span>
         </div>
 
         <div class="info-row">
@@ -1253,7 +2222,7 @@
 
         <div class="info-row">
           <strong class="trans" data-vi="Lĩnh vực hoạt động" data-en="Specialization">Lĩnh vực hoạt động</strong>
-          <span class="trans" data-vi="Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp" data-en="Solar equipment supply, EPC installation, Hybrid ESS & agricultural pumping">Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp</span>
+          <span class="trans" data-vi="Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp" data-en="Solar equipment supply, EPC installation, Hybrid ESS &amp; agricultural pumping">Cung cấp thiết bị điện mặt trời, tổng thầu EPC, Hybrid lưu trữ và bơm tưới nông nghiệp</span>
         </div>
       </div>
 
@@ -1267,6 +2236,7 @@
         </iframe>
       </div>
     </div>
+
   </section>
 
   <!-- ============================================================ -->
@@ -1421,13 +2391,80 @@
     </div>
   </footer>
 
-  <!-- Floating Zalo Quick-Chat Button -->
-  <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-zalo">
-    <span>💬</span> <span class="trans" data-vi="Chat Zalo" data-en="Chat on Zalo">Chat Zalo</span>
-  </a>
+  <!-- Floating Contact & Social Icons -->
+  <div class="floating-contact-group">
+    <a href="https://www.tiktok.com/@dienmattroixanh" target="_blank" rel="noopener noreferrer" class="floating-social-icon tiktok" title="TikTok" aria-label="TikTok">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61579131363617" target="_blank" rel="noopener noreferrer" class="floating-social-icon facebook" title="Facebook" aria-label="Facebook">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-zalo" title="Chat Zalo">
+      <span>💬</span> <span class="trans" data-vi="Chat Zalo" data-en="Chat on Zalo">Chat Zalo</span>
+    </a>
+  </div>
+
+  <!-- Lightbox Modal for Real Project Gallery -->
+  <div id="imageLightboxModal" class="lightbox-modal" onclick="closeLightboxModal(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightboxModal(event)" aria-label="Close">&times;</button>
+      <img id="lightboxImage" src="" alt="Project Photo">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
 
   <!-- Script Section -->
   <script>
+    // Lightbox modal handlers
+    function openLightboxModal(src, caption) {
+      const modal = document.getElementById('imageLightboxModal');
+      const img = document.getElementById('lightboxImage');
+      const cap = document.getElementById('lightboxCaption');
+      if (modal && img && cap) {
+        img.src = src;
+        cap.textContent = caption || '';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightboxModal(event) {
+      const modal = document.getElementById('imageLightboxModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightboxModal();
+      }
+    });
+
+    // Project card tab switcher for Hybrid package
+    function switchProjectCard(project, btn) {
+      const khuong = document.getElementById('projectShowcaseKhuong');
+      const van = document.getElementById('projectShowcaseVan');
+      if (btn && btn.parentElement) {
+        const btns = btn.parentElement.querySelectorAll('.project-tab-btn');
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      if (project === 'khuong') {
+        if (khuong) khuong.style.display = 'block';
+        if (van) van.style.display = 'none';
+      } else {
+        if (khuong) khuong.style.display = 'none';
+        if (van) van.style.display = 'block';
+      }
+    }
+
     // Google Apps Script Web App Endpoint
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwk5SENDikDcAmBlmPquoToiwepSFxfIOcXk2a87BIKVBh_7t7DlNJnHZX39DHbXcL5Lg/exec";
 
@@ -1446,7 +2483,7 @@
       elements.forEach(el => {
         const text = el.getAttribute('data-' + lang);
         if (text) {
-          el.innerText = text;
+          el.innerHTML = text;
         }
       });
 
@@ -1511,6 +2548,53 @@
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
       }
+    }
+
+    // Hero Background Animation (Transitions from 1.png to 10.jpg time by time)
+    let heroSlideIndex = 0;
+    let heroSlideTimer = null;
+
+    function showHeroSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      if (!slides || slides.length === 0) return;
+
+      heroSlideIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        if (i === heroSlideIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === heroSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function setHeroSlide(index) {
+      showHeroSlide(index);
+      startHeroAutoPlay();
+    }
+
+    function startHeroAutoPlay() {
+      if (heroSlideTimer) clearInterval(heroSlideTimer);
+      heroSlideTimer = setInterval(() => {
+        showHeroSlide(heroSlideIndex + 1);
+      }, 5000); // Transitions smoothly every 5 seconds
+    }
+
+    // Initialize Hero Slider
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startHeroAutoPlay);
+    } else {
+      startHeroAutoPlay();
     }
   </script>
 </body>
