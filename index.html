@@ -1900,12 +1900,66 @@
     <p class="section-subtitle trans" data-vi="Các cấu hình công suất phổ biến được tính toán phù hợp với nhu cầu phụ tải thực tế của khách hàng." data-en="Popular capacity configurations tailored to your specific power consumption.">Các cấu hình công suất phổ biến được tính toán phù hợp với nhu cầu phụ tải thực tế của khách hàng.</p>
 
     <div class="package-grid">
-      <!-- Package 1: Zero Export Residential -->
-      <div class="package-card">
+            <!-- Package 1: Zero Export Residential (On-Grid) -->
+      <div class="package-card featured-project-card">
         <span class="package-badge badge-blue trans" data-vi="HỆ BÁM TẢI" data-en="ZERO EXPORT / GRID-TIED">HỆ BÁM TẢI</span>
         <h3 class="trans" data-vi="Gói Bám Tải 5kWp - 10kWp" data-en="Package 5kWp - 10kWp">Gói Bám Tải 5kWp - 10kWp</h3>
         <p class="trans" data-vi="Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày." data-en="Ideal for residential households with monthly bills from 1.5 - 3.5 million VND using appliances during daytime.">Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày.</p>
-        <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
+
+        <!-- Real Project Showcase for On-Grid Systems -->
+        <div class="project-showcase-box">
+          <div class="project-showcase-header">
+            <span class="project-verified-badge trans" data-vi="✓ DỰ ÁN THỰC TẾ TIÊU BIỂU" data-en="✓ FEATURED REAL PROJECT">✓ DỰ ÁN THỰC TẾ TIÊU BIỂU</span>
+            
+            <!-- Project Tabs Switcher -->
+            <div class="project-tabs-switcher">
+              <button type="button" class="project-tab-btn active" onclick="switchProjectCard('ongridHieu', this)">Anh Hiếu (6 tấm)</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('ongridVi', this)">Văn Vĩ (14 tấm)</button>
+            </div>
+          </div>
+
+          <!-- Project 1: Anh Hieu -->
+          <div id="ongridHieu" class="project-showcase-content">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: ANH HIẾU" data-en="Client: MR. HIEU">Chủ hộ: ANH HIẾU</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925495_6206095317243811361_6206095317243811361_f7bc3bc6c92ca6427c6e574223795880.jpg', 'Dự án Bám Tải Anh Hiếu - Nghiệm thu Inverter bám tải & tủ điện an toàn')" title="Xem ảnh lớn">
+                <img src="bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925495_6206095317243811361_6206095317243811361_f7bc3bc6c92ca6427c6e574223795880.jpg" alt="Dự án Bám Tải Anh Hiếu - Inverter bám tải" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter bám tải" data-en="Grid-tied Inverter">Inverter bám tải</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925646_6206095317243811361_6206095317243811361_85d8de86ff3846e5cc834733def0c09b.jpg', 'Dự án Bám Tải Anh Hiếu - Dàn 6 tấm pin áp mái đón nắng')" title="Xem ảnh lớn">
+                <img src="bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925646_6206095317243811361_6206095317243811361_85d8de86ff3846e5cc834733def0c09b.jpg" alt="Dự án Bám Tải Anh Hiếu - Dàn 6 tấm pin" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 6 tấm pin áp mái" data-en="6 Solar Panels Array">Dàn 6 tấm pin áp mái</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Hệ thống điện mặt trời bám tải dân dụng • 6 tấm pin năng lượng mặt trời chính hãng." data-en="📍 Residential zero-export solar system • 6 tier-1 solar panels.">
+              📍 Hệ thống điện mặt trời bám tải dân dụng • 6 tấm pin năng lượng mặt trời chính hãng.
+            </div>
+          </div>
+
+          <!-- Project 2: Van Vi -->
+          <div id="ongridVi" class="project-showcase-content" style="display: none;">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: VĂN VĨ" data-en="Client: MR. VAN VI">Chủ hộ: VĂN VĨ</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925826_6206095317243811361_6206095317243811361_d0df8f240f1227c41614751a38d1b98c.jpg', 'Dự án Bám Tải Văn Vĩ - Lắp đặt hệ dàn 14 tấm pin mặt trời công suất cao')" title="Xem ảnh lớn">
+                <img src="bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925826_6206095317243811361_6206095317243811361_d0df8f240f1227c41614751a38d1b98c.jpg" alt="Dự án Bám Tải Văn Vĩ - Dàn 14 tấm pin" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 14 tấm pin áp mái" data-en="14 Panels Rooftop Array">Dàn 14 tấm pin áp mái</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925989_6206095317243811361_6206095317243811361_ed97f30c685d10922e3995715e5a453f.jpg', 'Dự án Bám Tải Văn Vĩ - Nghiệm thu bàn giao Inverter hòa lưới bám tải & tủ điện')" title="Xem ảnh lớn">
+                <img src="bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925989_6206095317243811361_6206095317243811361_ed97f30c685d10922e3995715e5a453f.jpg" alt="Dự án Bám Tải Văn Vĩ - Inverter & tủ điện" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter & tủ điện" data-en="Inverter & Electrical Box">Inverter & tủ điện</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Hệ thống hòa lưới bám tải • 14 tấm pin mặt trời công suất lớn, giảm tối đa tiền điện ban ngày." data-en="📍 Grid-tied zero export system • 14 solar panels, drastically cutting daytime power costs.">
+              📍 Hệ thống hòa lưới bám tải • 14 tấm pin mặt trời công suất lớn, giảm tối đa tiền điện ban ngày.
+            </div>
+          </div>
+        </div>
+
+        <a href="du-an-thuc-te.html#ongrid" class="package-gallery-btn trans" data-vi="📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →" data-en="📸 View All Real Project Photos →">📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
 
@@ -1914,11 +1968,11 @@
         <span class="package-badge badge-blue trans" data-vi="HỆ DOANH NGHIỆP" data-en="COMMERCIAL / INDUSTRIAL">HỆ DOANH NGHIỆP</span>
         <h3 class="trans" data-vi="Gói Doanh Nghiệp 15kWp - 50kWp" data-en="Package 15kWp - 50kWp">Gói Doanh Nghiệp 15kWp - 50kWp</h3>
         <p class="trans" data-vi="Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh." data-en="Tailored for workshops, stores, and small factories to offset high daytime peak commercial electricity rates.">Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh.</p>
-        <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
+        <a href="du-an-thuc-te.html#commercial" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
 
-      <!-- Package 3: Hybrid Residential -->
+      <!-- Package 3: Hybrid Residential (Hybrid + Storage) -->
       <div class="package-card featured-project-card">
         <span class="package-badge badge-green trans" data-vi="HỆ HYBRID CÓ LƯU TRỮ" data-en="HYBRID + STORAGE">HỆ HYBRID CÓ LƯU TRỮ</span>
         <h3 class="trans" data-vi="Hybrid 5kW - 10kW (Lưu 10-16kWh)" data-en="Hybrid 5kW - 10kW (Storage 10-16kWh)">Hybrid 5kW - 10kW (Storage 10-16kWh)</h3>
@@ -1930,14 +1984,82 @@
             <span class="project-verified-badge trans" data-vi="✓ DỰ ÁN THỰC TẾ TIÊU BIỂU" data-en="✓ FEATURED REAL PROJECT">✓ DỰ ÁN THỰC TẾ TIÊU BIỂU</span>
             
             <!-- Project Tabs Switcher -->
-            <div class="project-tabs-switcher">
-              <button type="button" class="project-tab-btn active" onclick="switchProjectCard('khuong', this)">Ông Đinh Ngọc Khương</button>
+            <div class="project-tabs-switcher" style="flex-wrap: wrap;">
+              <button type="button" class="project-tab-btn active" onclick="switchProjectCard('hybridNghia', this)">Chú Nghĩa (14 tấm - 16kWh)</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('hybridTu', this)">Tạ Cẩm Tú (10 tấm - 10kWh)</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('hybridThanh', this)">Mộc Ngư Coffee (10 tấm)</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('khuong', this)">Ông Đinh Ngọc Khương</button>
               <button type="button" class="project-tab-btn" onclick="switchProjectCard('van', this)">Ông Nguyễn Đình Văn</button>
             </div>
           </div>
 
-          <!-- Project 1: Ong Dinh Ngoc Khuong (Active Default) -->
-          <div id="projectShowcaseKhuong" class="project-showcase-content">
+          <!-- Project 1: Chu Nghia -->
+          <div id="hybridNghia" class="project-showcase-content">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: CHÚ NGHĨA" data-en="Client: MR. NGHIA">Chủ hộ: CHÚ NGHĨA</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924538_6206095317243811361_6206095317243811361_043fbacad402385a470d16f075f284d4.jpg', 'Dự án Hybrid Chú Nghĩa - Inverter Hybrid & Pin lưu trữ Lithium 16kWh')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924538_6206095317243811361_6206095317243811361_043fbacad402385a470d16f075f284d4.jpg" alt="Dự án Hybrid Chú Nghĩa - Inverter & Pin lưu trữ" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter & Lưu trữ 16kWh" data-en="Inverter & 16kWh Storage">Inverter & Lưu trữ 16kWh</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924677_6206095317243811361_6206095317243811361_11f8abf6836637a2ee3f5bbabf033b02.jpg', 'Dự án Hybrid Chú Nghĩa - Dàn 14 tấm pin áp mái đón nắng')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924677_6206095317243811361_6206095317243811361_11f8abf6836637a2ee3f5bbabf033b02.jpg" alt="Dự án Hybrid Chú Nghĩa - Dàn 14 tấm pin" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 14 tấm pin áp mái" data-en="14 Panels Rooftop Array">Dàn 14 tấm pin áp mái</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Dự án Hybrid Chú Nghĩa • Hệ thống 14 tấm pin & pin lưu trữ Lithium 16kWh đảm bảo điện 24/7." data-en="📍 Hybrid Project Mr. Nghia • 14 solar panels & 16kWh Lithium battery storage for 24/7 uninterrupted power.">
+              📍 Dự án Hybrid Chú Nghĩa • Hệ thống 14 tấm pin & pin lưu trữ Lithium 16kWh đảm bảo điện 24/7.
+            </div>
+          </div>
+
+          <!-- Project 2: Ta Cam Tu -->
+          <div id="hybridTu" class="project-showcase-content" style="display: none;">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: TẠ CẨM TÚ" data-en="Client: MR. TA CAM TU">Chủ hộ: TẠ CẨM TÚ</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924118_6206095317243811361_6206095317243811361_d6441a93bd2db6282ad27d13eaa5c009.jpg', 'Dự án Hybrid Tạ Cẩm Tú - Dàn 10 tấm pin mặt trời trên mái')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924118_6206095317243811361_6206095317243811361_d6441a93bd2db6282ad27d13eaa5c009.jpg" alt="Dự án Hybrid Tạ Cẩm Tú - Dàn 10 tấm pin" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 10 tấm pin áp mái" data-en="10 Panels Rooftop Array">Dàn 10 tấm pin áp mái</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924336_6206095317243811361_6206095317243811361_05092495034a4a7a7b399814434c6682.jpg', 'Dự án Hybrid Tạ Cẩm Tú - Biến tần Inverter Hybrid & Pin lưu trữ Lithium 10kWh')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924336_6206095317243811361_6206095317243811361_05092495034a4a7a7b399814434c6682.jpg" alt="Dự án Hybrid Tạ Cẩm Tú - Inverter & Pin lưu trữ" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter & Lưu trữ 10kWh" data-en="Inverter & 10kWh Storage">Inverter & Lưu trữ 10kWh</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Dự án Hybrid Tạ Cẩm Tú • Hệ thống 10 tấm pin mặt trời & pin lưu trữ Lithium 10kWh vận hành thông minh." data-en="📍 Hybrid Project Ta Cam Tu • 10 solar panels & 10kWh Lithium battery storage with smart energy management.">
+              📍 Dự án Hybrid Tạ Cẩm Tú • Hệ thống 10 tấm pin mặt trời & pin lưu trữ Lithium 10kWh vận hành thông minh.
+            </div>
+          </div>
+
+          <!-- Project 3: Anh Thanh - Moc Ngu Coffee -->
+          <div id="hybridThanh" class="project-showcase-content" style="display: none;">
+            <div class="project-owner-title trans" data-vi="Khách hàng: ANH THÀNH - MỘC NGƯ COFFEE" data-en="Client: MR. THANH - MOC NGU COFFEE">Khách hàng: ANH THÀNH - MỘC NGƯ COFFEE</div>
+            <div class="project-gallery-grid" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924799_6206095317243811361_6206095317243811361_a4f400d1cdf185f810915bd0616a9db3.jpg', 'Dự án Anh Thành - Không gian quán Mộc Ngư Coffee')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924799_6206095317243811361_6206095317243811361_a4f400d1cdf185f810915bd0616a9db3.jpg" alt="Quán Mộc Ngư Coffee" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Không gian quán cafe" data-en="Coffee Shop">Không gian quán cafe</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924922_6206095317243811361_6206095317243811361_fa070208749025a0dc8c562fec30b474.jpg', 'Dự án Anh Thành Mộc Ngư Coffee - Dàn 10 tấm pin mặt trời trên mái')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924922_6206095317243811361_6206095317243811361_fa070208749025a0dc8c562fec30b474.jpg" alt="Dàn pin trên mái Mộc Ngư Coffee" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 10 tấm pin trên mái" data-en="10 Rooftop Panels">Dàn 10 tấm pin trên mái</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570925053_6206095317243811361_6206095317243811361_46c925a4cab0a57e0e4876b62e6e56a3.jpg', 'Dự án Anh Thành Mộc Ngư Coffee - Nghiệm thu Inverter & tủ điện hòa lưới')" title="Xem ảnh lớn">
+                <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570925053_6206095317243811361_6206095317243811361_46c925a4cab0a57e0e4876b62e6e56a3.jpg" alt="Inverter & tủ điện Mộc Ngư Coffee" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter & tủ điện" data-en="Inverter & Electrical Box">Inverter & tủ điện</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Quán Mộc Ngư Coffee • Hệ thống 10 tấm pin mặt trời tối ưu hóa chi phí điện kinh doanh ban ngày." data-en="📍 Moc Ngu Coffee Shop • 10 solar panels maximizing daytime commercial electricity savings.">
+              📍 Quán Mộc Ngư Coffee • Hệ thống 10 tấm pin mặt trời tối ưu hóa chi phí điện kinh doanh ban ngày.
+            </div>
+          </div>
+
+          <!-- Project 4: Ong Dinh Ngoc Khuong -->
+          <div id="khuong" class="project-showcase-content" style="display: none;">
             <div class="project-owner-title trans" data-vi="Chủ hộ: ÔNG ĐINH NGỌC KHƯƠNG" data-en="Client: MR. DINH NGOC KHUONG">Chủ hộ: ÔNG ĐINH NGỌC KHƯƠNG</div>
             <div class="project-gallery-grid">
               <div class="project-gallery-item" onclick="openLightboxModal('ong_dinh_ngoc_khuong_1.jpg', 'Dự án Hybrid Ông Đinh Ngọc Khương - Nghiệm thu bàn giao Inverter Hybrid & Pin Lithium tại 122 Lê Duẩn, An Nhơn, Gia Lai (03/08/2026)')" title="Xem ảnh lớn">
@@ -1956,8 +2078,8 @@
             </div>
           </div>
 
-          <!-- Project 2: Ong Nguyen Dinh Van -->
-          <div id="projectShowcaseVan" class="project-showcase-content" style="display: none;">
+          <!-- Project 5: Ong Nguyen Dinh Van -->
+          <div id="van" class="project-showcase-content" style="display: none;">
             <div class="project-owner-title trans" data-vi="Chủ hộ: ÔNG NGUYỄN ĐÌNH VĂN" data-en="Client: MR. NGUYEN DINH VAN">Chủ hộ: ÔNG NGUYỄN ĐÌNH VĂN</div>
             <div class="project-gallery-grid">
               <div class="project-gallery-item" onclick="openLightboxModal('ong_nguyen_dinh_van_mai_pin.jpg', 'Dự án Hybrid Ông Nguyễn Đình Văn - Lắp đặt hệ dàn 11 tấm pin mặt trời trên mái tôn')" title="Xem ảnh lớn">
@@ -2447,21 +2569,19 @@
       }
     });
 
-    // Project card tab switcher for Hybrid package
-    function switchProjectCard(project, btn) {
-      const khuong = document.getElementById('projectShowcaseKhuong');
-      const van = document.getElementById('projectShowcaseVan');
-      if (btn && btn.parentElement) {
-        const btns = btn.parentElement.querySelectorAll('.project-tab-btn');
+    // Project card tab switcher for On-Grid and Hybrid packages
+    function switchProjectCard(projectId, btn) {
+      if (btn && btn.closest('.project-showcase-box')) {
+        const box = btn.closest('.project-showcase-box');
+        const btns = box.querySelectorAll('.project-tab-btn');
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-      }
-      if (project === 'khuong') {
-        if (khuong) khuong.style.display = 'block';
-        if (van) van.style.display = 'none';
-      } else {
-        if (khuong) khuong.style.display = 'none';
-        if (van) van.style.display = 'block';
+
+        const contents = box.querySelectorAll('.project-showcase-content');
+        contents.forEach(c => c.style.display = 'none');
+
+        const target = document.getElementById(projectId);
+        if (target) target.style.display = 'block';
       }
     }
 
