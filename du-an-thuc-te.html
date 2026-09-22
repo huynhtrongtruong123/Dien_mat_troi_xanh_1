@@ -251,6 +251,88 @@
     .customer-specs strong {
       color: #0f172a;
     }
+    .customer-specs.ongrid-specs {
+      border-left-color: #2563eb;
+    }
+
+    /* System Info Overview Banner */
+    .system-info-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .system-info-box.ongrid-theme {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+      border: 1px solid #bfdbfe;
+    }
+    .info-pillar {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .info-pillar-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #166534;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ongrid-theme .info-pillar-title {
+      color: #1d4ed8;
+    }
+    .info-pillar-desc {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .info-pillar-desc strong {
+      color: #0f172a;
+    }
+
+    /* Quick jump filter bar */
+    .gallery-nav-filter {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14.5px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .filter-btn.hybrid {
+      background: linear-gradient(135deg, #166534 0%, #15803d 100%);
+      color: #ffffff;
+    }
+    .filter-btn.hybrid:hover {
+      background: linear-gradient(135deg, #14532d 0%, #166534 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(22, 101, 52, 0.3);
+    }
+    .filter-btn.ongrid {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+      color: #ffffff;
+    }
+    .filter-btn.ongrid:hover {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+    }
 
     /* Photo Grid */
     .photo-grid {
@@ -535,17 +617,144 @@
   <!-- Gallery Container -->
   <div class="gallery-container">
 
-    <!-- Section: Hybrid 5kW - 10kW (Storage 10-16kWh) -->
+    <!-- Quick Jump Navigation -->
+    <div class="gallery-nav-filter">
+      <a href="#hybrid" class="filter-btn hybrid trans" data-vi="⚡ Hệ Hybrid Có Lưu Trữ" data-en="⚡ Hybrid Storage Systems">
+        ⚡ Hệ Hybrid Có Lưu Trữ
+      </a>
+      <a href="#ongrid" class="filter-btn ongrid trans" data-vi="☀️ Hệ Hòa Lưới Bám Tải On-Grid" data-en="☀️ On-Grid Zero-Export Systems">
+        ☀️ Hệ Hòa Lưới Bám Tải On-Grid
+      </a>
+    </div>
+
+    <!-- ==================== SECTION: HYBRID SYSTEMS ==================== -->
     <div class="category-card" id="hybrid">
       <div class="category-header">
         <div class="category-title">
           <span>⚡</span>
-          <span class="trans" data-vi="Hệ Thống Hybrid 5kW - 10kW Có Lưu Trữ (10 - 16kWh)" data-en="Hybrid Solar Systems 5kW - 10kW (Storage 10-16kWh)">Hệ Thống Hybrid 5kW - 10kW Có Lưu Trữ (10 - 16kWh)</span>
+          <span class="trans" data-vi="Hệ Thống Điện Mặt Trời Hybrid Có Lưu Trữ (10 - 16kWh)" data-en="Hybrid Solar Energy Systems with Storage (10 - 16kWh)">Hệ Thống Điện Mặt Trời Hybrid Có Lưu Trữ (10 - 16kWh)</span>
         </div>
-        <span class="category-badge trans" data-vi="Hệ Hybrid Dân Dụng Cao Cấp" data-en="Premium Residential Hybrid">Hệ Hybrid Dân Dụng Cao Cấp</span>
+        <span class="category-badge trans" data-vi="Cấp Điện 24/7 • Chống Cúp Điện" data-en="24/7 Power • Uninterrupted">Cấp Điện 24/7 • Chống Cúp Điện</span>
       </div>
 
-      <!-- Customer 1: Ông Đinh Ngọc Khương -->
+      <!-- Extra Technical Information: Hybrid System -->
+      <div class="system-info-box">
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>🔄</span>
+            <span class="trans" data-vi="Nguyên Lý Vận Hành Thông Minh" data-en="Intelligent Operating Principle">Nguyên Lý Vận Hành Thông Minh</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Ban ngày, quang năng cấp thẳng cho tải tiêu thụ trong nhà và nạp đầy bộ lưu trữ Lithium. Ban đêm hoặc khi mất điện lưới, bộ lưu trữ tự động cấp nguồn tức thì qua chuyển mạch ATS siêu tốc (< 10ms), thiết bị không hề ngắt quãng." 
+               data-en="Daytime solar directly powers household loads while charging the Lithium battery. At night or during grid outages, the battery instantly supplies power via ultra-fast ATS (< 10ms), preventing any device interruption.">
+            Ban ngày, quang năng cấp thẳng cho tải tiêu thụ trong nhà và nạp đầy bộ lưu trữ Lithium. Ban đêm hoặc khi mất điện lưới, bộ lưu trữ tự động cấp nguồn tức thì qua chuyển mạch ATS siêu tốc (&lt; 10ms), thiết bị không hề ngắt quãng.
+          </div>
+        </div>
+
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>🛡️</span>
+            <span class="trans" data-vi="Lợi Ích Vượt Trội" data-en="Outstanding Advantages">Lợi Ích Vượt Trội</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Tự chủ nguồn điện 100%, không lo mất điện mùa nắng nóng. Pin Lithium LiFePO4 thế hệ mới tuổi thọ trên 15 năm (> 6,000 chu kỳ sạc/xả), độ xả sâu DOD đến 90%, tích hợp BMS an toàn chống cháy nổ tuyệt đối và giám sát qua App điện thoại." 
+               data-en="100% power autonomy with zero blackout worries. Next-gen LiFePO4 Lithium batteries with 15+ years lifespan (> 6,000 cycles), 90% DOD, built-in intelligent BMS for fire safety and 24/7 mobile app monitoring.">
+            Tự chủ nguồn điện 100%, không lo mất điện mùa nắng nóng. Pin Lithium LiFePO4 thế hệ mới tuổi thọ trên 15 năm (&gt; 6,000 chu kỳ sạc/xả), độ xả sâu DOD đến 90%, tích hợp BMS an toàn chống cháy nổ tuyệt đối và giám sát qua App điện thoại.
+          </div>
+        </div>
+
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>⚙️</span>
+            <span class="trans" data-vi="Cấu Hình Tiêu Chuẩn" data-en="Standard Specifications">Cấu Hình Tiêu Chuẩn</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Tấm pin Mono Half-cell Tier-1 hiệu suất > 21.5%, Biến tần Inverter Hybrid chuẩn bảo vệ IP65 chống nước bụi, Pin lưu trữ Lithium 10kWh - 16kWh, Tủ điện bảo vệ AC/DC tích hợp chống sét lan truyền Type 2 và tiếp địa an toàn." 
+               data-en="Tier-1 Mono Half-cell panels (> 21.5% efficiency), IP65 waterproof Hybrid Inverters, 10kWh - 16kWh Lithium storage batteries, and specialized AC/DC switchgear with Type 2 surge protection and grounding.">
+            Tấm pin Mono Half-cell Tier-1 hiệu suất &gt; 21.5%, Biến tần Inverter Hybrid chuẩn bảo vệ IP65 chống nước bụi, Pin lưu trữ Lithium 10kWh - 16kWh, Tủ điện bảo vệ AC/DC tích hợp chống sét lan truyền Type 2 và tiếp địa an toàn.
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 1: Chú Nghĩa -->
+      <div class="customer-project-item">
+        <div class="customer-meta-row">
+          <div class="customer-name">
+            <span class="trans" data-vi="Chủ hộ: CHÚ NGHĨA (14 Tấm Pin • Pin Lưu Trữ 16kWh)" data-en="Client: MR. NGHIA (14 Panels • 16kWh Battery)">Chủ hộ: CHÚ NGHĨA (14 Tấm Pin • Pin Lưu Trữ 16kWh)</span>
+            <span class="verified-pill trans" data-vi="✓ BÀN GIAO THỰC TẾ" data-en="✓ VERIFIED HANDOVER">✓ BÀN GIAO THỰC TẾ</span>
+          </div>
+          <span style="font-size: 13px; color: #64748b; font-weight: 600;">📍 Khu biệt thự dân cư, Gia Lai</span>
+        </div>
+
+        <div class="customer-specs trans" 
+             data-vi="<strong>Cấu hình công trình:</strong> Hệ thống Hybrid 14 tấm pin mặt trời công suất lớn (~8.1 kWp), kết hợp biến tần Inverter Hybrid và bộ lưu trữ Pin Lithium LiFePO4 dung lượng cực đại 16kWh. Dàn pin lắp đặt áp mái ngói đón trọn bức xạ nắng, cấp điện liên tục 24/7 cho toàn bộ hệ thống máy lạnh, thiết bị gia đình. Tiết kiệm ~3.5 - 4.5 triệu đồng/tháng." 
+             data-en="<strong>System Specifications:</strong> Hybrid solar system with 14 high-efficiency solar panels (~8.1 kWp), Hybrid Inverter, and 16kWh high-capacity LiFePO4 Lithium battery bank. Tiled rooftop array providing 24/7 seamless power for air conditioners and home appliances. Monthly savings: ~3.5 - 4.5 million VND.">
+          <strong>Cấu hình công trình:</strong> Hệ thống Hybrid 14 tấm pin mặt trời công suất lớn (~8.1 kWp), kết hợp biến tần Inverter Hybrid và bộ lưu trữ Pin Lithium LiFePO4 dung lượng cực đại 16kWh. Dàn pin lắp đặt áp mái ngói đón trọn bức xạ nắng, cấp điện liên tục 24/7 cho toàn bộ hệ thống máy lạnh, thiết bị gia đình. Tiết kiệm ~3.5 - 4.5 triệu đồng/tháng.
+        </div>
+
+        <div class="photo-grid">
+          <!-- Photo 1: Inverter & Battery -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924538_6206095317243811361_6206095317243811361_043fbacad402385a470d16f075f284d4.jpg', 'Dự án Hybrid Chú Nghĩa - Inverter Hybrid & Pin lưu trữ Lithium 16kWh cao cấp')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924538_6206095317243811361_6206095317243811361_043fbacad402385a470d16f075f284d4.jpg" alt="Inverter Hybrid và Pin lưu trữ Lithium 16kWh dự án Chú Nghĩa" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" data-vi="Inverter & Pin 16kWh" data-en="Inverter & 16kWh Battery">Inverter & Pin 16kWh</span>
+              <div class="photo-desc trans" data-vi="Biến tần Inverter Hybrid và tủ pin lưu trữ Lithium 16kWh dung lượng lớn" data-en="Hybrid Inverter and 16kWh high-capacity Lithium storage battery bank">Biến tần Inverter Hybrid và tủ pin lưu trữ Lithium 16kWh dung lượng lớn</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Roof Installation -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924677_6206095317243811361_6206095317243811361_11f8abf6836637a2ee3f5bbabf033b02.jpg', 'Dự án Hybrid Chú Nghĩa - Dàn 14 tấm pin mặt trời lắp đặt trên mái ngói đón nắng')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Chú Nghĩa - 14 panels - 16 kwh battery/1788570924677_6206095317243811361_6206095317243811361_11f8abf6836637a2ee3f5bbabf033b02.jpg" alt="Dàn 14 tấm pin mặt trời áp mái ngói nhà Chú Nghĩa" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" data-vi="Dàn Pin Áp Mái Ngói" data-en="Rooftop Tile Array">Dàn Pin Áp Mái Ngói</span>
+              <div class="photo-desc trans" data-vi="Dàn 14 tấm pin mặt trời công suất lớn bố trí đón nắng tối ưu trên mái ngói" data-en="14 high-power solar panels positioned for optimal sunlight harvest on tile roof">Dàn 14 tấm pin mặt trời công suất lớn bố trí đón nắng tối ưu trên mái ngói</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 2: Tạ Cẩm Tú -->
+      <div class="customer-project-item">
+        <div class="customer-meta-row">
+          <div class="customer-name">
+            <span class="trans" data-vi="Chủ hộ: TẠ CẨM TÚ (10 Tấm Pin • Pin Lưu Trữ 10kWh)" data-en="Client: TA CAM TU (10 Panels • 10kWh Battery)">Chủ hộ: TẠ CẨM TÚ (10 Tấm Pin • Pin Lưu Trữ 10kWh)</span>
+            <span class="verified-pill trans" data-vi="✓ BÀN GIAO THỰC TẾ" data-en="✓ VERIFIED HANDOVER">✓ BÀN GIAO THỰC TẾ</span>
+          </div>
+          <span style="font-size: 13px; color: #64748b; font-weight: 600;">📍 TP. Pleiku, Gia Lai</span>
+        </div>
+
+        <div class="customer-specs trans" 
+             data-vi="<strong>Cấu hình công trình:</strong> Hệ thống Hybrid 10 tấm pin mặt trời (~5.8 kWp) áp mái tôn kết hợp bộ phụ kiện nhôm chuyên dụng. Biến tần Hybrid thông minh kết nối bộ lưu trữ Pin Lithium 10kWh, quản lý năng lượng tự động, cắt giảm 85% - 90% hóa đơn tiền điện hàng tháng." 
+             data-en="<strong>System Specifications:</strong> Hybrid solar system with 10 solar panels (~5.8 kWp) mounted on corrugated roof with anodized aluminum fixtures. Smart Hybrid Inverter paired with 10kWh Lithium storage battery, reducing 85% - 90% of monthly electricity bills.">
+          <strong>Cấu hình công trình:</strong> Hệ thống Hybrid 10 tấm pin mặt trời (~5.8 kWp) áp mái tôn kết hợp bộ phụ kiện nhôm chuyên dụng. Biến tần Hybrid thông minh kết nối bộ lưu trữ Pin Lithium 10kWh, quản lý năng lượng tự động, cắt giảm 85% - 90% hóa đơn tiền điện hàng tháng.
+        </div>
+
+        <div class="photo-grid">
+          <!-- Photo 1: Roof -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924118_6206095317243811361_6206095317243811361_d6441a93bd2db6282ad27d13eaa5c009.jpg', 'Dự án Hybrid Tạ Cẩm Tú - Dàn 10 tấm pin mặt trời lắp đặt trên mái tôn')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924118_6206095317243811361_6206095317243811361_d6441a93bd2db6282ad27d13eaa5c009.jpg" alt="Dàn 10 tấm pin mặt trời áp mái tôn nhà Tạ Cẩm Tú" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" data-vi="Dàn Pin Áp Mái Tôn" data-en="Corrugated Roof Array">Dàn Pin Áp Mái Tôn</span>
+              <div class="photo-desc trans" data-vi="Dàn 10 tấm pin mặt trời áp mái tôn kiên cố, chịu sức gió bão tốt" data-en="10 solar panels securely mounted on corrugated roof, engineered for storm resistance">Dàn 10 tấm pin mặt trời áp mái tôn kiên cố, chịu sức gió bão tốt</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Inverter & Battery -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924336_6206095317243811361_6206095317243811361_05092495034a4a7a7b399814434c6682.jpg', 'Dự án Hybrid Tạ Cẩm Tú - Biến tần Inverter Hybrid & Pin lưu trữ Lithium 10kWh')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Tạ Cẩm Tú - 10 panels + 10 kwh battery/1788570924336_6206095317243811361_6206095317243811361_05092495034a4a7a7b399814434c6682.jpg" alt="Inverter Hybrid và Pin lưu trữ Lithium 10kWh nhà Tạ Cẩm Tú" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" data-vi="Inverter & Pin 10kWh" data-en="Inverter & 10kWh Battery">Inverter & Pin 10kWh</span>
+              <div class="photo-desc trans" data-vi="Nghiệm thu biến tần Inverter Hybrid và bộ pin lưu trữ Lithium 10kWh" data-en="Commissioning of Hybrid Inverter and 10kWh Lithium storage battery">Nghiệm thu biến tần Inverter Hybrid và bộ pin lưu trữ Lithium 10kWh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 3: Ông Đinh Ngọc Khương -->
       <div class="customer-project-item">
         <div class="customer-meta-row">
           <div class="customer-name">
@@ -584,7 +793,7 @@
         </div>
       </div>
 
-      <!-- Customer 2: Ông Nguyễn Đình Văn -->
+      <!-- Customer 4: Ông Nguyễn Đình Văn -->
       <div class="customer-project-item">
         <div class="customer-meta-row">
           <div class="customer-name">
@@ -618,6 +827,183 @@
             <div class="photo-caption-bar">
               <span class="photo-tag trans" data-vi="Bàn Giao Nghiệm Thu" data-en="Handover Ceremony">Bàn Giao Nghiệm Thu</span>
               <div class="photo-desc trans" data-vi="Bàn giao hệ thống biến tần Inverter, tủ điện và pin Lithium với khách hàng" data-en="Handover of inverter, switchgear and Lithium battery with customer">Bàn giao hệ thống biến tần Inverter, tủ điện và pin Lithium với khách hàng</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION: ON-GRID (ZERO-EXPORT) SYSTEMS ==================== -->
+    <div class="category-card" id="ongrid">
+      <div class="category-header">
+        <div class="category-title">
+          <span>☀️</span>
+          <span class="trans" data-vi="Hệ Thống Điện Mặt Trời Hòa Lưới Bám Tải On-Grid (Zero-Export)" data-en="Grid-Tied Zero-Export Solar Systems (On-Grid)">Hệ Thống Điện Mặt Trời Hòa Lưới Bám Tải On-Grid (Zero-Export)</span>
+        </div>
+        <span class="category-badge trans" style="background: #dbeafe; color: #1e40af; border-color: #93c5fd;" data-vi="Tối Ưu Chi Phí • Hoàn Vốn 3-4 Năm" data-en="Cost-Effective • 3-4 Year Payback">Tối Ưu Chi Phí • Hoàn Vốn 3-4 Năm</span>
+      </div>
+
+      <!-- Extra Technical Information: On-Grid System -->
+      <div class="system-info-box ongrid-theme">
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>🔄</span>
+            <span class="trans" data-vi="Nguyên Lý Bám Tải Zero-Export" data-en="Zero-Export Operation">Nguyên Lý Bám Tải Zero-Export</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Điện mặt trời sinh ra vào ban ngày ưu tiên cấp thẳng cho phụ tải gia đình/cơ sở kinh doanh (máy lạnh, máy móc...). Smart Meter / CT cảm biến dòng tải liên tục và điều khiển Inverter chỉ phát đúng công suất tiêu thụ — 100% không phát ngược lên lưới EVN (tuân thủ Nghị định 135/2024/NĐ-CP)." 
+               data-en="Daytime solar power directly feeds active appliances (air conditioners, machinery, chillers). Smart Meter / CT continuously monitors load and throttles the Inverter to generate only what is needed — 100% zero-export to the grid (fully compliant with Decree 135/2024/ND-CP).">
+            Điện mặt trời sinh ra vào ban ngày ưu tiên cấp thẳng cho phụ tải gia đình/cơ sở kinh doanh (máy lạnh, máy móc...). Smart Meter / CT cảm biến dòng tải liên tục và điều khiển Inverter chỉ phát đúng công suất tiêu thụ — 100% không phát ngược lên lưới EVN (tuân thủ Nghị định 135/2024/NĐ-CP).
+          </div>
+        </div>
+
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>📈</span>
+            <span class="trans" data-vi="Hiệu Quả Kinh Tế Cao Nhất" data-en="Maximum Return on Investment">Hiệu Quả Kinh Tế Cao Nhất</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Chi phí đầu tư thấp nhất (không tốn chi phí pin lưu trữ), hoàn vốn siêu nhanh từ 3 - 4 năm. Triệt tiêu hoàn toàn tiền điện ở khung giá bậc thang cao nhất (bậc 5, bậc 6 sinh hoạt) và khung giờ cao điểm kinh doanh (lên đến gần 5,000đ/kWh). Tuổi thọ dàn pin bền bỉ trên 25 - 30 năm." 
+               data-en="Lowest upfront investment (no battery cost) with rapid 3 - 4 year payback. Eliminates top-tier residential tariff brackets (tier 5, 6) and peak commercial rates (up to ~5,000 VND/kWh). Panel lifespan exceeds 25 - 30 years with 25-year performance warranty.">
+            Chi phí đầu tư thấp nhất (không tốn chi phí pin lưu trữ), hoàn vốn siêu nhanh từ 3 - 4 năm. Triệt tiêu hoàn toàn tiền điện ở khung giá bậc thang cao nhất (bậc 5, bậc 6 sinh hoạt) và khung giờ cao điểm kinh doanh (lên đến gần 5,000đ/kWh). Tuổi thọ dàn pin bền bỉ trên 25 - 30 năm.
+          </div>
+        </div>
+
+        <div class="info-pillar">
+          <div class="info-pillar-title">
+            <span>⚙️</span>
+            <span class="trans" data-vi="Cấu Hình Tiêu Chuẩn" data-en="Standard Equipment">Cấu Hình Tiêu Chuẩn</span>
+          </div>
+          <div class="info-pillar-desc trans" 
+               data-vi="Dàn pin Mono N-Type/Topcon công suất 550W - 600W/tấm, Biến tần Inverter hòa lưới bám tải chính hãng hiệu suất chuyển đổi 98.4%, Smart Meter / CT chống phát ngược, Tủ điện bảo vệ AC/DC đóng ngắt tự động tích hợp thiết bị chống sét lan truyền." 
+               data-en="Tier-1 Mono N-Type/Topcon 550W - 600W solar modules, high-efficiency grid-tied Inverters (98.4% conversion), Smart Meter / CT zero-export sensors, and specialized AC/DC switchgear with surge protection.">
+            Dàn pin Mono N-Type/Topcon công suất 550W - 600W/tấm, Biến tần Inverter hòa lưới bám tải chính hãng hiệu suất chuyển đổi 98.4%, Smart Meter / CT chống phát ngược, Tủ điện bảo vệ AC/DC đóng ngắt tự động tích hợp thiết bị chống sét lan truyền.
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 5: Anh Hiếu - 6 ongrid panels -->
+      <div class="customer-project-item">
+        <div class="customer-meta-row">
+          <div class="customer-name">
+            <span class="trans" data-vi="Chủ hộ: ANH HIẾU (6 Tấm Pin Hòa Lưới Bám Tải)" data-en="Client: MR. HIEU (6 On-Grid Zero-Export Panels)">Chủ hộ: ANH HIẾU (6 Tấm Pin Hòa Lưới Bám Tải)</span>
+            <span class="verified-pill trans" data-vi="✓ BÀN GIAO THỰC TẾ" data-en="✓ VERIFIED HANDOVER">✓ BÀN GIAO THỰC TẾ</span>
+          </div>
+          <span style="font-size: 13px; color: #64748b; font-weight: 600;">📍 Hộ gia đình dân dụng, Gia Lai</span>
+        </div>
+
+        <div class="customer-specs ongrid-specs trans" 
+             data-vi="<strong>Cấu hình công trình:</strong> Hệ thống hòa lưới bám tải 6 tấm pin mặt trời công suất lớn (~3.5 kWp) lắp đặt áp mái tôn. Biến tần Inverter hòa lưới bám tải thông minh kèm tủ điện bảo vệ đóng cắt và chống sét lan truyền. Sản lượng đạt 400 - 450 kWh/tháng, tiết kiệm trực tiếp 1.2 - 1.6 triệu đồng tiền điện mỗi tháng." 
+             data-en="<strong>System Specifications:</strong> Zero-export on-grid solar system with 6 high-efficiency panels (~3.5 kWp) mounted on corrugated roof. Smart grid-tied inverter with surge protection switchgear. Produces 400 - 450 kWh/month, saving 1.2 - 1.6 million VND/month.">
+          <strong>Cấu hình công trình:</strong> Hệ thống hòa lưới bám tải 6 tấm pin mặt trời công suất lớn (~3.5 kWp) lắp đặt áp mái tôn. Biến tần Inverter hòa lưới bám tải thông minh kèm tủ điện bảo vệ đóng cắt và chống sét lan truyền. Sản lượng đạt 400 - 450 kWh/tháng, tiết kiệm trực tiếp 1.2 - 1.6 triệu đồng tiền điện mỗi tháng.
+        </div>
+
+        <div class="photo-grid">
+          <!-- Photo 1: Inverter -->
+          <div class="photo-card" onclick="openLightbox('bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925495_6206095317243811361_6206095317243811361_f7bc3bc6c92ca6427c6e574223795880.jpg', 'Dự án Bám Tải Anh Hiếu - Nghiệm thu Inverter hòa lưới bám tải & tủ điện bảo vệ')" title="Xem ảnh lớn">
+            <img src="bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925495_6206095317243811361_6206095317243811361_f7bc3bc6c92ca6427c6e574223795880.jpg" alt="Inverter hòa lưới bám tải và tủ điện dự án Anh Hiếu" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Inverter Bám Tải" data-en="Zero-Export Inverter">Inverter Bám Tải</span>
+              <div class="photo-desc trans" data-vi="Biến tần Inverter hòa lưới bám tải và tủ điện bảo vệ đóng cắt an toàn" data-en="Grid-tied zero-export inverter and safety protection electrical switchgear">Biến tần Inverter hòa lưới bám tải và tủ điện bảo vệ đóng cắt an toàn</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Roof -->
+          <div class="photo-card" onclick="openLightbox('bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925646_6206095317243811361_6206095317243811361_85d8de86ff3846e5cc834733def0c09b.jpg', 'Dự án Bám Tải Anh Hiếu - Dàn 6 tấm pin mặt trời áp mái đón nắng')" title="Xem ảnh lớn">
+            <img src="bank logos/on grid/Anh Hiếu- 6 ongrid panels/1788570925646_6206095317243811361_6206095317243811361_85d8de86ff3846e5cc834733def0c09b.jpg" alt="Dàn 6 tấm pin mặt trời áp mái tôn nhà Anh Hiếu" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Dàn Pin Áp Mái" data-en="Rooftop Array">Dàn Pin Áp Mái</span>
+              <div class="photo-desc trans" data-vi="Dàn 6 tấm pin mặt trời áp mái tôn đón nắng tối ưu cho hộ gia đình" data-en="6 rooftop solar panels catching optimal sunlight for residential home">Dàn 6 tấm pin mặt trời áp mái tôn đón nắng tối ưu cho hộ gia đình</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 6: Văn Vĩ - on grid 14 panels -->
+      <div class="customer-project-item">
+        <div class="customer-meta-row">
+          <div class="customer-name">
+            <span class="trans" data-vi="Chủ hộ: VĂN VĨ (14 Tấm Pin Hòa Lưới Bám Tải)" data-en="Client: VAN VI (14 On-Grid Zero-Export Panels)">Chủ hộ: VĂN VĨ (14 Tấm Pin Hòa Lưới Bám Tải)</span>
+            <span class="verified-pill trans" data-vi="✓ BÀN GIAO THỰC TẾ" data-en="✓ VERIFIED HANDOVER">✓ BÀN GIAO THỰC TẾ</span>
+          </div>
+          <span style="font-size: 13px; color: #64748b; font-weight: 600;">📍 Hộ kinh doanh & sinh hoạt, Gia Lai</span>
+        </div>
+
+        <div class="customer-specs ongrid-specs trans" 
+             data-vi="<strong>Cấu hình công trình:</strong> Hệ thống hòa lưới bám tải 14 tấm pin mặt trời (~8.1 kWp) bố trí trên mái đón trọn bức xạ nắng. Biến tần Inverter bám tải công suất cao, tản nhiệt nhôm nguyên khối, vận hành êm ái. Sản lượng đạt ~950 - 1,150 kWh/tháng, triệt tiêu tiền điện giờ cao điểm, tiết kiệm 3 - 4.2 triệu đồng/tháng." 
+             data-en="<strong>System Specifications:</strong> Zero-export on-grid solar system with 14 high-power solar panels (~8.1 kWp). High-efficiency grid-tied inverter with solid aluminum heatsink. Generates ~950 - 1,150 kWh/month, eliminating peak-hour electricity costs with monthly savings of 3 - 4.2 million VND.">
+          <strong>Cấu hình công trình:</strong> Hệ thống hòa lưới bám tải 14 tấm pin mặt trời (~8.1 kWp) bố trí trên mái đón trọn bức xạ nắng. Biến tần Inverter bám tải công suất cao, tản nhiệt nhôm nguyên khối, vận hành êm ái. Sản lượng đạt ~950 - 1,150 kWh/tháng, triệt tiêu tiền điện giờ cao điểm, tiết kiệm 3 - 4.2 triệu đồng/tháng.
+        </div>
+
+        <div class="photo-grid">
+          <!-- Photo 1: Roof -->
+          <div class="photo-card" onclick="openLightbox('bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925826_6206095317243811361_6206095317243811361_d0df8f240f1227c41614751a38d1b98c.jpg', 'Dự án Bám Tải Văn Vĩ - Dàn 14 tấm pin mặt trời áp mái công suất cao')" title="Xem ảnh lớn">
+            <img src="bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925826_6206095317243811361_6206095317243811361_d0df8f240f1227c41614751a38d1b98c.jpg" alt="Dàn 14 tấm pin mặt trời áp mái dự án Văn Vĩ" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Dàn Pin Áp Mái" data-en="Rooftop Array">Dàn Pin Áp Mái</span>
+              <div class="photo-desc trans" data-vi="Dàn 14 tấm pin mặt trời áp mái kiên cố, tối ưu hóa hấp thụ bức xạ" data-en="14 high-power solar panels mounted securely for maximum radiation absorption">Dàn 14 tấm pin mặt trời áp mái kiên cố, tối ưu hóa hấp thụ bức xạ</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Inverter -->
+          <div class="photo-card" onclick="openLightbox('bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925989_6206095317243811361_6206095317243811361_ed97f30c685d10922e3995715e5a453f.jpg', 'Dự án Bám Tải Văn Vĩ - Nghiệm thu Inverter hòa lưới bám tải & tủ điện đóng cắt')" title="Xem ảnh lớn">
+            <img src="bank logos/on grid/Văn Vĩ - on grid 14 panels/1788570925989_6206095317243811361_6206095317243811361_ed97f30c685d10922e3995715e5a453f.jpg" alt="Inverter hòa lưới bám tải và tủ điện đóng cắt dự án Văn Vĩ" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Inverter & Tủ Điện" data-en="Inverter & Electrical Box">Inverter & Tủ Điện</span>
+              <div class="photo-desc trans" data-vi="Nghiệm thu bàn giao Inverter hòa lưới bám tải và tủ điện bảo vệ" data-en="Commissioning of grid-tied zero-export inverter and switchgear">Nghiệm thu bàn giao Inverter hòa lưới bám tải và tủ điện bảo vệ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer 7: Anh Thành - Mộc Ngư Coffee -->
+      <div class="customer-project-item">
+        <div class="customer-meta-row">
+          <div class="customer-name">
+            <span class="trans" data-vi="Khách hàng: ANH THÀNH - MỘC NGƯ COFFEE (10 Tấm Pin Bám Tải)" data-en="Client: MR. THANH - MOC NGU COFFEE (10 On-Grid Panels)">Khách hàng: ANH THÀNH - MỘC NGƯ COFFEE (10 Tấm Pin Bám Tải)</span>
+            <span class="verified-pill trans" data-vi="✓ BÀN GIAO THỰC TẾ" data-en="✓ VERIFIED HANDOVER">✓ BÀN GIAO THỰC TẾ</span>
+          </div>
+          <span style="font-size: 13px; color: #64748b; font-weight: 600;">📍 Quán Mộc Ngư Coffee, Gia Lai</span>
+        </div>
+
+        <div class="customer-specs ongrid-specs trans" 
+             data-vi="<strong>Cấu hình công trình:</strong> Hệ thống điện mặt trời thương mại 10 tấm pin (~5.8 kWp) lắp đặt trên mái quán Mộc Ngư Coffee. Giải pháp vừa tạo điện sạch vừa đóng vai trò lớp cách nhiệt làm mát không gian quán. Cung cấp điện trực tiếp cho dàn máy pha cà phê, máy lạnh, tủ đông và hệ thống âm thanh ánh sáng ban ngày. Tiết kiệm 2.5 - 3.5 triệu đồng tiền điện kinh doanh giá cao mỗi tháng." 
+             data-en="<strong>System Specifications:</strong> Commercial solar system with 10 panels (~5.8 kWp) installed on Moc Ngu Coffee roof. The array acts as both a clean power generator and a thermal insulation layer cooling the coffee shop. Directly powers espresso machines, air conditioners, freezers, and sound systems. Monthly savings: 2.5 - 3.5 million VND on commercial peak rates.">
+          <strong>Cấu hình công trình:</strong> Hệ thống điện mặt trời thương mại 10 tấm pin (~5.8 kWp) lắp đặt trên mái quán Mộc Ngư Coffee. Giải pháp vừa tạo điện sạch vừa đóng vai trò lớp cách nhiệt làm mát không gian quán. Cung cấp điện trực tiếp cho dàn máy pha cà phê, máy lạnh, tủ đông và hệ thống âm thanh ánh sáng ban ngày. Tiết kiệm 2.5 - 3.5 triệu đồng tiền điện kinh doanh giá cao mỗi tháng.
+        </div>
+
+        <div class="photo-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          <!-- Photo 1: Shop space -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924799_6206095317243811361_6206095317243811361_a4f400d1cdf185f810915bd0616a9db3.jpg', 'Dự án Anh Thành - Không gian quán Mộc Ngư Coffee')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924799_6206095317243811361_6206095317243811361_a4f400d1cdf185f810915bd0616a9db3.jpg" alt="Không gian quán Mộc Ngư Coffee" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #f59e0b;" data-vi="Không Gian Quán" data-en="Coffee Shop">Không Gian Quán</span>
+              <div class="photo-desc trans" data-vi="Không gian quán Mộc Ngư Coffee ứng dụng điện mặt trời xanh" data-en="Moc Ngu Coffee shop utilizing clean green solar power">Không gian quán Mộc Ngư Coffee ứng dụng điện mặt trời xanh</div>
+            </div>
+          </div>
+
+          <!-- Photo 2: Roof Panels -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924922_6206095317243811361_6206095317243811361_fa070208749025a0dc8c562fec30b474.jpg', 'Dự án Anh Thành Mộc Ngư Coffee - Dàn 10 tấm pin mặt trời trên mái quán')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570924922_6206095317243811361_6206095317243811361_fa070208749025a0dc8c562fec30b474.jpg" alt="Dàn 10 tấm pin mặt trời trên mái quán Mộc Ngư Coffee" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Dàn Pin Áp Mái" data-en="Rooftop Array">Dàn Pin Áp Mái</span>
+              <div class="photo-desc trans" data-vi="Dàn 10 tấm pin mặt trời áp mái giúp giảm nhiệt và tạo điện kinh doanh" data-en="10 solar panels insulating the roof while generating commercial power">Dàn 10 tấm pin mặt trời áp mái giúp giảm nhiệt và tạo điện kinh doanh</div>
+            </div>
+          </div>
+
+          <!-- Photo 3: Inverter & Switchgear -->
+          <div class="photo-card" onclick="openLightbox('bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570925053_6206095317243811361_6206095317243811361_46c925a4cab0a57e0e4876b62e6e56a3.jpg', 'Dự án Anh Thành Mộc Ngư Coffee - Inverter hòa lưới bám tải & tủ điện chuyên dụng')" title="Xem ảnh lớn">
+            <img src="bank logos/hybrid/Anh Thành - Mộc Ngư coffee- ongrid 10 panels/1788570925053_6206095317243811361_6206095317243811361_46c925a4cab0a57e0e4876b62e6e56a3.jpg" alt="Inverter hòa lưới bám tải và tủ điện Mộc Ngư Coffee" loading="lazy">
+            <div class="photo-overlay">🔍</div>
+            <div class="photo-caption-bar">
+              <span class="photo-tag trans" style="background: #2563eb;" data-vi="Inverter & Tủ Điện" data-en="Inverter & Switchgear">Inverter & Tủ Điện</span>
+              <div class="photo-desc trans" data-vi="Nghiệm thu biến tần hòa lưới bám tải và tủ điện bảo vệ an toàn" data-en="Commissioning of grid-tied zero-export inverter and protective switchgear">Nghiệm thu biến tần hòa lưới bám tải và tủ điện bảo vệ an toàn</div>
             </div>
           </div>
         </div>
