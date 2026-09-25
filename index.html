@@ -68,12 +68,17 @@
 
     /* Top Left Company Logo with Background Removed */
     .logo-graphic {
-      height: 56px;
+      height: 66px;
       width: auto;
-      border-radius: 6px;
+      border-radius: 8px;
       object-fit: contain;
       background: transparent;
       mix-blend-mode: multiply;
+      transition: transform 0.3s ease;
+    }
+
+    .brand-composite:hover .logo-graphic {
+      transform: scale(1.05);
     }
 
     .brand-info {
@@ -83,7 +88,7 @@
 
     .brand-info h1 {
       color: #1e3a8a;
-      font-size: 22px;
+      font-size: 25px;
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.5px;
@@ -94,7 +99,7 @@
     }
 
     .brand-info .brand-sub {
-      font-size: 12px;
+      font-size: 13.5px;
       color: var(--text-muted);
       font-weight: 600;
       text-transform: uppercase;
@@ -1627,8 +1632,8 @@
     /* AI Chat Floating Icon Button */
     .floating-social-icon.ai-chat {
       position: relative;
-      width: 48px;
-      height: 48px;
+      width: 98px;
+      height: 98px;
       background: transparent;
       border: none;
       cursor: pointer;
@@ -1636,7 +1641,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
+      border-radius: 22px;
       box-shadow: none;
       transition: transform 0.25s ease;
     }
@@ -1646,36 +1651,36 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.45));
+      filter: drop-shadow(0 4px 18px rgba(37, 99, 235, 0.55));
       transition: transform 0.25s ease, filter 0.25s ease;
       animation: aiFloatGlow 2.5s infinite ease-in-out;
     }
 
     @keyframes aiFloatGlow {
       0%, 100% {
-        filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.45));
+        filter: drop-shadow(0 4px 18px rgba(37, 99, 235, 0.55));
         transform: translateY(0);
       }
       50% {
-        filter: drop-shadow(0 6px 18px rgba(243, 156, 18, 0.75));
+        filter: drop-shadow(0 8px 24px rgba(243, 156, 18, 0.85));
         transform: translateY(-2px);
       }
     }
 
     .floating-social-icon.ai-chat:hover .ai-chat-btn-icon {
-      transform: scale(1.12) translateY(-3px);
-      filter: drop-shadow(0 8px 22px rgba(37, 99, 235, 0.7));
+      transform: scale(1.1) translateY(-3px);
+      filter: drop-shadow(0 10px 28px rgba(37, 99, 235, 0.8));
     }
 
     /* Gemini AI Chatbot Drawer & Widget Styling */
     .ai-chat-widget {
       position: fixed;
-      bottom: 85px;
+      bottom: 132px;
       right: 24px;
       width: 370px;
       max-width: calc(100vw - 32px);
       height: 520px;
-      max-height: calc(100vh - 110px);
+      max-height: calc(100vh - 150px);
       background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
@@ -1708,13 +1713,13 @@
     .ai-chat-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .ai-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 70px;
+      height: 70px;
+      border-radius: 14px;
       background: transparent;
       display: flex;
       align-items: center;
@@ -1726,7 +1731,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 14px;
     }
 
     .ai-chat-title {
@@ -1984,8 +1989,8 @@
         height: 38px;
       }
       .floating-social-icon.ai-chat {
-        width: 42px;
-        height: 42px;
+        width: 82px;
+        height: 82px;
       }
       .btn-doc-intro {
         width: 100%;
