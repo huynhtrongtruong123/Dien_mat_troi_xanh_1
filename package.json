@@ -1,0 +1,10 @@
+{
+  "name": "dien-mat-troi-xanh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Website Công ty TNHH Điện Mặt Trời Xanh với AI Chatbot tích hợp Vercel Serverless Function",
+  "scripts": {
+    "start": "python server.py"
+  }
+}
