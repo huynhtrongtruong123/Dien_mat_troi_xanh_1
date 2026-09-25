@@ -1603,6 +1603,11 @@
       box-shadow: 0 4px 16px rgba(24, 119, 242, 0.45);
     }
 
+    .floating-social-icon.zalo {
+      background-color: #0068ff;
+      box-shadow: 0 4px 16px rgba(0, 104, 255, 0.45);
+    }
+
     .floating-social-icon:hover {
       transform: translateY(-3px) scale(1.08);
     }
@@ -1615,26 +1620,260 @@
       box-shadow: 0 8px 22px rgba(24, 119, 242, 0.65);
     }
 
-    .floating-zalo {
-      background-color: #0068ff;
+    .floating-social-icon.zalo:hover {
+      box-shadow: 0 8px 22px rgba(0, 104, 255, 0.65);
+    }
+
+    /* AI Chat Floating Icon Button */
+    .floating-social-icon.ai-chat {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      box-shadow: none;
+      transition: transform 0.25s ease;
+    }
+
+    .floating-social-icon.ai-chat .ai-chat-btn-icon {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.45));
+      transition: transform 0.25s ease, filter 0.25s ease;
+      animation: aiFloatGlow 2.5s infinite ease-in-out;
+    }
+
+    @keyframes aiFloatGlow {
+      0%, 100% {
+        filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.45));
+        transform: translateY(0);
+      }
+      50% {
+        filter: drop-shadow(0 6px 18px rgba(243, 156, 18, 0.75));
+        transform: translateY(-2px);
+      }
+    }
+
+    .floating-social-icon.ai-chat:hover .ai-chat-btn-icon {
+      transform: scale(1.12) translateY(-3px);
+      filter: drop-shadow(0 8px 22px rgba(37, 99, 235, 0.7));
+    }
+
+    /* Gemini AI Chatbot Drawer & Widget Styling */
+    .ai-chat-widget {
+      position: fixed;
+      bottom: 85px;
+      right: 24px;
+      width: 370px;
+      max-width: calc(100vw - 32px);
+      height: 520px;
+      max-height: calc(100vh - 110px);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1001;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+
+    .ai-chat-widget.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .ai-chat-header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
       color: white;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ai-chat-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ai-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ai-avatar .ai-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .ai-chat-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .ai-chat-status {
+      font-size: 11px;
+      color: #bbf7d0;
+      font-weight: 500;
+    }
+
+    .ai-chat-close {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .ai-chat-close:hover { opacity: 1; }
+
+    .ai-chat-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #f8fafc;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .ai-msg { display: flex; max-width: 85%; }
+    .ai-msg.user { align-self: flex-end; }
+    .ai-msg.bot { align-self: flex-start; }
+
+    .ai-msg-bubble {
+      padding: 10px 14px;
+      border-radius: 12px;
+      word-break: break-word;
+    }
+
+    .ai-msg.user .ai-msg-bubble {
+      background: #2563eb;
+      color: white;
+      border-bottom-right-radius: 2px;
+    }
+
+    .ai-msg.bot .ai-msg-bubble {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-bottom-left-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .ai-msg.bot.loading .ai-msg-bubble {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 16px;
+    }
+
+    .ai-msg.bot.loading .ai-msg-bubble span {
+      width: 6px;
+      height: 6px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: aiBounce 1.4s infinite ease-in-out both;
+    }
+
+    .ai-msg.bot.loading .ai-msg-bubble span:nth-child(1) { animation-delay: -0.32s; }
+    .ai-msg.bot.loading .ai-msg-bubble span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes aiBounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    .ai-chat-footer {
+      border-top: 1px solid var(--border-color);
+      background: white;
+      padding: 10px 12px;
+    }
+
+    .ai-quick-suggestions {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+
+    .ai-quick-btn {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #334155;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .ai-quick-btn:hover { background: #e2e8f0; }
+
+    .ai-chat-input-bar {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 4px 16px rgba(0, 104, 255, 0.45);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      white-space: nowrap;
     }
 
-    .floating-zalo:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 22px rgba(0, 104, 255, 0.6);
+    .ai-chat-input-bar input {
+      flex: 1;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
     }
+
+    .ai-chat-input-bar input:focus { border-color: #2563eb; }
+
+    .ai-chat-input-bar button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .ai-chat-input-bar button:hover { background: #1d4ed8; }
 
     /* Footer */
     footer {
@@ -1744,9 +1983,9 @@
         width: 38px;
         height: 38px;
       }
-      .floating-zalo {
-        padding: 10px 16px;
-        font-size: 14px;
+      .floating-social-icon.ai-chat {
+        width: 42px;
+        height: 42px;
       }
       .btn-doc-intro {
         width: 100%;
@@ -2525,9 +2764,57 @@
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
       </svg>
     </a>
-    <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-zalo" title="Chat Zalo">
-      <span>💬</span> <span class="trans" data-vi="Chat Zalo" data-en="Chat on Zalo">Chat Zalo</span>
+    <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-social-icon zalo" title="Zalo" aria-label="Zalo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.49 10.2722v-.4496h1.3467v6.3218h-.7704a.576.576 0 01-.5763-.5729l-.0006.0005a3.273 3.273 0 01-1.9372.6321c-1.8138 0-3.2844-1.4697-3.2844-3.2823 0-1.8125 1.4706-3.2822 3.2844-3.2822a3.273 3.273 0 011.9372.6321l.0006.0005zM6.9188 7.7896v.205c0 .3823-.051.6944-.2995 1.0605l-.03.0343c-.0542.0615-.1815.206-.2421.2843L2.024 14.8h4.8948v.7682a.5764.5764 0 01-.5767.5761H0v-.3622c0-.4436.1102-.6414.2495-.8476L4.8582 9.23H.1922V7.7896h6.7266zm8.5513 8.3548a.4805.4805 0 01-.4803-.4798v-7.875h1.4416v8.3548H15.47zM20.6934 9.6C22.52 9.6 24 11.0807 24 12.9044c0 1.8252-1.4801 3.306-3.3066 3.306-1.8264 0-3.3066-1.4808-3.3066-3.306 0-1.8237 1.4802-3.3044 3.3066-3.3044zm-10.1412 5.253c1.0675 0 1.9324-.8645 1.9324-1.9312 0-1.065-.865-1.9295-1.9324-1.9295s-1.9324.8644-1.9324 1.9295c0 1.0667.865 1.9312 1.9324 1.9312zm10.1412-.0033c1.0737 0 1.945-.8707 1.945-1.9453 0-1.073-.8713-1.9436-1.945-1.9436-1.0753 0-1.945.8706-1.945 1.9453 0 1.0746.8697 1.9453 1.945 1.9453z"/>
+      </svg>
     </a>
+
+    <!-- Company AI Chat Box Button (Right side of page) -->
+    <button type="button" class="floating-social-icon ai-chat" id="aiChatToggle" onclick="toggleAiChat()" title="Trợ Lý AI - Tư Vấn Điện Mặt Trời Xanh" aria-label="Mở Trợ Lý AI Điện Mặt Trời Xanh">
+      <img src="chat_box_icon.png" alt="Điện Mặt Trời Xanh AI" class="ai-chat-btn-icon">
+    </button>
+  </div>
+
+  <!-- AI Chatbot Drawer & Widget -->
+  <div id="aiChatWidget" class="ai-chat-widget">
+    <div class="ai-chat-header">
+      <div class="ai-chat-brand">
+        <div class="ai-avatar">
+          <img src="chat_box_icon.png" alt="Điện Mặt Trời Xanh AI" class="ai-avatar-img">
+        </div>
+        <div>
+          <div class="ai-chat-title">Trợ Lý AI Điện Mặt Trời Xanh</div>
+          <div class="ai-chat-status">● Trực tuyến (Powered by Gemini)</div>
+        </div>
+      </div>
+      <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Đóng chat">✕</button>
+    </div>
+    
+    <div id="aiChatMessages" class="ai-chat-messages">
+      <div class="ai-msg bot">
+        <div class="ai-msg-bubble">
+          Xin chào! 👋 Tôi là <strong>Trợ lý AI của Điện Mặt Trời Xanh</strong>.<br><br>
+          Tôi có thể hỗ trợ bạn tính toán công suất lắp đặt, giải đáp các gói điện mặt trời bám tải dân dụng, doanh nghiệp hoặc hệ thống Hybrid lưu trữ. Bạn đang quan tâm đến giải pháp nào?
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-chat-footer">
+      <div class="ai-quick-suggestions">
+        <button type="button" class="ai-quick-btn" onclick="sendQuickPrompt('Tư vấn gói bám tải cho hộ gia đình')">Gói bám tải gia đình?</button>
+        <button type="button" class="ai-quick-btn" onclick="sendQuickPrompt('Giá hệ thống hybrid có lưu trữ bao nhiêu?')">Hệ thống Hybrid?</button>
+        <button type="button" class="ai-quick-btn" onclick="sendQuickPrompt('Địa chỉ văn phòng và hotline công ty?')">Địa chỉ văn phòng?</button>
+      </div>
+      <form id="aiChatForm" onsubmit="handleAiChatSubmit(event)" class="ai-chat-input-bar">
+        <input type="text" id="aiUserInput" placeholder="Nhập câu hỏi của bạn..." autocomplete="off" required>
+        <button type="submit" id="aiSubmitBtn" aria-label="Gửi tin nhắn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
   </div>
 
   <!-- Lightbox Modal for Real Project Gallery -->
@@ -2715,6 +3002,267 @@
       document.addEventListener('DOMContentLoaded', startHeroAutoPlay);
     } else {
       startHeroAutoPlay();
+    }
+
+    // ============================================================
+    // Gemini AI Chatbot Integration for Điện Mặt Trời Xanh
+    // ============================================================
+    const GEMINI_API_KEY = "AIzaSyAadOYNAdHFpSRfdBTU8-3K4U5Jz-rhsNg";
+    const GEMINI_MODELS = ["gemini-flash-lite-latest", "gemini-3.5-flash-lite", "gemini-3.6-flash"];
+    let aiChatHistory = [];
+
+    // Comprehensive knowledge base for instant answers and fallback
+    function getLocalAnswer(query) {
+      const q = query.toLowerCase();
+      if (q.includes('địa chỉ') || q.includes('ở đâu') || q.includes('văn phòng') || q.includes('chi nhánh') || q.includes('location')) {
+        return `📍 **Hệ Thống Văn Phòng & Chi Nhánh Điện Mặt Trời Xanh:**\n\n` +
+               `• **Văn phòng Đại diện (TP.HCM):** 364 Cộng Hòa, P.13, Tân Bình, TP.HCM\n` +
+               `• **Chi nhánh (Gia Lai):** Tổ 47, Khu phố 5, P. Quy Nhơn Nam, Gia Lai\n` +
+               `• **Giờ làm việc:** Thứ 2 - Thứ 7: 8:00 - 18:00\n\n` +
+               `📞 Hotline tư vấn: [0787 691 089](tel:0787691089) (Zalo 24/7). Kỹ sư sẵn sàng khảo sát tận nơi miễn phí!`;
+      }
+      if (q.includes('hotline') || q.includes('số điện thoại') || q.includes('sđt') || q.includes('liên hệ') || q.includes('zalo') || q.includes('phone')) {
+        return `📞 **Thông Tin Liên Hệ Công Ty TNHH Điện Mặt Trời Xanh:**\n\n` +
+               `• **Hotline / Zalo tư vấn 24/7:** [0787 691 089](tel:0787691089)\n` +
+               `• **Zalo Chat:** [zalo.me/0787691089](https://zalo.me/0787691089)\n` +
+               `• **Facebook:** [Điện Mặt Trời XANH](https://www.facebook.com/profile.php?id=61579131363617)\n` +
+               `• **TikTok:** [@dienmattroixanh](https://www.tiktok.com/@dienmattroixanh)\n` +
+               `• **Email:** contact@dienmattroixanh.vn\n\n` +
+               `👉 Bạn có thể để lại số điện thoại tại form Kết Nối để kỹ sư gọi lại tư vấn chi tiết nhé!`;
+      }
+      if (q.includes('giá') || q.includes('báo giá') || q.includes('chi phí') || q.includes('bao nhiêu tiền') || q.includes('hết bao nhiêu') || q.includes('bảng giá')) {
+        return `💰 **Báo Giá Tham Khảo Các Gói Điện Mặt Trời Chính Hãng:**\n\n` +
+               `• **Gói bám tải 5kWp:** ~45 - 55 triệu VNĐ (tạo ~600 - 750 kWh/tháng, tiết kiệm ~1.5 - 2 triệu/tháng tiền điện).\n` +
+               `• **Gói bám tải 10kWp:** ~85 - 95 triệu VNĐ (tạo ~1.200 - 1.500 kWh/tháng, tiết kiệm ~3 - 3.5 triệu/tháng).\n` +
+               `• **Hệ Hybrid lưu trữ 5kW + Pin Lithium 10kWh:** ~115 - 135 triệu VNĐ (điện liên tục 24/7 khi cúp điện).\n` +
+               `• **Hệ Hybrid lưu trữ 10kW + Pin Lithium 15kWh:** ~180 - 210 triệu VNĐ.\n` +
+               `• **Bơm năng lượng mặt trời 3HP - 10HP:** Tư vấn tùy cột áp và lưu lượng giếng tưới.\n\n` +
+               `🎁 **Ưu đãi:** Điện Mặt Trời XANH khảo sát kết cấu mái và thiết kế 3D hoàn toàn **MIỄN PHÍ** tận nơi.\n` +
+               `📞 Gọi ngay hotline/Zalo: **0787 691 089** để nhận báo giá chi tiết theo hóa đơn điện!`;
+      }
+      if (q.includes('hoàn vốn') || q.includes('thu hồi vốn')) {
+        return `📈 **Thời Gian Hoàn Vốn & Hiệu Quả Đầu Tư:**\n\n` +
+               `• **Hệ bám tải dân dụng & doanh nghiệp:** Hoàn vốn chỉ sau **3.5 - 4.5 năm** nhờ cắt giảm trực tiếp bậc giá điện cao nhất của EVN.\n` +
+               `• **Tuổi thọ tấm pin:** Trên 25 - 30 năm (bảo hành hiệu suất 25 năm của Canadian Solar / LONGi).\n` +
+               `• **Hiệu quả ròng:** Sau thời gian hoàn vốn, gia đình và doanh nghiệp dùng điện gần như miễn phí suốt hơn 20 năm tiếp theo!`;
+      }
+      if (q.includes('ban đêm') || q.includes('buổi tối') || q.includes('tối')) {
+        return `🌙 **Dùng Điện Mặt Trời Vào Ban Đêm:**\n\n` +
+               `• **Hệ bám tải thông thường:** Chỉ phát điện vào ban ngày khi có ánh nắng mặt trời, ban đêm nhà dùng điện lưới bình thường.\n` +
+               `• **Giải pháp dùng ban đêm:** Lắp đặt **Hệ thống Hybrid có Pin lưu trữ Lithium (10kWh - 16kWh)**. Ban ngày pin lưu trữ điện mặt trời dư thừa, ban đêm tự động xả điện cung cấp cho máy lạnh, đèn, quạt, tủ lạnh mà không tốn tiền điện lưới!`;
+      }
+      if (q.includes('bám tải') || q.includes('dân dụng') || q.includes('hộ gia đình') || q.includes('mái nhà') || q.includes('5kw') || q.includes('10kw') || q.includes('tiết kiệm')) {
+        return `⚡ **Gói Điện Mặt Trời Bám Tải Dân Dụng (5kWp - 10kWp):**\n\n` +
+               `• **Đối tượng:** Hộ gia đình có tiền điện 1.5 - 3.5+ triệu/tháng, dùng nhiều máy lạnh ban ngày.\n` +
+               `• **Cơ chế:** Hòa lưới bám tải Zero-Export, sản lượng dùng trực tiếp ban ngày để triệt tiêu bậc giá điện cao nhất.\n` +
+               `• **Hiệu quả:** Tiết kiệm đến 80% tiền điện ban ngày và làm mát tự nhiên trần nhà.\n` +
+               `• **Thiết bị:** Inverter Solis/Deye/Luxpower + Pin Tier-1 Canadian Solar / LONGi / TCL.\n` +
+               `• **Bảo hành:** Tấm pin bảo hành 12-25 năm, Inverter 5-10 năm.\n\n` +
+               `📞 Hãy gọi hotline **0787 691 089** để được kỹ sư lên dự toán và thiết kế miễn phí!`;
+      }
+      if (q.includes('hybrid') || q.includes('lưu trữ') || q.includes('lithium') || q.includes('mất điện') || q.includes('cúp điện') || q.includes('bess') || q.includes('ắc quy')) {
+        return `🔋 **Hệ Thống Hybrid Có Pin Lưu Trữ (5kW - 10kW / Lưu 10 - 16kWh):**\n\n` +
+               `• **Giải pháp:** Cung cấp nguồn điện liên tục 24/7 cho gia đình và biệt thự, không phụ thuộc lưới điện.\n` +
+               `• **Tính năng:** Tự động chuyển mạch UPS tức thì (<10ms) khi cúp điện lưới, máy tính, tủ lạnh, camera không bị tắt.\n` +
+               `• **Lưu trữ:** Pin Lithium Pylontech / Deye ESS chất lượng cao (>6.000 chu kỳ sạc xả, tuổi thọ trên 15 năm).\n\n` +
+               `👉 Liên hệ hotline/Zalo **0787 691 089** để tính dung lượng pin phù hợp tải gia đình bạn!`;
+      }
+      if (q.includes('bơm') || q.includes('nông nghiệp') || q.includes('tưới') || q.includes('sầu riêng') || q.includes('cà phê') || q.includes('rẫy') || q.includes('hồ tiêu')) {
+        return `🌾 **Hệ Thống Bơm Năng Lượng Mặt Trời Nông Nghiệp (3HP - 10HP):**\n\n` +
+               `• **Ứng dụng:** Chuyên tưới rẫy cà phê, sầu riêng, hồ tiêu, cây ăn trái tại Gia Lai và Tây Nguyên.\n` +
+               `• **Ưu điểm:** Bơm trực tiếp bằng năng lượng mặt trời, không cần kéo điện lưới xa, không tốn tiền dầu máy nổ.\n` +
+               `• **Vận hành:** Tự động bơm khi có nắng, có biến tần chuyên dụng chống cạn và bảo vệ động cơ bơm.\n\n` +
+               `📞 Gọi ngay **0787 691 089** để nhận tư vấn trọn gói hệ thống bơm tưới tự động!`;
+      }
+      if (q.includes('doanh nghiệp') || q.includes('nhà xưởng') || q.includes('khách sạn') || q.includes('esg') || q.includes('15kw') || q.includes('50kw')) {
+        return `🏢 **Gói Điện Mặt Trời Doanh Nghiệp & Nhà Xưởng (15kWp - 50kWp+):**\n\n` +
+               `• **Mục tiêu:** Cắt giảm chi phí điện giá cao giờ cao điểm sản xuất, tối ưu ngân sách vận hành.\n` +
+               `• **Lợi ích dài hạn:** Khấu hao nhanh 3 - 4 năm, giúp doanh nghiệp đạt chứng chỉ xanh ESG quốc tế.\n` +
+               `• **Chính sách:** Khảo sát kết cấu mái, đo tải thực tế và lập hồ sơ kỹ thuật trọn gói miễn phí.\n\n` +
+               `📞 Hotline dự án EPC: **0787 691 089** (Hỗ trợ doanh nghiệp tận nơi).`;
+      }
+      if (q.includes('thiết bị') || q.includes('thương hiệu') || q.includes('inverter') || q.includes('pin') || q.includes('bảo hành') || q.includes('solis') || q.includes('deye')) {
+        return `🛡 **Thương Hiệu Thiết Bị & Tiêu Chuẩn Bảo Hành:**\n\n` +
+               `• **Biến tần (Inverter):** Solis, Deye, Luxpower, Sungrow, GoodWe (Bảo hành 5 - 10 năm).\n` +
+               `• **Tấm pin quang điện:** Canadian Solar, LONGi Solar, TCL Solar (Bảo hành thiết bị 12 năm, hiệu suất 25 năm).\n` +
+               `• **Pin Lithium:** Pylontech, Deye ESS (Tuổi thọ >6.000 chu kỳ sạc xả).\n` +
+               `• **Cam kết:** 100% nhập khẩu chính ngạch, đầy đủ CO/CQ, hóa đơn VAT, giám sát qua app 24/7.`;
+      }
+      return null;
+    }
+
+    function toggleAiChat() {
+      const widget = document.getElementById('aiChatWidget');
+      widget.classList.toggle('active');
+      if (widget.classList.contains('active')) {
+        document.getElementById('aiUserInput').focus();
+      }
+    }
+
+    function sendQuickPrompt(text) {
+      document.getElementById('aiUserInput').value = text;
+      handleAiChatSubmit(new Event('submit', { cancelable: true }));
+    }
+
+    async function callGeminiApi(userText) {
+      const systemPrompt = `Bạn là Chuyên viên Kỹ thuật & Tư vấn AI của Công ty TNHH Điện Mặt Trời Xanh (Điện Mặt Trời XANH - Tiên Phong Năng Lượng Sạch).
+QUY TẮC CỐT LÕI:
+1. KHÔNG lặp lại câu chào "Dạ chào Anh/Chị! Em là Trợ lý AI..." hay các lời chào khuôn mẫu dài dòng ở mỗi câu trả lời.
+2. Trả lời thẳng vào trọng tâm câu hỏi của khách hàng, súc tích, chuyên nghiệp, thông tin kỹ thuật và báo giá thực tế, dễ hiểu, có gạch đầu dòng rõ ràng.
+3. Kiến thức sản phẩm & Báo giá thực tế tham khảo của công ty:
+   • Gói bám tải dân dụng (Zero-Export - tiết kiệm điện ban ngày):
+     - 5kWp: ~45 - 55 triệu VNĐ (tạo ~600 - 750 kWh/tháng, tiết kiệm ~1.5 - 2 triệu/tháng). Phù hợp hộ dùng điện 1.5 - 3 triệu/tháng.
+     - 10kWp: ~85 - 95 triệu VNĐ (tạo ~1.200 - 1.500 kWh/tháng, tiết kiệm ~3 - 3.5 triệu/tháng). Phù hợp hộ dùng điện trên 3.5 triệu/tháng.
+     - Thời gian hoàn vốn: 3.5 - 4.5 năm.
+   • Hệ Hybrid có lưu trữ (dùng cả ban đêm và khi cúp điện):
+     - 5kW + Pin Lithium 10kWh: ~115 - 135 triệu VNĐ.
+     - 10kW + Pin Lithium 15kWh: ~180 - 210 triệu VNĐ.
+     - Pin Lithium Pylontech / Deye ESS tuổi thọ >15 năm (>6.000 chu kỳ sạc xả), tự động bật nguồn dự phòng UPS <10ms khi cúp điện.
+   • Bơm năng lượng mặt trời nông nghiệp (Tây Nguyên / Gia Lai):
+     - 3HP - 10HP chuyên tưới rẫy sầu riêng, cà phê, hồ tiêu. Hoạt động tự động khi có nắng, không tốn tiền dầu máy nổ, có biến tần chống cạn nước.
+   • Hệ Doanh nghiệp & Nhà xưởng:
+     - 15kWp - 100kWp+ giảm đỉnh giá cao điểm sản xuất, đạt chứng chỉ xanh ESG quốc tế, khấu hao 3 - 4 năm.
+   • Thiết bị chính hãng Tier-1: Solis, Deye, Luxpower, Canadian Solar, LONGi, Pylontech. Bảo hành vật lý tấm pin 12 năm, hiệu suất 25 năm; Inverter 5 - 10 năm.
+4. Thông tin liên hệ công ty:
+   • Hotline / Zalo tư vấn 24/7: 0787 691 089
+   • VP TP.HCM: 364 Cộng Hòa, P.13, Tân Bình, TP.HCM
+   • CN Gia Lai: Tổ 47, KP 5, P. Quy Nhơn Nam, Gia Lai
+   • Email: contact@dienmattroixanh.vn | Website: https://dienmattroixanh.vn/
+   • Kỹ sư khảo sát kết cấu mái và thiết kế mô hình 3D hoàn toàn MIỄN PHÍ tận nơi.`;
+
+      for (const model of GEMINI_MODELS) {
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+          const payload = {
+            systemInstruction: {
+              parts: [{ text: systemPrompt }]
+            },
+            contents: [
+              ...aiChatHistory.slice(-6),
+              {
+                role: 'user',
+                parts: [{ text: userText }]
+              }
+            ],
+            generationConfig: {
+              maxOutputTokens: 600,
+              temperature: 0.5
+            }
+          };
+
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+          });
+
+          clearTimeout(timeoutId);
+
+          if (!response.ok) {
+            console.warn(`[Gemini AI] Model ${model} returned HTTP ${response.status}. Trying next available model...`);
+            continue;
+          }
+
+          const data = await response.json();
+          if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+            console.log(`[Gemini AI] Real AI response received from ${model}!`);
+            return data.candidates[0].content.parts[0].text;
+          }
+        } catch (err) {
+          console.warn(`[Gemini AI] Error calling ${model}:`, err.message || err);
+        }
+      }
+      return null;
+    }
+
+    async function handleAiChatSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const input = document.getElementById('aiUserInput');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      const messagesBox = document.getElementById('aiChatMessages');
+      const submitBtn = document.getElementById('aiSubmitBtn');
+
+      // Add user message
+      const userMsgEl = document.createElement('div');
+      userMsgEl.className = 'ai-msg user';
+      userMsgEl.innerHTML = `<div class="ai-msg-bubble">${escapeHtml(userText)}</div>`;
+      messagesBox.appendChild(userMsgEl);
+      input.value = '';
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+
+      // Add typing indicator
+      const loadingEl = document.createElement('div');
+      loadingEl.className = 'ai-msg bot loading';
+      loadingEl.id = 'aiTypingIndicator';
+      loadingEl.innerHTML = `<div class="ai-msg-bubble"><span></span><span></span><span></span></div>`;
+      messagesBox.appendChild(loadingEl);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+      submitBtn.disabled = true;
+
+      try {
+        // Try Gemini API first with provided key
+        let replyText = await callGeminiApi(userText);
+
+        // Fall back to local knowledge base if API is busy
+        if (!replyText) {
+          replyText = getLocalAnswer(userText);
+        }
+
+        // Generic friendly reply with full contact details
+        if (!replyText) {
+          replyText = `Cảm ơn bạn đã quan tâm đến **Công ty TNHH Điện Mặt Trời Xanh**! ☀️\n\n` +
+                      `Chúng tôi sẵn sàng hỗ trợ tư vấn:\n` +
+                      `• Gói bám tải gia đình (5kWp - 10kWp)\n` +
+                      `• Gói doanh nghiệp & xưởng (15kWp - 50kWp+)\n` +
+                      `• Hệ Hybrid lưu trữ 24/7 (pin Lithium 10 - 16kWh)\n` +
+                      `• Bơm tưới rẫy cà phê, sầu riêng (3HP - 10HP)\n\n` +
+                      `📍 **VP:** 364 Cộng Hòa, Tân Bình, TP.HCM & Tổ 47, KP 5, P. Quy Nhơn Nam, Gia Lai.\n` +
+                      `📞 **Hotline / Zalo 24/7:** [0787 691 089](tel:0787691089).\n` +
+                      `Kỹ sư sẽ liên hệ tư vấn và khảo sát mái hoàn toàn miễn phí!`;
+        }
+
+        const indicator = document.getElementById('aiTypingIndicator');
+        if (indicator) indicator.remove();
+
+        aiChatHistory.push({ role: 'user', parts: [{ text: userText }] });
+        aiChatHistory.push({ role: 'model', parts: [{ text: replyText }] });
+
+        const botMsgEl = document.createElement('div');
+        botMsgEl.className = 'ai-msg bot';
+        botMsgEl.innerHTML = `<div class="ai-msg-bubble">${formatAiText(replyText)}</div>`;
+        messagesBox.appendChild(botMsgEl);
+      } catch (err) {
+        const indicator = document.getElementById('aiTypingIndicator');
+        if (indicator) indicator.remove();
+
+        const botMsgEl = document.createElement('div');
+        botMsgEl.className = 'ai-msg bot';
+        botMsgEl.innerHTML = `<div class="ai-msg-bubble">Chào bạn! Bạn vui lòng gọi ngay hotline/Zalo <a href="tel:0787691089" style="color:#2563eb;font-weight:bold;">0787 691 089</a> để kỹ sư Điện Mặt Trời Xanh hỗ trợ và khảo sát miễn phí ngay nhé!</div>`;
+        messagesBox.appendChild(botMsgEl);
+      } finally {
+        submitBtn.disabled = false;
+        messagesBox.scrollTop = messagesBox.scrollHeight;
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function formatAiText(text) {
+      let formatted = escapeHtml(text);
+      formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      formatted = formatted.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:600;text-decoration:underline;">$1</a>');
+      formatted = formatted.replace(/\n/g, '<br>');
+      return formatted;
     }
   </script>
 </body>
