@@ -2000,7 +2000,89 @@
         justify-content: center;
       }
     }
-  </style>
+  
+    /* Product Buttons & Badges (Connecting to Dedicated Catalogue Page) */
+    .cta-product-btn {
+      background: rgba(255, 255, 255, 0.18) !important;
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255, 255, 255, 0.85) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+      transition: all 0.3s ease !important;
+    }
+    .cta-product-btn:hover {
+      background: white !important;
+      color: #1e3a8a !important;
+      transform: translateY(-2px) !important;
+    }
+    .hero-quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .hero-quick-pill:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .service-product-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #27ae60;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 14px;
+      transition: all 0.2s ease;
+    }
+    .service-product-btn:hover {
+      color: #219653;
+      transform: translateX(4px);
+    }
+    .package-equipment-btn {
+      display: block;
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      padding: 9px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      transition: all 0.25s ease;
+    }
+    .package-equipment-btn:hover {
+      background: #dbeafe;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .featured-product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    .btn-spotlight:hover {
+      background: #dbeafe !important;
+      border-color: #2563eb !important;
+      color: #1e40af !important;
+      transform: translateY(-2px);
+    }
+
+</style>
 </head>
 <body>
 
@@ -2020,6 +2102,7 @@
         <a href="#commitments" class="trans" data-vi="Cam Kết" data-en="Commitment">Cam Kết</a>
         <a href="#services" class="trans" data-vi="Giải Pháp" data-en="Solutions">Giải Pháp</a>
         <a href="#packages" class="trans" data-vi="Gói Lắp Đặt" data-en="Packages">Gói Lắp Đặt</a>
+        <a href="san-pham.html" class="trans" data-vi="Sản Phẩm" data-en="Products">Sản Phẩm</a>
         <a href="du-an-thuc-te.html" class="trans" data-vi="Dự Án Thực Tế" data-en="Real Projects">Dự Án Thực Tế</a>
         <a href="#about" class="trans" data-vi="Giới Thiệu" data-en="About">Giới Thiệu</a>
         <a href="#connect" class="trans" data-vi="Kết Nối" data-en="Connect">Kết Nối</a>
@@ -2052,9 +2135,19 @@
       <p class="trans" data-vi="Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu." data-en="Reduce your electricity bills and carbon footprint with our premium residential, commercial, and agricultural solar installations.">
         Giảm hóa đơn tiền điện và lượng khí thải carbon với các giải pháp điện mặt trời áp mái dân dụng, nhà xưởng và bơm tưới nông nghiệp hàng đầu.
       </p>
-      <a href="#connect" class="cta-button trans" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →" data-en="Connect / Get a Free Quote →">
-        Kết Nối / Nhận Báo Giá Miễn Phí →
-      </a>
+      <div class="hero-cta-buttons" style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 24px;">
+        <a href="#connect" class="cta-button trans" data-vi="Kết Nối / Nhận Báo Giá Miễn Phí →" data-en="Connect / Get a Free Quote →">
+          Kết Nối / Nhận Báo Giá Miễn Phí →
+        </a>
+        <a href="san-pham.html" class="cta-button cta-product-btn trans" data-vi="📦 Xem Catalogue Thiết Bị Tier-1 →" data-en="📦 View Tier-1 Product Catalogue →">
+          📦 Xem Catalogue Thiết Bị Tier-1 →
+        </a>
+      </div>
+      <div class="hero-quick-equipment" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 18px;">
+        <a href="san-pham.html#panels" class="hero-quick-pill trans" data-vi="☀️ Tấm Pin N-Type TOPCon (615Wp - 625Wp)" data-en="☀️ N-Type TOPCon Panels (615Wp - 625Wp)">☀️ Tấm Pin N-Type TOPCon (615Wp - 625Wp)</a>
+        <a href="san-pham.html#inverters" class="hero-quick-pill trans" data-vi="⚡ Inverter Hybrid (Solis / Deye / GoodWe)" data-en="⚡ Hybrid Inverters (Solis / Deye / GoodWe)">⚡ Inverter Hybrid (Solis / Deye / GoodWe)</a>
+        <a href="san-pham.html#batteries" class="hero-quick-pill trans" data-vi="🔋 Pin Lưu Trữ Lithium (16kWh LiFePO4)" data-en="🔋 Lithium Storage (16kWh LiFePO4)">🔋 Pin Lưu Trữ Lithium (16kWh LiFePO4)</a>
+      </div>
     </div>
 
     <!-- Navigation Dots for Slideshow -->
@@ -2119,21 +2212,25 @@
         <div class="service-icon">🏠</div>
         <h3 class="trans" data-vi="Điện Mặt Trời Dân Dụng" data-en="Residential Solar">Điện Mặt Trời Dân Dụng</h3>
         <p class="trans" data-vi="Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên." data-en="Custom rooftop systems designed to maximize daytime solar production and drastically cut monthly electricity bills.">Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên.</p>
+        <a href="san-pham.html#inverters" class="service-product-btn trans" data-vi="⚡ Xem Thiết Bị Cho Hộ Gia Đình →" data-en="⚡ View Residential Equipment →">⚡ Xem Thiết Bị Cho Hộ Gia Đình →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🏢</div>
         <h3 class="trans" data-vi="Nhà Xưởng & Doanh Nghiệp" data-en="Commercial & Industrial">Nhà Xưởng & Doanh Nghiệp</h3>
         <p class="trans" data-vi="Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG." data-en="Large-scale rooftop integrations to reduce manufacturing overhead and achieve ESG green compliance goals.">Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG.</p>
+        <a href="san-pham.html#panels" class="service-product-btn trans" data-vi="🏢 Xem Tấm Pin & Inverter 125kW →" data-en="🏢 View C&I Panels & 125kW Inverter →">🏢 Xem Tấm Pin & Inverter 125kW →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🔋</div>
         <h3 class="trans" data-vi="Hệ Thống Lưu Trữ Hybrid" data-en="Battery Backup & Hybrid">Hệ Thống Lưu Trữ Hybrid</h3>
         <p class="trans" data-vi="Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm." data-en="Store excess solar energy into lithium batteries for uninterrupted 24/7 power during outages and evening peaks.">Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm.</p>
+        <a href="san-pham.html#batteries" class="service-product-btn trans" data-vi="🔋 Xem Pin Lưu Trữ Lithium 16kWh →" data-en="🔋 View 16kWh Lithium Battery Packs →">🔋 Xem Pin Lưu Trữ Lithium 16kWh →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🌾</div>
         <h3 class="trans" data-vi="Bơm Tưới Nông Nghiệp" data-en="Agricultural Solar Pumping">Bơm Tưới Nông Nghiệp</h3>
         <p class="trans" data-vi="Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu." data-en="Direct solar pumping systems for farms, orchards, and irrigation in remote regions with unstable or absent grid power.">Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu.</p>
+        <a href="san-pham.html#inverters" class="service-product-btn trans" data-vi="🌾 Xem Biến Tần & Tấm Pin Bơm Nước →" data-en="🌾 View Pumping Inverters & Panels →">🌾 Xem Biến Tần & Tấm Pin Bơm Nước →</a>
       </div>
     </div>
   </section>
@@ -2156,8 +2253,9 @@
             <span class="project-verified-badge trans" data-vi="✓ DỰ ÁN THỰC TẾ TIÊU BIỂU" data-en="✓ FEATURED REAL PROJECT">✓ DỰ ÁN THỰC TẾ TIÊU BIỂU</span>
             
             <!-- Project Tabs Switcher -->
-            <div class="project-tabs-switcher">
+            <div class="project-tabs-switcher" style="flex-wrap: wrap;">
               <button type="button" class="project-tab-btn active" onclick="switchProjectCard('ongridHieu', this)">Anh Hiếu (6 tấm)</button>
+              <button type="button" class="project-tab-btn" onclick="switchProjectCard('ongridPhuc', this)">Chú Phúc (12 tấm)</button>
               <button type="button" class="project-tab-btn" onclick="switchProjectCard('ongridVi', this)">Văn Vĩ (14 tấm)</button>
             </div>
           </div>
@@ -2182,7 +2280,27 @@
             </div>
           </div>
 
-          <!-- Project 2: Van Vi -->
+          <!-- Project 2: Chu Phuc -->
+          <div id="ongridPhuc" class="project-showcase-content" style="display: none;">
+            <div class="project-owner-title trans" data-vi="Chủ hộ: CHÚ PHÚC" data-en="Client: MR. PHUC">Chủ hộ: CHÚ PHÚC</div>
+            <div class="project-gallery-grid">
+              <div class="project-gallery-item" onclick="openLightboxModal('image/Chú_Phúc_inverter.jpg', 'Dự án Bám Tải Chú Phúc - Nghiệm thu Inverter hòa lưới bám tải & tủ điện an toàn')" title="Xem ảnh lớn">
+                <img src="image/Chú_Phúc_inverter.jpg" alt="Dự án Bám Tải Chú Phúc - Inverter bám tải & tủ điện" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Inverter & tủ điện" data-en="Inverter & Electrical Box">Inverter & tủ điện</span>
+              </div>
+              <div class="project-gallery-item" onclick="openLightboxModal('image/Chú_Phúc_pin_trên_mái.jpg', 'Dự án Bám Tải Chú Phúc - Dàn 12 tấm pin mặt trời áp mái đón nắng')" title="Xem ảnh lớn">
+                <img src="image/Chú_Phúc_pin_trên_mái.jpg" alt="Dự án Bám Tải Chú Phúc - Dàn 12 tấm pin" loading="lazy">
+                <div class="gallery-overlay">🔍</div>
+                <span class="gallery-tag trans" data-vi="Dàn 12 tấm pin áp mái" data-en="12 Solar Panels Array">Dàn 12 tấm pin áp mái</span>
+              </div>
+            </div>
+            <div class="project-showcase-loc trans" data-vi="📍 Hệ thống hòa lưới bám tải 12 tấm pin • Tiết kiệm 3.5 triệu đồng tiền điện mỗi tháng." data-en="📍 Grid-tied zero-export system with 12 solar panels • Saving 3.5 million VND each month.">
+              📍 Hệ thống hòa lưới bám tải 12 tấm pin • Tiết kiệm 3.5 triệu đồng tiền điện mỗi tháng.
+            </div>
+          </div>
+
+          <!-- Project 3: Van Vi -->
           <div id="ongridVi" class="project-showcase-content" style="display: none;">
             <div class="project-owner-title trans" data-vi="Chủ hộ: VĂN VĨ" data-en="Client: MR. VAN VI">Chủ hộ: VĂN VĨ</div>
             <div class="project-gallery-grid">
@@ -2203,6 +2321,7 @@
           </div>
         </div>
 
+        <a href="san-pham.html#panels" class="package-equipment-btn trans" data-vi="📦 Xem Thiết Bị Gói Này (Pin & Inverter) →" data-en="📦 View Package Equipment (Panels & Inverter) →">📦 Xem Thiết Bị Gói Này (Pin & Inverter) →</a>
         <a href="du-an-thuc-te.html#ongrid" class="package-gallery-btn trans" data-vi="📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →" data-en="📸 View All Real Project Photos →">📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
@@ -2212,6 +2331,7 @@
         <span class="package-badge badge-blue trans" data-vi="HỆ DOANH NGHIỆP" data-en="COMMERCIAL / INDUSTRIAL">HỆ DOANH NGHIỆP</span>
         <h3 class="trans" data-vi="Gói Doanh Nghiệp 15kWp - 50kWp" data-en="Package 15kWp - 50kWp">Gói Doanh Nghiệp 15kWp - 50kWp</h3>
         <p class="trans" data-vi="Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh." data-en="Tailored for workshops, stores, and small factories to offset high daytime peak commercial electricity rates.">Dành cho nhà xưởng, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh.</p>
+        <a href="san-pham.html#inverters" class="package-equipment-btn trans" data-vi="📦 Xem Tấm Pin & Inverter 125kW →" data-en="📦 View C&I Panels & 125kW Inverters →">📦 Xem Tấm Pin & Inverter 125kW →</a>
         <a href="du-an-thuc-te.html#commercial" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
@@ -2343,6 +2463,7 @@
           </div>
         </div>
 
+        <a href="san-pham.html#batteries" class="package-equipment-btn trans" data-vi="📦 Xem Biến Tần Hybrid & Pin 16kWh →" data-en="📦 View Hybrid Inverter & 16kWh Battery →">📦 Xem Biến Tần Hybrid & Pin 16kWh →</a>
         <a href="du-an-thuc-te.html#hybrid" class="package-gallery-btn trans" data-vi="📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →" data-en="📸 View All Real Project Photos →">📸 Xem Toàn Bộ Ảnh Công Trình Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
@@ -2352,6 +2473,7 @@
         <span class="package-badge badge-amber trans" data-vi="BƠM NĂNG LƯỢNG MẶT TRỜI" data-en="AGRICULTURAL PUMPING">BƠM NĂNG LƯỢNG MẶT TRỜI</span>
         <h3 class="trans" data-vi="Hệ Bơm Tưới 3HP - 10HP" data-en="Solar Pumping 3HP - 10HP">Hệ Bơm Tưới 3HP - 10HP</h3>
         <p class="trans" data-vi="Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa." data-en="Automatic water pumping directly from sunlight for farms and orchards, eliminating fuel costs and grid connection fees.">Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa.</p>
+        <a href="san-pham.html#inverters" class="package-equipment-btn trans" data-vi="📦 Xem Biến Tần Bơm Nước Năng Lượng Mặt Trời →" data-en="📦 View Solar Pump Inverters →">📦 Xem Biến Tần Bơm Nước Năng Lượng Mặt Trời →</a>
         <a href="du-an-thuc-te.html" class="package-gallery-btn trans" data-vi="📷 Xem Hình Ảnh Khách Hàng Thực Tế →" data-en="📷 View Real Customer Photos →">📷 Xem Hình Ảnh Khách Hàng Thực Tế →</a>
         <a href="#connect" class="package-link trans" data-vi="Nhận Báo Giá Gói Này →" data-en="Request Details & Quote →">Nhận Báo Giá Gói Này →</a>
       </div>
@@ -2359,53 +2481,136 @@
   </section>
 
   <!-- Hardware Brand Partners Strip (Logos Only) -->
-  <section class="brands-section">
+    <section class="brands-section">
     <h3 class="trans" data-vi="Thương Hiệu Thiết Bị Hàng Đầu Đồng Hành" data-en="Trusted Tier-1 Equipment Partners">Thương Hiệu Thiết Bị Hàng Đầu Đồng Hành</h3>
     <div class="brand-logos">
       <!-- 1. Solis Inverters -->
-      <span class="brand-pill no-bg" title="Solis Inverters">
-        <img src="solis.png" alt="Solis Inverters" class="brand-logo-img" onerror="this.src='solis.jpg'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="Solis Inverters">
+        <img src="products/Solis.png" alt="Solis Inverters" class="brand-logo-img" onerror="this.src='products/solis.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 2. Deye ESS -->
-      <span class="brand-pill no-bg" title="Deye ESS">
-        <img src="Deye.png" alt="Deye ESS" class="brand-logo-img" onerror="this.src='deye.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="Deye ESS">
+        <img src="products/Deye.png" alt="Deye ESS" class="brand-logo-img" onerror="this.src='products/deye.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 3. Luxpower -->
-      <span class="brand-pill no-bg" title="Luxpower">
-        <img src="Luxpower.png" alt="Luxpower" class="brand-logo-img" onerror="this.src='luxpower.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="Luxpower">
+        <img src="products/Luxpower.png" alt="Luxpower" class="brand-logo-img" onerror="this.src='products/luxpower.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 4. Sungrow -->
-      <span class="brand-pill no-bg" title="Sungrow">
-        <img src="sungrow.png" alt="Sungrow" class="brand-logo-img" onerror="this.src='Sungrow.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="Sungrow">
+        <img src="products/sungrow.png" alt="Sungrow" class="brand-logo-img" onerror="this.src='products/Sungrow.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 5. GoodWe -->
-      <span class="brand-pill no-bg" title="GoodWe">
-        <img src="goodwe.png" alt="GoodWe" class="brand-logo-img" onerror="this.src='GoodWe.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="GoodWe">
+        <img src="products/goodwe.png" alt="GoodWe" class="brand-logo-img" onerror="this.src='products/GoodWe.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 6. TCL Solar -->
-      <span class="brand-pill no-bg" title="TCL Solar">
-        <img src="TCL.png" alt="TCL Solar" class="brand-logo-img" onerror="this.src='tcl.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#panels" class="brand-pill no-bg" title="TCL Solar">
+        <img src="products/TCL.png" alt="TCL Solar" class="brand-logo-img" onerror="this.src='products/tcl.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 7. Canadian Solar -->
-      <span class="brand-pill no-bg" title="Canadian Solar">
-        <img src="canadiansolar.png" alt="Canadian Solar" class="brand-logo-img" onerror="this.src='CanadianSolar.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#panels" class="brand-pill no-bg" title="Canadian Solar">
+        <img src="products/canadiansolar.png" alt="Canadian Solar" class="brand-logo-img" onerror="this.src='products/CanadianSolar.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
       <!-- 8. LONGi Solar -->
-      <span class="brand-pill no-bg" title="LONGi Solar">
-        <img src="longi.png" alt="LONGi Solar" class="brand-logo-img" onerror="this.src='LONGi.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <a href="san-pham.html#panels" class="brand-pill no-bg" title="LONGi Solar">
+        <img src="products/longi.png" alt="LONGi Solar" class="brand-logo-img" onerror="this.src='products/LONGi.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
 
-      <!-- 9. Pylontech Battery -->
-      <span class="brand-pill no-bg" title="Pylontech Battery">
-        <img src="Pylontech.png" alt="Pylontech Battery" class="brand-logo-img" onerror="this.src='pylontech.png'; this.onerror=function(){this.style.display='none';}">
-      </span>
+      <!-- 9. JA Solar -->
+      <a href="san-pham.html#panels" class="brand-pill no-bg" title="JA Solar">
+        <img src="products/jasolar.svg" alt="JA Solar" class="brand-logo-img">
+      </a>
+
+      <!-- 10. Power Brick SC -->
+      <a href="san-pham.html#batteries" class="brand-pill no-bg" title="Power Brick SC">
+        <img src="products/powerbrick.svg" alt="Power Brick SC" class="brand-logo-img">
+      </a>
+
+      <!-- 11. Dyness ESS -->
+      <a href="san-pham.html#batteries" class="brand-pill no-bg" title="Dyness ESS">
+        <img src="products/dyness_dark.svg" alt="Dyness ESS" class="brand-logo-img">
+      </a>
+
+      <!-- 12. Pylontech Battery -->
+      <a href="san-pham.html#batteries" class="brand-pill no-bg" title="Pylontech Battery">
+        <img src="products/Pylontech.png" alt="Pylontech Battery" class="brand-logo-img" onerror="this.src='products/pylontech.png'; this.onerror=function(){this.style.display='none';}">
+      </a>
+
+      <!-- 13. INVT Solar -->
+      <a href="san-pham.html#inverters" class="brand-pill no-bg" title="INVT Solar">
+        <img src="products/invt.svg" alt="INVT Solar" class="brand-logo-img">
+      </a>
+    </div>
+
+    <!-- Direct Switch Button to Product Catalogue Page -->
+    <div style="text-align: center; margin-top: 28px;">
+      <a href="san-pham.html" class="cta-button trans" data-vi="📦 Khám Phá Toàn Bộ Catalogue Thiết Bị & Bảng Thông Số Kỹ Thuật →" data-en="📦 Explore Complete Hardware Catalogue & Technical Datasheets →" style="display: inline-flex; align-items: center; gap: 8px;">
+        📦 Khám Phá Toàn Bộ Catalogue Thiết Bị & Bảng Thông Số Kỹ Thuật →
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Equipment Spotlight Showcase Using products/ folder images -->
+  <section class="featured-products-section" style="padding: 60px 10%; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <span class="trans" data-vi="🛡️ DANH MỤC THIẾT BỊ TIER-1 TIÊU BIỂU" data-en="🛡️ FEATURED TIER-1 HARDWARE" style="background: rgba(37, 99, 235, 0.1); color: #1e40af; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 12px; letter-spacing: 0.5px;">🛡️ DANH MỤC THIẾT BỊ TIER-1 TIÊU BIỂU</span>
+      <h2 class="section-title trans" data-vi="Thiết Bị Tiên Tiến Chuẩn Quốc Tế Theo Hồ Sơ Năng Lực" data-en="Advanced Tier-1 Solar Hardware in Capability Profile" style="font-size: 28px; font-weight: 800; color: #1e3a8a; margin-bottom: 10px;">Thiết Bị Tiên Tiến Chuẩn Quốc Tế Theo Hồ Sơ Năng Lực</h2>
+      <p class="section-subtitle trans" data-vi="Khám phá ngay các dòng tấm pin N-type TOPCon, biến tần Inverter Hybrid thông minh và pin lưu trữ Lithium dung lượng cao." data-en="Explore high-efficiency N-Type TOPCon panels, smart multi-source Hybrid inverters, and high-capacity LiFePO4 batteries." style="font-size: 15px; color: #64748b; max-width: 800px; margin: 0 auto 36px auto;">Khám phá ngay các dòng tấm pin N-type TOPCon, biến tần Inverter Hybrid thông minh và pin lưu trữ Lithium dung lượng cao.</p>
+
+      <div class="featured-products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; text-align: left;">
+        
+        <!-- Spotlight 1: Solar Panels -->
+        <div class="featured-product-card" style="background: white; border-radius: 14px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 190px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 10px; margin-bottom: 16px; overflow: hidden; position: relative; border: 1px solid #f1f5f9;">
+            <img src="products/jasolar_deepblue_panel.jpg" alt="Tấm Pin JA Solar DeepBlue 4.0 Pro" style="max-height: 170px; max-width: 90%; object-fit: contain;">
+            <span style="position: absolute; top: 10px; right: 10px; background: #f59e0b; color: white; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 12px;">615W - 625Wp</span>
+          </div>
+          <span style="font-size: 12px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Tấm Pin N-Type TOPCon</span>
+          <h3 style="font-size: 17.5px; font-weight: 700; color: #1e3a8a; margin: 4px 0 8px 0;">JA Solar / TCL Solar 615Wp - 625Wp</h3>
+          <p class="trans" data-vi="Cell N-type Bycium+ hai mặt kính, hiệu suất 23.0%, kích thước 2.382m x 1.134m, bảo hành vật lý 12 năm và 30 năm hiệu suất (>87.4%)." data-en="N-Type Bycium+ dual-glass cells, 23.0% module efficiency, 12 years product warranty, and 30 years linear performance (>87.4%)." style="font-size: 13.5px; color: #64748b; margin-bottom: 18px; line-height: 1.55; flex-grow: 1;">Cell N-type Bycium+ hai mặt kính, hiệu suất 23.0%, kích thước 2.382m x 1.134m, bảo hành vật lý 12 năm và 30 năm hiệu suất (&gt;87.4%).</p>
+          <a href="san-pham.html#panels" class="btn-spotlight trans" data-vi="⚡ Xem Catalogue Tấm Pin →" data-en="⚡ View Solar Panels Catalogue →" style="display: block; text-align: center; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 11px 14px; border-radius: 8px; font-weight: 600; font-size: 13.5px; text-decoration: none; transition: all 0.25s ease;">⚡ Xem Catalogue Tấm Pin →</a>
+        </div>
+
+        <!-- Spotlight 2: Inverters -->
+        <div class="featured-product-card" style="background: white; border-radius: 14px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 190px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 10px; margin-bottom: 16px; overflow: hidden; position: relative; border: 1px solid #f1f5f9;">
+            <img src="products/solis_s6_inverter.png" alt="Biến Tần Inverter Hybrid Solis" style="max-height: 170px; max-width: 90%; object-fit: contain;">
+            <span style="position: absolute; top: 10px; right: 10px; background: #2563eb; color: white; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 12px;">Eff 98.4%</span>
+          </div>
+          <span style="font-size: 12px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Biến Tần Hybrid Đa Nhiệm</span>
+          <h3 style="font-size: 17.5px; font-weight: 700; color: #1e3a8a; margin: 4px 0 8px 0;">Solis / Deye / GoodWe (6kW - 125kW)</h3>
+          <p class="trans" data-vi="Chuyển mạch UPS &lt;10ms tức thì khi mất điện, chống nước IP66, tích hợp chống phát ngược Zero-Export CT và quản lý SolisCloud / SEMS." data-en="UPS switching &lt;10ms, IP66 rated, integrated Zero-Export CT clamp, and full SolisCloud / SEMS mobile monitoring." style="font-size: 13.5px; color: #64748b; margin-bottom: 18px; line-height: 1.55; flex-grow: 1;">Chuyển mạch UPS &lt;10ms tức thì khi mất điện, chống nước IP66, tích hợp chống phát ngược Zero-Export CT và quản lý SolisCloud / SEMS.</p>
+          <a href="san-pham.html#inverters" class="btn-spotlight trans" data-vi="⚡ Xem Catalogue Inverter →" data-en="⚡ View Inverters Catalogue →" style="display: block; text-align: center; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 11px 14px; border-radius: 8px; font-weight: 600; font-size: 13.5px; text-decoration: none; transition: all 0.25s ease;">⚡ Xem Catalogue Inverter →</a>
+        </div>
+
+        <!-- Spotlight 3: Batteries -->
+        <div class="featured-product-card" style="background: white; border-radius: 14px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div style="height: 190px; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 10px; margin-bottom: 16px; overflow: hidden; position: relative; border: 1px solid #f1f5f9;">
+            <img src="products/powerbrick_16kwh_battery.jpg" alt="Pin Lưu Trữ Lithium Power Brick" style="max-height: 170px; max-width: 90%; object-fit: contain;">
+            <span style="position: absolute; top: 10px; right: 10px; background: #059669; color: white; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 12px;">16.0 kWh</span>
+          </div>
+          <span style="font-size: 12px; color: #27ae60; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Pin Lưu Trữ Lithium LiFePO4</span>
+          <h3 style="font-size: 17.5px; font-weight: 700; color: #1e3a8a; margin: 4px 0 8px 0;">Power Brick SC 16kWh / Dyness / Pylontech</h3>
+          <p class="trans" data-vi="Khối pin 51.2V-314Ah dung lượng cao 16kWh, dòng xả liên tục max 140A-200A, độ xả sâu DOD 95%, tuổi thọ &gt;6000 chu kỳ, bảo hành 10 năm." data-en="High-capacity 51.2V-314Ah 16kWh LiFePO4 battery pack, continuous discharge 140A-200A, 95% DoD, &gt;6,000 cycles, 10-year warranty." style="font-size: 13.5px; color: #64748b; margin-bottom: 18px; line-height: 1.55; flex-grow: 1;">Khối pin 51.2V-314Ah dung lượng cao 16kWh, dòng xả liên tục max 140A-200A, độ xả sâu DOD 95%, tuổi thọ &gt;6000 chu kỳ, bảo hành 10 năm.</p>
+          <a href="san-pham.html#batteries" class="btn-spotlight trans" data-vi="⚡ Xem Catalogue Pin Lưu Trữ →" data-en="⚡ View Batteries Catalogue →" style="display: block; text-align: center; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 11px 14px; border-radius: 8px; font-weight: 600; font-size: 13.5px; text-decoration: none; transition: all 0.25s ease;">⚡ Xem Catalogue Pin Lưu Trữ →</a>
+        </div>
+
+      </div>
+
+      <!-- Centered Button to Switch Page -->
+      <div style="margin-top: 36px;">
+        <a href="san-pham.html" class="cta-button trans" data-vi="📦 Khám Phá Toàn Bộ 15 Thiết Bị Trong Catalogue Sản Phẩm →" data-en="📦 Explore All 15 Hardware Models in Full Product Catalogue →" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; font-size: 15px;">
+          📦 Khám Phá Toàn Bộ 15 Thiết Bị Trong Catalogue Sản Phẩm →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -2583,7 +2788,8 @@
 
         <div class="info-row">
           <strong class="trans" data-vi="Email" data-en="Email">Email</strong>
-          <a href="mailto:contact@dienmattroixanh.vn">contact@dienmattroixanh.vn</a>
+          <p><a href="san-pham.html" class="trans" data-vi="📦 Catalogue Thiết Bị & Sản Phẩm Chính Hãng" data-en="📦 Tier-1 Hardware & Product Catalogue" style="color: #38bdf8; font-weight: 600; text-decoration: underline;">📦 Catalogue Thiết Bị & Sản Phẩm Chính Hãng →</a></p>
+    <p><strong>Email:</strong> <a href="mailto:contact@dienmattroixanh.vn">contact@dienmattroixanh.vn</a>
         </div>
 
         <div class="info-row">
@@ -3118,7 +3324,7 @@
       for (const endpoint of endpoints) {
         try {
           const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 10000);
+          const timeoutId = setTimeout(() => controller.abort(), 15000);
 
           const response = await fetch(endpoint, {
             method: 'POST',
