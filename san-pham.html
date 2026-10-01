@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue Thiết Bị & Sản Phẩm Chính Hãng Tier-1 | Điện Mặt Trời Xanh</title>
+  <meta name="description" content="Danh mục thiết bị tấm pin N-type TOPCon, biến tần Inverter Hybrid và pin lưu trữ Lithium tiêu chuẩn quốc tế theo Hồ sơ đánh giá năng lực Điện Mặt Trời Xanh.">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    :root {
+      --primary-color: #f39c12;
+      --primary-hover: #d68910;
+      --secondary-color: #27ae60;
+      --secondary-hover: #219653;
+      --dark-bg: #1e293b;
+      --dark-card: #0f172a;
+      --light-bg: #f8fafc;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --card-hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      --accent-blue: #1e3a8a;
+    }
+    body {
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 14px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .brand-composite {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-graphic {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .brand-info h1 {
+      color: var(--accent-blue);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .brand-info h1 span {
+      color: var(--primary-color);
+    }
+    .brand-info .brand-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .back-home-btn:hover {
+      background: #dbeafe;
+      color: #1e40af;
+      transform: translateY(-1px);
+    }
+    .btn-contact-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--secondary-color);
+      color: white;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-contact-header:hover {
+      background: var(--secondary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 4px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: white;
+      color: var(--primary-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hero Banner */
+    .product-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #064e3b 100%);
+      color: white;
+      padding: 60px 8% 50px 8%;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(243, 156, 18, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(243, 156, 18, 0.2);
+      border: 1px solid rgba(243, 156, 18, 0.4);
+      color: #fbbf24;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .product-hero h2 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+    .product-hero h2 span {
+      color: #fbbf24;
+    }
+    .product-hero p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #e2e8f0;
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+    .hero-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .hero-stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-icon {
+      font-size: 28px;
+    }
+    .stat-text .stat-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1.2;
+    }
+    .stat-text .stat-label {
+      font-size: 12.5px;
+      color: #cbd5e1;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 40px 24px 80px 24px;
+    }
+
+    /* Filter Bar */
+    .filter-sticky-bar {
+      position: sticky;
+      top: 78px;
+      z-index: 90;
+      background: rgba(248, 250, 252, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 14px 0;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .filter-tab {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      text-decoration: none;
+    }
+    .filter-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    .filter-tab.active {
+      background: var(--dark-bg);
+      color: white;
+      border-color: var(--dark-bg);
+      box-shadow: 0 4px 12px rgba(30, 41, 59, 0.25);
+    }
+    .filter-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .filter-tab:not(.active) .filter-badge {
+      background: #e2e8f0;
+      color: var(--text-muted);
+    }
+
+    /* Section Headers */
+    .category-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 150px;
+    }
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .category-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .category-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+      gap: 28px;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-hover-shadow);
+      border-color: #cbd5e1;
+    }
+
+    /* Card Media */
+    .card-media-wrapper {
+      position: relative;
+      height: 280px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+      overflow: hidden;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .card-media-img {
+      max-height: 240px;
+      max-width: 90%;
+      object-fit: contain;
+      transition: transform 0.35s ease;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+    }
+    .product-card:hover .card-media-img {
+      transform: scale(1.06);
+    }
+    .zoom-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(30, 41, 59, 0.75);
+      color: white;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      backdrop-filter: blur(4px);
+    }
+    .card-media-wrapper:hover .zoom-hint {
+      opacity: 1;
+    }
+
+    /* Brand Watermark / Badge on Media */
+    .brand-logo-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 5px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-logo-badge img {
+      height: 24px;
+      width: auto;
+      max-width: 85px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .tier1-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(217, 119, 6, 0.3);
+    }
+
+    /* Card Body */
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-category-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+    }
+    .product-title {
+      font-size: 18.5px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .product-model-code {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: Consolas, monospace;
+      margin-bottom: 14px;
+      background: #f1f5f9;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Key Badges */
+    .product-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .highlight-pill {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .highlight-pill.blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+    }
+    .highlight-pill.gold {
+      background: #fffbeb;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+
+    /* Tech Specs Table */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+    .specs-table tr {
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+    .specs-table td {
+      padding: 7px 0;
+    }
+    .specs-table .spec-label {
+      color: var(--text-muted);
+      width: 48%;
+    }
+    .specs-table .spec-value {
+      font-weight: 600;
+      color: #1e293b;
+      text-align: right;
+    }
+
+    /* Accordion / Expandable Datasheet */
+    .accordion-toggle {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      width: 100%;
+      text-align: left;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      transition: background 0.2s ease;
+    }
+    .accordion-toggle:hover {
+      background: #f1f5f9;
+      color: var(--accent-blue);
+    }
+    .accordion-content {
+      display: none;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .accordion-content.active {
+      display: block;
+    }
+
+    /* Card Footer / CTA */
+    .card-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      gap: 10px;
+    }
+    .btn-quote-item {
+      flex: 1;
+      background: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-quote-item:hover {
+      background: var(--secondary-hover);
+      box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    }
+    .btn-quick-view {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid #cbd5e1;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-quick-view:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Real Installation Spotlight Section */
+    .field-installation-section {
+      background: white;
+      border-radius: 16px;
+      padding: 36px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+    .field-installation-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 10px;
+    }
+    .field-installation-desc {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      max-width: 800px;
+    }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .field-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+    .field-card:hover {
+      transform: translateY(-4px);
+    }
+    .field-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .field-card-info {
+      padding: 16px;
+    }
+    .field-card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .field-card-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Brand Ecosystem Grid */
+    .brand-ecosystem-section {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin-bottom: 60px;
+      scroll-margin-top: 150px;
+    }
+    .brand-ecosystem-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+    }
+    .brand-ecosystem-subtitle {
+      text-align: center;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+    .brand-partner-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px 14px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+    }
+    .brand-partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    .brand-partner-logo {
+      height: 48px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      mix-blend-mode: multiply;
+    }
+    .brand-partner-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .brand-partner-tier {
+      font-size: 11.5px;
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+
+    /* Consultation Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #065f46 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 44px 36px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+      margin-bottom: 40px;
+    }
+    .cta-banner h3 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      font-size: 15.5px;
+      max-width: 760px;
+      margin: 0 auto 28px auto;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-btn-primary {
+      background: var(--primary-color);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    }
+    .cta-btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .cta-btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .cta-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 900px;
+      max-height: 90vh;
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #0f172a;
+      text-align: center;
+    }
+    .lightbox-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-align: center;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.2s ease;
+    }
+    .lightbox-close:hover {
+      background: #dc2626;
+    }
+
+    /* Floating Contact Buttons */
+    .floating-contact-group {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+    .floating-social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.25s ease;
+      color: white;
+      text-decoration: none;
+    }
+    .floating-social-icon:hover {
+      transform: scale(1.12);
+    }
+    .floating-social-icon.tiktok {
+      background: #000000;
+    }
+    .floating-social-icon.facebook {
+      background: #1877f2;
+    }
+    .floating-zalo {
+      background: #0068ff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 104, 255, 0.35);
+      transition: transform 0.25s ease;
+    }
+    .floating-zalo:hover {
+      transform: scale(1.06);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-bg);
+      color: #94a3b8;
+      padding: 40px 8% 30px 8%;
+      border-top: 1px solid #334155;
+    }
+    .footer-content {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    .footer-copy {
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+      .product-hero h2 {
+        font-size: 28px;
+      }
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 5%;
+      }
+      .brand-info h1 {
+        font-size: 17px;
+      }
+      .product-hero {
+        padding: 40px 5% 35px 5%;
+      }
+      .product-hero h2 {
+        font-size: 24px;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-sticky-bar {
+        top: 68px;
+      }
+      .filter-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 6px;
+        white-space: nowrap;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header>
+    <a href="index.html#home" class="brand-composite" title="Trang Chủ Điện Mặt Trời Xanh">
+      <img src="image_1.png" alt="Điện Mặt Trời Xanh Logo" class="logo-graphic">
+      <div class="brand-info">
+        <h1>Điện Mặt Trời <span>Xanh</span></h1>
+        <span class="brand-sub trans" data-vi="Catalogue Thiết Bị Tier-1" data-en="Tier-1 Equipment Catalogue">Catalogue Thiết Bị Tier-1</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <a href="index.html" class="back-home-btn trans" data-vi="← Về Trang Chủ" data-en="← Back to Home">
+        ← Về Trang Chủ
+      </a>
+      <a href="index.html#connect" class="btn-contact-header trans" data-vi="⚡ Báo Giá" data-en="⚡ Get Quote">
+        ⚡ Báo Giá
+      </a>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button id="btn-vi" class="lang-btn active" onclick="changeLang('vi')">VI</button>
+        <button id="btn-en" class="lang-btn" onclick="changeLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="product-hero">
+    <div class="hero-badge trans" data-vi="🛡️ Danh Mục Thiết Bị Chính Hãng Theo Hồ Sơ Năng Lực" data-en="🛡️ Official Tier-1 Equipment Portfolio">
+      🛡️ Danh Mục Thiết Bị Chính Hãng Theo Hồ Sơ Năng Lực
+    </div>
+    <h2 class="trans" data-vi="Hệ Sinh Thái Thiết Bị Điện Mặt Trời Tier-1 Toàn Cầu" data-en="Global Tier-1 Solar Equipment Ecosystem">
+      Hệ Sinh Thái Thiết Bị Điện Mặt Trời <span>Tier-1 Toàn Cầu</span>
+    </h2>
+    <p class="trans" data-vi="Điện Mặt Trời Xanh cam kết 100% thiết bị chính hãng từ các thương hiệu dẫn đầu thế giới: Tấm pin N-Type TOPCon hiệu suất cao, Biến tần Inverter Hybrid thông minh đa nhiệm và Khối pin lưu trữ Lithium LiFePO4 dung lượng lớn, bảo hành vận hành lên tới 30 năm." data-en="Dien Mat Troi Xanh commits 100% genuine Tier-1 hardware from leading global manufacturers: High-efficiency N-Type TOPCon panels, smart multi-source Hybrid inverters, and high-capacity LiFePO4 Lithium batteries with up to 30 years performance warranty.">
+      Điện Mặt Trời Xanh cam kết 100% thiết bị chính hãng từ các thương hiệu dẫn đầu thế giới: Tấm pin N-Type TOPCon hiệu suất cao, Biến tần Inverter Hybrid thông minh đa nhiệm và Khối pin lưu trữ Lithium LiFePO4 dung lượng lớn, bảo hành vận hành lên tới 30 năm.
+    </p>
+
+    <!-- Key Metrics Bar -->
+    <div class="hero-stats-bar">
+      <div class="hero-stat-card">
+        <div class="stat-icon">☀️</div>
+        <div class="stat-text">
+          <div class="stat-num">615Wp - 625Wp</div>
+          <div class="stat-label trans" data-vi="Tấm Pin N-Type TOPCon Mới Nhất" data-en="Latest N-Type TOPCon Modules">Tấm Pin N-Type TOPCon Mới Nhất</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-text">
+          <div class="stat-num">98.4% Max Eff</div>
+          <div class="stat-label trans" data-vi="Biến Tần Inverter Hybrid & Chuỗi" data-en="Hybrid & String Inverter Max Eff">Biến Tần Inverter Hybrid & Chuỗi</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-icon">🔋</div>
+        <div class="stat-text">
+          <div class="stat-num">16 kWh (314Ah)</div>
+          <div class="stat-label trans" data-vi="Pin Lithium LiFePO4 Chu Kỳ Cao" data-en="High-Cycle LiFePO4 Batteries">Pin Lithium LiFePO4 Chu Kỳ Cao</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="stat-icon">📜</div>
+        <div class="stat-text">
+          <div class="stat-num">12 - 30 Năm</div>
+          <div class="stat-label trans" data-vi="Cam Kết Bảo Hành Chính Hãng" data-en="Manufacturer Direct Warranty">Cam Kết Bảo Hành Chính Hãng</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <div class="container">
+
+    <!-- Filter Bar (Sticky) -->
+    <div class="filter-sticky-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterCategory('all', this)">
+          <span class="trans" data-vi="Tất Cả Thiết Bị" data-en="All Equipment">Tất Cả Thiết Bị</span>
+          <span class="filter-badge">15</span>
+        </button>
+        <button class="filter-tab" onclick="filterCategory('panels', this)">
+          <span>☀️</span>
+          <span class="trans" data-vi="Tấm Pin Mặt Trời" data-en="Solar Panels">Tấm Pin Mặt Trời</span>
+          <span class="filter-badge">4</span>
+        </button>
+        <button class="filter-tab" onclick="filterCategory('inverters', this)">
+          <span>⚡</span>
+          <span class="trans" data-vi="Biến Tần Inverter" data-en="Inverters">Biến Tần Inverter</span>
+          <span class="filter-badge">8</span>
+        </button>
+        <button class="filter-tab" onclick="filterCategory('batteries', this)">
+          <span>🔋</span>
+          <span class="trans" data-vi="Pin Lưu Trữ Lithium" data-en="Storage Batteries">Pin Lưu Trữ Lithium</span>
+          <span class="filter-badge">3</span>
+        </button>
+        <button class="filter-tab" onclick="scrollToSection('brands')">
+          <span>🤝</span>
+          <span class="trans" data-vi="Thương Hiệu Đối Tác" data-en="Brand Partners">Thương Hiệu Đối Tác</span>
+          <span class="filter-badge">13</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== 1. SOLAR PANELS SECTION ==================== -->
+    <section id="panels" class="category-section product-category-block" data-category="panels">
+      <div class="category-header">
+        <div>
+          <h3 class="category-title trans" data-vi="☀️ Tấm Pin Năng Lượng Mặt Trời (Solar Panels)" data-en="☀️ Solar Photovoltaic Modules (Panels)">
+            ☀️ Tấm Pin Năng Lượng Mặt Trời (Solar Panels)
+          </h3>
+          <p class="category-subtitle trans" data-vi="Công nghệ Cell N-Type TOPCon & HPBC thế hệ mới, hiệu suất trên 22.8%, suy hao cực thấp, bảo hành 30 năm." data-en="Next-gen N-Type TOPCon & HPBC cell tech, efficiency over 22.8%, ultra-low degradation, 30-year warranty.">
+            Công nghệ Cell N-Type TOPCon & HPBC thế hệ mới, hiệu suất trên 22.8%, suy hao cực thấp, bảo hành 30 năm.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- 1. JA Solar DeepBlue 4.0 Pro -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/jasolar_deepblue_panel.jpg', 'JA Solar DeepBlue 4.0 Pro 615Wp - 625Wp', 'Tấm pin hai mặt kính N-Type TOPCon Bycium+ hiệu suất 23.0%')">
+            <div class="brand-logo-badge">
+              <img src="products/jasolar.svg" alt="JA Solar">
+            </div>
+            <div class="tier1-badge">Tier-1 Bloomberg</div>
+            <img src="products/jasolar_deepblue_panel.jpg" alt="JA Solar DeepBlue 4.0 Pro" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Tấm Pin Hai Mặt Kính (Bifacial)" data-en="Bifacial Dual-Glass Panel">Tấm Pin Hai Mặt Kính (Bifacial)</span>
+            <h4 class="product-title">JA Solar DeepBlue 4.0 Pro</h4>
+            <div class="product-model-code">JAM72D40/LB (615Wp - 625Wp)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Cell N-Type Bycium+" data-en="N-Type Bycium+ Cell">Cell N-Type Bycium+</span>
+              <span class="highlight-pill blue trans" data-vi="Hiệu suất 23.0%" data-en="Efficiency 23.0%">Hiệu suất 23.0%</span>
+              <span class="highlight-pill gold trans" data-vi="Bảo hành 30 năm" data-en="30Y Warranty">Bảo hành 30 năm</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất cực đại (Pmax)" data-en="Peak Power (Pmax)">Công suất cực đại (Pmax)</td>
+                <td class="spec-value">615Wp – 625Wp</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Công nghệ Cell" data-en="Cell Technology">Công nghệ Cell</td>
+                <td class="spec-value">N-Type TOPCon / 16BB Half-Cell</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Kích thước & Diện tích" data-en="Dimensions & Area">Kích thước & Diện tích</td>
+                <td class="spec-value">2382 x 1134 x 30 mm (2.705 m²)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hệ số nhiệt độ (Pmax)" data-en="Temperature Coeff">Hệ số nhiệt độ (Pmax)</td>
+                <td class="spec-value">-0.30% / °C (Mát hơn trong nắng hè)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">12 năm vật lý | 30 năm hiệu suất (>87.4%)</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Điện áp Voc / Vmp:</strong> 55.48V / 46.52V<br>
+              <strong>Dòng ngắn mạch Isc / Imp:</strong> 13.98A / 13.22A<br>
+              <strong>Mặt kính:</strong> Kính cường lực AR chống phản xạ 2.0mm + 2.0mm hai mặt<br>
+              <strong>Tiêu chuẩn kiểm định:</strong> IEC 61215, IEC 61730, TUV Rheinland, ISO 9001/14001<br>
+              <strong>Tải trọng cơ học:</strong> Tải gió 2400 Pa / Tải tuyết 5400 Pa.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá JA Solar" data-en="⚡ Quote JA Solar">⚡ Nhận Báo Giá JA Solar</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/jasolar_deepblue_panel.jpg', 'JA Solar DeepBlue 4.0 Pro', 'Kích thước chuẩn: 2.382m x 1.134m - Công suất 615Wp - 625Wp')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. TCL Solar G12 Bifacial Module -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/tcl_g12_panel.jpg', 'TCL Solar G12 N-Type TOPCon 620W - 625Wp', 'Dòng pin công suất lớn kích thước wafer 210mm G12 chuyên dụng cho nhà xưởng C&I và dự án mái lớn')">
+            <div class="brand-logo-badge">
+              <img src="products/TCL.png" alt="TCL Solar">
+            </div>
+            <div class="tier1-badge">Tier-1 Bloomberg</div>
+            <img src="products/tcl_g12_panel.jpg" alt="TCL Solar G12 Module" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Tấm Pin Hai Mặt Kính G12" data-en="G12 Bifacial Module">Tấm Pin Hai Mặt Kính G12</span>
+            <h4 class="product-title">TCL Solar G12 Bifacial TOPCon</h4>
+            <div class="product-model-code">TCL-G12-625W (620Wp - 625Wp)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Wafer G12 210mm" data-en="G12 210mm Wafer">Wafer G12 210mm</span>
+              <span class="highlight-pill blue trans" data-vi="Hiệu suất 22.8%" data-en="Efficiency 22.8%">Hiệu suất 22.8%</span>
+              <span class="highlight-pill gold trans" data-vi="Dự Án 377.5kWp C&I" data-en="Used in 377.5kWp C&I">Dự Án 377.5kWp C&I</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất cực đại" data-en="Peak Power">Công suất cực đại</td>
+                <td class="spec-value">620Wp – 625Wp</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Công nghệ Cell" data-en="Cell Technology">Công nghệ Cell</td>
+                <td class="spec-value">N-Type TOPCon G12 Multi-Busbar</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Kích thước" data-en="Dimensions">Kích thước</td>
+                <td class="spec-value">2384 x 1134 x 30 mm</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hệ số nhiệt độ" data-en="Temperature Coeff">Hệ số nhiệt độ</td>
+                <td class="spec-value">-0.30% / °C</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">12 năm vật lý | 30 năm hiệu suất</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Thành tích tiêu biểu:</strong> Thiết bị chủ lực trong đại dự án 604 tấm pin TCL 625Wp (377.5 kWp DC) cấp điện cho nhà máy sản xuất, doanh thu bán điện thặng dư trên 217 triệu đồng/năm.<br>
+              <strong>Độ tin cậy:</strong> Chống PID vượt trội, chịu ăn mòn muối biển và sương mù amoniac theo chuẩn IEC 61701 & IEC 62716.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá TCL Solar" data-en="⚡ Quote TCL Solar">⚡ Nhận Báo Giá TCL Solar</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/tcl_g12_panel.jpg', 'TCL Solar G12 Bifacial 625W', 'Tấm pin N-Type TOPCon kích thước lớn cho trang trại và nhà xưởng C&I')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Canadian Solar BiHiKu6 / TOPHiKu6 -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/canadian_solar_hiku6_panel.png', 'Canadian Solar BiHiKu6 / TOPHiKu6 575W - 610W', 'Tấm pin cao cấp N-type TOPCon thương hiệu Canada bảo hành toàn cầu')">
+            <div class="brand-logo-badge">
+              <img src="products/canadiansolar.png" alt="Canadian Solar">
+            </div>
+            <div class="tier1-badge">Tier-1 Bloomberg</div>
+            <img src="products/canadian_solar_hiku6_panel.png" alt="Canadian Solar BiHiKu6" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Tấm Pin Hai Mặt Kính TOPCon" data-en="TOPCon Bifacial Panel">Tấm Pin Hai Mặt Kính TOPCon</span>
+            <h4 class="product-title">Canadian Solar BiHiKu6 / TOPHiKu6</h4>
+            <div class="product-model-code">CS6W-575~610T (575W - 610W)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Thương Hiệu Canada" data-en="Canadian Brand">Thương Hiệu Canada</span>
+              <span class="highlight-pill blue trans" data-vi="Hiệu suất 22.6%" data-en="Efficiency 22.6%">Hiệu suất 22.6%</span>
+              <span class="highlight-pill gold trans" data-vi="Kháng LeTID & PID" data-en="Anti-LeTID & PID">Kháng LeTID & PID</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất cực đại" data-en="Peak Power">Công suất cực đại</td>
+                <td class="spec-value">575Wp – 610Wp</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất module" data-en="Module Efficiency">Hiệu suất module</td>
+                <td class="spec-value">Đạt tới 22.6%</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Kích thước" data-en="Dimensions">Kích thước</td>
+                <td class="spec-value">2278 x 1134 x 30 mm</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hệ số suy hao năm đầu" data-en="1st Year Degradation">Hệ số suy hao năm đầu</td>
+                <td class="spec-value">&le; 1.0% (Sau đó &le; 0.4%/năm)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">12 năm sản phẩm | 30 năm hiệu suất</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Công nghệ Bifacial:</strong> Mặt sau bổ sung công suất từ 5% đến 25% tùy thuộc vào hệ số phản xạ mặt mái (albedo).<br>
+              <strong>Hộp đấu nối:</strong> Chuẩn chống nước IP68 với 3 diode bypass giảm thiểu rủi ro điểm nóng (hotspot).
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Canadian Solar" data-en="⚡ Quote Canadian Solar">⚡ Nhận Báo Giá Canadian Solar</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/canadian_solar_hiku6_panel.png', 'Canadian Solar TOPHiKu6', 'Dòng pin chất lượng hàng đầu xuất xứ tập đoàn năng lượng Canada')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. LONGi Hi-MO 6 Explorer -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/longi_himo6_panel.jpg', 'LONGi Hi-MO 6 Explorer 575W - 585W', 'Tấm pin công nghệ HPBC độc quyền không thanh dẫn mặt trước, thẩm mỹ sang trọng')">
+            <div class="brand-logo-badge">
+              <img src="products/longi.png" alt="LONGi Solar">
+            </div>
+            <div class="tier1-badge">Tier-1 Bloomberg</div>
+            <img src="products/longi_himo6_panel.jpg" alt="LONGi Hi-MO 6 Explorer" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Tấm Pin HPBC Siêu Thẩm Mỹ" data-en="HPBC Aesthetic Panel">Tấm Pin HPBC Siêu Thẩm Mỹ</span>
+            <h4 class="product-title">LONGi Hi-MO 6 Explorer</h4>
+            <div class="product-model-code">LR5-72HTH-575~585M</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Công nghệ Cell HPBC" data-en="HPBC Cell Tech">Công nghệ Cell HPBC</span>
+              <span class="highlight-pill blue trans" data-vi="Không Busbar Mặt Trước" data-en="No Front Busbar">Không Busbar Mặt Trước</span>
+              <span class="highlight-pill gold trans" data-vi="Quang Năng Tối Đa" data-en="Max Light Absorption">Quang Năng Tối Đa</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất cực đại" data-en="Peak Power">Công suất cực đại</td>
+                <td class="spec-value">575Wp – 585Wp</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất module" data-en="Module Efficiency">Hiệu suất module</td>
+                <td class="spec-value">Đạt tới 22.8%</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Kích thước" data-en="Dimensions">Kích thước</td>
+                <td class="spec-value">2278 x 1134 x 35 mm</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo vệ vi nứt" data-en="Micro-crack Resistance">Bảo vệ vi nứt</td>
+                <td class="spec-value">Tăng cường hàn một dòng phía sau</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">15 năm sản phẩm | 25 năm hiệu suất</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Đột phá kiến trúc HPBC:</strong> Chuyển toàn bộ đường hàn busbar về mặt sau giúp bề mặt tiếp xúc ánh sáng tăng 2.27%, tạo ra điện lượng cao hơn ngay cả trong điều kiện nắng yếu hoặc bóng râm cục bộ.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá LONGi Solar" data-en="⚡ Quote LONGi Solar">⚡ Nhận Báo Giá LONGi Solar</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/longi_himo6_panel.jpg', 'LONGi Hi-MO 6 Explorer', 'Tấm pin cao cấp nhất cho biệt thự sang trọng và tòa nhà văn phòng')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. INVERTERS SECTION ==================== -->
+    <section id="inverters" class="category-section product-category-block" data-category="inverters">
+      <div class="category-header">
+        <div>
+          <h3 class="category-title trans" data-vi="⚡ Biến Tần Inverter (On-Grid & Hybrid Đa Nhiệm)" data-en="⚡ Solar Inverters (On-Grid & Multi-source Hybrid)">
+            ⚡ Biến Tần Inverter (On-Grid & Hybrid Đa Nhiệm)
+          </h3>
+          <p class="category-subtitle trans" data-vi="Thiết bị trái tim của hệ thống: Tích hợp chống phát ngược Zero-Export, chuyển đổi UPS <10ms, tương thích điện thoại SolisCloud / SEMS." data-en="The heart of your solar power system: Built-in Zero-Export CT, seamless <10ms UPS switching, smartphone IoT monitoring.">
+            Thiết bị trái tim của hệ thống: Tích hợp chống phát ngược Zero-Export, chuyển đổi UPS &lt;10ms, tương thích điện thoại SolisCloud / SEMS.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- 5. Solis S6-EH1P6K-L-PRO (6kW Hybrid 1 Pha) -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis S6-EH1P6K-L-PRO (6kW Hybrid 1 Pha)', 'Biến tần Hybrid thông minh đa nhiệm dân dụng chuẩn IP66, hiệu suất 97.6%')">
+            <div class="brand-logo-badge">
+              <img src="products/Solis.png" alt="Solis Inverter">
+            </div>
+            <div class="tier1-badge">Top 3 Toàn Cầu</div>
+            <img src="products/solis_s6_inverter.png" alt="Solis S6 Hybrid Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hybrid 1 Pha (6kW)" data-en="1-Phase Hybrid Inverter (6kW)">Biến Tần Hybrid 1 Pha (6kW)</span>
+            <h4 class="product-title">Solis S6-EH1P6K-L-PRO</h4>
+            <div class="product-model-code">S6-EH1P6K (Dân dụng cao cấp)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Chuyển mạch UPS &lt;10ms" data-en="UPS Switch &lt;10ms">Chuyển mạch UPS &lt;10ms</span>
+              <span class="highlight-pill blue trans" data-vi="Chống nước IP66" data-en="Waterproof IP66">Chống nước IP66</span>
+              <span class="highlight-pill gold trans" data-vi="SolisCloud Giám Sát" data-en="SolisCloud App">SolisCloud Giám Sát</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất định mức AC" data-en="Rated AC Power">Công suất định mức AC</td>
+                <td class="spec-value">6,000 W (6 kW)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất cực đại" data-en="Max Efficiency">Hiệu suất cực đại</td>
+                <td class="spec-value">97.6% (Chuẩn Châu Âu)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dải điện áp MPPT" data-en="MPPT Voltage Range">Dải điện áp MPPT</td>
+                <td class="spec-value">90V – 520V (2 MPPT độc lập)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng sạc/xả pin" data-en="Charge/Discharge">Dòng sạc/xả pin</td>
+                <td class="spec-value">Max 135A (Pin 48V/51.2V)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành chính hãng" data-en="Warranty">Bảo hành chính hãng</td>
+                <td class="spec-value">5 năm (Đổi mới kỹ thuật)</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Điều phối 3 nguồn tự động:</strong> Quang năng (PV) - Pin lưu trữ (Battery) - Lưới điện (Grid).<br>
+              <strong>Tích hợp chống phát ngược:</strong> Đi kèm biến dòng (CT) đo lường chính xác, bám tải 100% không phát điện thừa lên lưới EVN.<br>
+              <strong>Bảo vệ an toàn:</strong> Chống hồ quang điện AFCI 2.0, chống sét lan truyền Type II DC & AC.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Solis 6kW" data-en="⚡ Quote Solis 6kW">⚡ Nhận Báo Giá Solis 6kW</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis S6-EH1P6K Hybrid Inverter', 'Thiết bị biến tần Hybrid chuẩn quốc tế hoạt động 24/7 không lo mất điện')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Solis S6-EH3P10K / 15K (Hybrid 3 Pha) -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis S6-EH3P10K / S6-EH3P15K (10kW - 15kW 3 Pha)', 'Biến tần Hybrid 3 pha công suất cao, hỗ trợ phụ tải lệch pha 100%')">
+            <div class="brand-logo-badge">
+              <img src="products/Solis.png" alt="Solis Inverter">
+            </div>
+            <div class="tier1-badge">3 Pha Cao Cấp</div>
+            <img src="products/solis_s6_inverter.png" alt="Solis S6 3P Hybrid Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hybrid 3 Pha (10-15kW)" data-en="3-Phase Hybrid Inverter (10-15kW)">Biến Tần Hybrid 3 Pha (10-15kW)</span>
+            <h4 class="product-title">Solis S6-EH3P10K / S6-EH3P15K</h4>
+            <div class="product-model-code">S6-EH3P10K-H / S6-EH3P15K-H</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Lệch Pha 100%" data-en="100% Unbalanced Load">Lệch Pha 100%</span>
+              <span class="highlight-pill blue trans" data-vi="Hiệu suất 98.4%" data-en="Efficiency 98.4%">Hiệu suất 98.4%</span>
+              <span class="highlight-pill gold trans" data-vi="Áp Pin Cao 150-800V" data-en="High-Volt Battery">Áp Pin Cao 150-800V</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất AC" data-en="AC Power">Công suất AC</td>
+                <td class="spec-value">10,000 W – 15,000 W (3 Pha 380V)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dải điện áp MPPT" data-en="MPPT Voltage">Dải điện áp MPPT</td>
+                <td class="spec-value">200V – 850V (Cực rộng)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng sạc/xả pin" data-en="Charge/Discharge">Dòng sạc/xả pin</td>
+                <td class="spec-value">Max 50A / 100A</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng ngõ vào PV" data-en="Max PV Input Current">Dòng ngõ vào PV</td>
+                <td class="spec-value">16A/chuỗi (Tương thích tấm 625W)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Hệ 40 kWp điển hình trong hồ sơ:</strong> Cấu hình 2 Inverter Solis Hybrid 15kW kết hợp cùng 3 pack pin lithium 16kWh (tổng 48kWh) tạo ra sản lượng điện 5,997 kWh/tháng, cấp điện liên tục 24/7 cho toàn bộ phụ tải 3 pha.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Solis 3 Pha" data-en="⚡ Quote Solis 3P">⚡ Nhận Báo Giá Solis 3 Pha</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis 3 Pha Hybrid Inverter', 'Giải pháp hoàn hảo cho biệt thự 3 pha, nhà hàng tiệc cưới và khách sạn')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Solis 110K-5G / 125K-EHV (C&I Công Nghiệp) -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis 110K / 125K Commercial String Inverter', 'Biến tần hòa lưới công nghiệp quy mô lớn hiệu suất cực đại 98.7% với 10 MPPT')">
+            <div class="brand-logo-badge">
+              <img src="products/Solis.png" alt="Solis Inverter">
+            </div>
+            <div class="tier1-badge">Công Nghiệp C&I</div>
+            <img src="products/solis_s6_inverter.png" alt="Solis 125kW Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Chuỗi Công Nghiệp (125kW)" data-en="C&I String Inverter (125kW)">Biến Tần Chuỗi Công Nghiệp (125kW)</span>
+            <h4 class="product-title">Solis 110K-PRO / 125K-EHV</h4>
+            <div class="product-model-code">Solis-125K-EHV-5G (Quy mô Mega-Watt)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="10 Cổng MPPT Độc Lập" data-en="10 MPPTs">10 Cổng MPPT Độc Lập</span>
+              <span class="highlight-pill blue trans" data-vi="Hiệu suất 98.7%" data-en="Efficiency 98.7%">Hiệu suất 98.7%</span>
+              <span class="highlight-pill gold trans" data-vi="Quét Đường Cong I-V" data-en="I-V Curve Scan">Quét Đường Cong I-V</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất định mức AC" data-en="Rated AC Power">Công suất định mức AC</td>
+                <td class="spec-value">125,000 W (125 kW)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Điện áp định danh lưới" data-en="Grid Voltage">Điện áp định danh lưới</td>
+                <td class="spec-value">3/N/PE, 400V / 480V / 500V</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Tỷ lệ quá tải DC/AC" data-en="DC/AC Ratio">Tỷ lệ quá tải DC/AC</td>
+                <td class="spec-value">Lên tới 150%</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dự án thực tế" data-en="Real Project">Dự án thực tế</td>
+                <td class="spec-value">Cụm 3 x 125kW (375kW AC) cho nhà máy</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng (Mở rộng 10 năm)</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Thực chứng hồ sơ năng lực:</strong> Hệ 377.5 kWp sử dụng 3 bộ Solis 125kW tạo ra trung bình 56,625 kWh/tháng, giải quyết triệt để bài toán điện năng cho nhà máy công nghiệp sản xuất.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Solis 125kW" data-en="⚡ Quote Solis 125kW">⚡ Nhận Báo Giá Solis 125kW</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis 125kW C&I Inverter', 'Giải pháp hòa lưới quy mô Mega-Watt cho nhà xưởng doanh nghiệp')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Deye SUN Hybrid (SUN-5K ~ 12K) -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/deye_hybrid_inverter.png', 'Deye SUN-5K ~ 12K Hybrid Inverter (Low Voltage 48V)', 'Biến tần Hybrid 3 pha điện áp thấp an toàn hàng đầu thế giới với màn hình cảm ứng màu')">
+            <div class="brand-logo-badge">
+              <img src="products/Deye.png" alt="Deye Hybrid">
+            </div>
+            <div class="tier1-badge">Deye Cloud</div>
+            <img src="products/deye_hybrid_inverter.png" alt="Deye Hybrid Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hybrid 48V (5k-12kW)" data-en="48V Hybrid Inverter (5-12kW)">Biến Tần Hybrid 48V (5k-12kW)</span>
+            <h4 class="product-title">Deye SUN-5K / 8K / 10K / 12K</h4>
+            <div class="product-model-code">SUN-12K-SG04LP3-EU (Áp thấp 48V an toàn)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Màn Hình Cảm Ứng LCD" data-en="Color Touch LCD">Màn Hình Cảm Ứng LCD</span>
+              <span class="highlight-pill blue trans" data-vi="Ghép Song Song 16 Máy" data-en="16 Parallel Units">Ghép Song Song 16 Máy</span>
+              <span class="highlight-pill gold trans" data-vi="Kết Hợp Máy Phát Điện" data-en="Generator Friendly">Kết Hợp Máy Phát Điện</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất AC" data-en="AC Power">Công suất AC</td>
+                <td class="spec-value">5kW – 12kW (1 Pha & 3 Pha)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Điện áp ắc quy/pin" data-en="Battery Voltage">Điện áp ắc quy/pin</td>
+                <td class="spec-value">40V – 60V (Low Voltage cực kỳ an toàn)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng sạc/xả pin max" data-en="Max Charge/Discharge">Dòng sạc/xả pin max</td>
+                <td class="spec-value">Lên tới 240A</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Chế độ xả pin theo giờ" data-en="Time of Use">Chế độ xả pin theo giờ</td>
+                <td class="spec-value">6 mốc thời gian cài đặt linh hoạt</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng Deye</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Ưu điểm vượt trội:</strong> Khả năng ghép song song tới 16 bộ tạo thành hệ thống hybrid công suất lớn hàng trăm kW; tương thích hoàn hảo với pin Power Brick, Dyness và Pylontech qua cổng CAN/RS485.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Deye" data-en="⚡ Quote Deye">⚡ Nhận Báo Giá Deye</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/deye_hybrid_inverter.png', 'Deye SUN Hybrid Inverter', 'Thương hiệu biến tần hybrid phổ biến và được tin dùng nhất Việt Nam')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. GoodWe ET / EH Series Hybrid -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/goodwe_hybrid_inverter.png', 'GoodWe ET / EH Series Hybrid Inverter', 'Biến tần GoodWe Hybrid phân khúc cao cấp xuất khẩu Châu Âu, tương thích giám sát GoodWe SEMS')">
+            <div class="brand-logo-badge">
+              <img src="products/goodwe.png" alt="GoodWe Inverter">
+            </div>
+            <div class="tier1-badge">GoodWe SEMS</div>
+            <img src="products/goodwe_hybrid_inverter.png" alt="GoodWe Hybrid Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hybrid Cao Cấp (5k-10kW)" data-en="Premium Hybrid Inverter (5-10kW)">Biến Tần Hybrid Cao Cấp (5k-10kW)</span>
+            <h4 class="product-title">GoodWe ET Series (Three-Phase)</h4>
+            <div class="product-model-code">GW5K-ET / GW10K-ET (Chuẩn Châu Âu)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Tản Nhiệt Tự Nhiên Không Quạt" data-en="Fanless Cooling">Tản Nhiệt Tự Nhiên Không Quạt</span>
+              <span class="highlight-pill blue trans" data-vi="Vận Hành Siêu Êm &lt;25dB" data-en="Whisper Quiet &lt;25dB">Vận Hành Siêu Êm &lt;25dB</span>
+              <span class="highlight-pill gold trans" data-vi="SEMS Portal App" data-en="SEMS Portal App">SEMS Portal App</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất định mức AC" data-en="Rated AC Power">Công suất định mức AC</td>
+                <td class="spec-value">5,000 W – 10,000 W (3 Pha)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất cực đại" data-en="Max Efficiency">Hiệu suất cực đại</td>
+                <td class="spec-value">98.2% (Hiệu suất châu Âu 97.5%)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dải áp pin cao" data-en="Battery Voltage">Dải áp pin cao</td>
+                <td class="spec-value">180V – 600V (High Voltage)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Giám sát quản lý" data-en="Monitoring">Giám sát quản lý</td>
+                <td class="spec-value">6 dự án bàn giao trên GoodWe SEMS Portal</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng GoodWe</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Tiêu chuẩn Châu Âu khắt khe:</strong> Thiết kế nguyên khối tản nhiệt không quạt gió, vận hành không tiếng ồn, tuổi thọ bo mạch cao; tích hợp bảo vệ cắt mạch nhanh SPD Type II cả hai phía AC và DC.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá GoodWe" data-en="⚡ Quote GoodWe">⚡ Nhận Báo Giá GoodWe</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/goodwe_hybrid_inverter.png', 'GoodWe ET Series Hybrid', 'Sản phẩm cao cấp được khách hàng biệt thự và văn phòng ưa chuộng')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Luxpower SNA 5000 WPV / LXP Hybrid -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/luxpower_sna5000_inverter.png', 'Luxpower SNA 5000 WPV Hybrid Inverter', 'Biến tần Hybrid thông minh đa chế độ Off-Grid và On-Grid bền bỉ, dễ cấu hình')">
+            <div class="brand-logo-badge">
+              <img src="products/Luxpower.png" alt="Luxpower Inverter">
+            </div>
+            <div class="tier1-badge">Quốc Dân Việt Nam</div>
+            <img src="products/luxpower_sna5000_inverter.png" alt="Luxpower SNA 5000" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hybrid Quốc Dân (5kW)" data-en="Hybrid Inverter (5kW)">Biến Tần Hybrid Quốc Dân (5kW)</span>
+            <h4 class="product-title">Luxpower SNA 5000 WPV</h4>
+            <div class="product-model-code">SNA 5000 WPV (Chuẩn kết nối thông minh)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="2 Cổng MPPT 100-480V" data-en="Dual MPPT 100-480V">2 Cổng MPPT 100-480V</span>
+              <span class="highlight-pill blue trans" data-vi="Chạy Không Cần Pin" data-en="Run Without Battery">Chạy Không Cần Pin</span>
+              <span class="highlight-pill gold trans" data-vi="Ghép Song Song 10 Bộ" data-en="10 Units Parallel">Ghép Song Song 10 Bộ</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất định mức" data-en="Rated Power">Công suất định mức</td>
+                <td class="spec-value">5,000 W (5 kW AC)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất pin mặt trời PV" data-en="Max PV Input">Công suất pin mặt trời PV</td>
+                <td class="spec-value">Lên tới 6,000 Wp</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Điện áp ắc quy" data-en="Battery Voltage">Điện áp ắc quy</td>
+                <td class="spec-value">48V / 51.2V Lithium & Acid chì</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng sạc pin max" data-en="Max Charge Current">Dòng sạc pin max</td>
+                <td class="spec-value">110A</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">2 - 5 năm chính hãng</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Tính năng độc đáo:</strong> Có thể chạy trực tiếp từ dàn pin mặt trời ban ngày mà chưa cần lắp pin lưu trữ; có cổng độc lập kết nối máy phát điện; ứng dụng Luxpower View giám sát thời gian thực qua WiFi.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Luxpower" data-en="⚡ Quote Luxpower">⚡ Nhận Báo Giá Luxpower</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/luxpower_sna5000_inverter.png', 'Luxpower SNA 5000 WPV', 'Biến tần hòa lưới có lưu trữ giá tốt và hoạt động bền bỉ')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Sungrow Residential & Commercial -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/sungrow_inverter.png', 'Sungrow Residential & Commercial Series', 'Biến tần thương hiệu số 1 thế giới Sungrow, công nghệ kiểm soát sóng hài chuẩn IEEE')">
+            <div class="brand-logo-badge">
+              <img src="products/sungrow.png" alt="Sungrow Inverter">
+            </div>
+            <div class="tier1-badge">Số 1 Thế Giới</div>
+            <img src="products/sungrow_inverter.png" alt="Sungrow Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Chuỗi Hàng Đầu (3k-10kW)" data-en="Top String Inverter (3-10kW)">Biến Tần Chuỗi Hàng Đầu (3k-10kW)</span>
+            <h4 class="product-title">Sungrow SG3.0RS ~ SG10RT</h4>
+            <div class="product-model-code">SG Series (iSolarCloud Ecosystem)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Hiệu Suất 98.6%" data-en="Efficiency 98.6%">Hiệu Suất 98.6%</span>
+              <span class="highlight-pill blue trans" data-vi="Chẩn Đoán IV Smart" data-en="Smart IV Curve Scan">Chẩn Đoán IV Smart</span>
+              <span class="highlight-pill gold trans" data-vi="AFCI Chống Cháy Nổ" data-en="AFCI Arc Fault Protect">AFCI Chống Cháy Nổ</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Dải công suất" data-en="Power Range">Dải công suất</td>
+                <td class="spec-value">3kW (1 Pha) – 10kW/20kW (3 Pha)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất cực đại" data-en="Peak Efficiency">Hiệu suất cực đại</td>
+                <td class="spec-value">Lên tới 98.6%</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng điện PV tối đa" data-en="Max PV Current">Dòng điện PV tối đa</td>
+                <td class="spec-value">16A/chuỗi (Khớp hoàn hảo pin TOPCon)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Cấp bảo vệ" data-en="Protection Rating">Cấp bảo vệ</td>
+                <td class="spec-value">IP65 / C5 Chống ăn mòn muối biển</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Đẳng cấp Sungrow:</strong> Nền tảng iSolarCloud quản trị trạm 24/7 với thuật toán cảnh báo lỗi sớm; trang bị công tắc DC cách ly an toàn chuẩn Châu Âu.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Sungrow" data-en="⚡ Quote Sungrow">⚡ Nhận Báo Giá Sungrow</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/sungrow_inverter.png', 'Sungrow Solar Inverter', 'Thương hiệu biến tần dẫn đầu toàn cầu về công nghệ điện mặt trời')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. INVT Solar iMars Series -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/invt_imars_inverter.jpg', 'INVT Solar iMars Inverter Series', 'Biến tần hòa lưới và lưu trữ iMars của tập đoàn công nghệ tự động hóa INVT')">
+            <div class="brand-logo-badge">
+              <img src="products/invt.svg" alt="INVT Solar">
+            </div>
+            <div class="tier1-badge">Tự Động Hóa INVT</div>
+            <img src="products/invt_imars_inverter.jpg" alt="INVT iMars Inverter" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Biến Tần Hòa Lưới & Bơm (3k-15kW)" data-en="Grid-Tied & Solar Pump (3-15kW)">Biến Tần Hòa Lưới & Bơm (3k-15kW)</span>
+            <h4 class="product-title">INVT Solar iMars MG / BG Series</h4>
+            <div class="product-model-code">iMars Series (Bền bỉ trong môi trường khắc nghiệt)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Dải MPPT Rộng" data-en="Wide MPPT Range">Dải MPPT Rộng</span>
+              <span class="highlight-pill blue trans" data-vi="Chuyên Bơm Tưới Nông Nghiệp" data-en="Solar Pumping Spec">Chuyên Bơm Tưới Nông Nghiệp</span>
+              <span class="highlight-pill gold trans" data-vi="Độ Ổn Định Cao" data-en="Industrial Durability">Độ Ổn Định Cao</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Công suất định mức" data-en="Rated Power">Công suất định mức</td>
+                <td class="spec-value">3kW – 15kW (1 Pha & 3 Pha)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hiệu suất MPPT" data-en="MPPT Efficiency">Hiệu suất MPPT</td>
+                <td class="spec-value">99.9% (Dò cực nhanh)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Điện áp khởi động" data-en="Startup Voltage">Điện áp khởi động</td>
+                <td class="spec-value">80V (Tạo điện sớm từ sáng tinh mơ)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Ứng dụng đặc biệt" data-en="Special Applications">Ứng dụng đặc biệt</td>
+                <td class="spec-value">Hòa lưới bám tải & Bơm nước nông nghiệp Tây Nguyên</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">5 năm chính hãng INVT</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Thế mạnh biến tần INVT:</strong> Khả năng thích ứng điện áp chập chờn vùng nông thôn, chống sét lan truyền đa cấp, giải nhiệt tối ưu cho các trạm bơm năng lượng mặt trời công suất lớn.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá INVT" data-en="⚡ Quote INVT">⚡ Nhận Báo Giá INVT</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/invt_imars_inverter.jpg', 'INVT Solar Inverter', 'Giải pháp hiệu quả cho hệ thống bơm tưới rẫy và áp mái dân dụng')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. STORAGE BATTERIES SECTION ==================== -->
+    <section id="batteries" class="category-section product-category-block" data-category="batteries">
+      <div class="category-header">
+        <div>
+          <h3 class="category-title trans" data-vi="🔋 Pin Lưu Trữ Lithium LiFePO4 (Energy Storage)" data-en="🔋 LiFePO4 Lithium Storage Batteries (ESS)">
+            🔋 Pin Lưu Trữ Lithium LiFePO4 (Energy Storage)
+          </h3>
+          <p class="category-subtitle trans" data-vi="Pack pin Lithium sắt phốt phát (LiFePO4) chuẩn Grade-A cao cấp: Dung lượng 5kWh - 16kWh, tuổi thọ trên 6000 chu kỳ nạp xả (hơn 15 năm), an toàn chống cháy nổ tuyệt đối." data-en="Premium Grade-A LiFePO4 battery packs: 5kWh to 16kWh capacity, over 6,000 charge cycles (over 15 years lifetime), fire-safe chemistry.">
+            Pack pin Lithium sắt phốt phát (LiFePO4) chuẩn Grade-A cao cấp: Dung lượng 5kWh - 16kWh, tuổi thọ trên 6000 chu kỳ nạp xả (&gt;15 năm), an toàn chống cháy nổ tuyệt đối.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- 13. Power Brick SC 16kWh LiFePO4 -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/powerbrick_16kwh_battery.jpg', 'Power Brick SC 16kWh (51.2V - 314Ah) LiFePO4', 'Pack pin lưu trữ công suất khủng 16kWh dòng xả 150A-200A, thiết bị chuẩn trong hồ sơ đánh giá năng lực')">
+            <div class="brand-logo-badge">
+              <img src="products/powerbrick.svg" alt="Power Brick SC">
+            </div>
+            <div class="tier1-badge">Dung Lượng Khủng 16kWh</div>
+            <img src="products/powerbrick_16kwh_battery.jpg" alt="Power Brick SC 16kWh Battery" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Khối Pin Lưu Trữ LiFePO4 16kWh" data-en="16kWh LiFePO4 Battery Pack">Khối Pin Lưu Trữ LiFePO4 16kWh</span>
+            <h4 class="product-title">Power Brick SC 16kWh (51.2V - 314Ah)</h4>
+            <div class="product-model-code">PB-SC-16 (Chủ lực trong Hồ sơ đánh giá năng lực)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="314Ah Grade A Cell" data-en="314Ah Grade A Cell">314Ah Grade A Cell</span>
+              <span class="highlight-pill blue trans" data-vi="Độ Xả Sâu DOD 95%" data-en="95% Depth of Discharge">Độ Xả Sâu DOD 95%</span>
+              <span class="highlight-pill gold trans" data-vi="Bảo Hành 10 Năm" data-en="10Y Warranty">Bảo Hành 10 Năm</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Dung lượng danh định" data-en="Nominal Capacity">Dung lượng danh định</td>
+                <td class="spec-value">16.07 kWh (51.2V – 314Ah)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Hóa học lưu trữ" data-en="Battery Chemistry">Hóa học lưu trữ</td>
+                <td class="spec-value">Lithium Iron Phosphate (LiFePO4) chống cháy</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng xả liên tục max" data-en="Continuous Discharge">Dòng xả liên tục max</td>
+                <td class="spec-value">140A – 200A (Chạy điều hòa/bếp từ thoải mái)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Tuổi thọ chu kỳ" data-en="Cycle Life">Tuổi thọ chu kỳ</td>
+                <td class="spec-value">&gt;6,000 chu kỳ nạp xả (&gt;15 năm)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Chuẩn giao tiếp" data-en="Communication">Chuẩn giao tiếp</td>
+                <td class="spec-value">CAN / RS485 đồng bộ Solis, Deye, Luxpower</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">10 năm chính hãng</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Giải pháp tối ưu cho gia đình:</strong> Với 16kWh điện tích trữ, ngôi nhà được cấp điện mát mẻ suốt đêm dài mà không tốn một đồng tiền điện lưới, đồng thời tự động phát điện dự phòng tức thì khi bão gió gây sự cố mất điện lưới EVN.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Power Brick" data-en="⚡ Quote Power Brick">⚡ Nhận Báo Giá Power Brick</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/powerbrick_16kwh_battery.jpg', 'Power Brick SC 16kWh', 'Khối lưu trữ Lithium dung tích lớn 16kWh chuẩn kỹ thuật cao')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Dyness Powerbox Pro LiFePO4 -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/dyness_powerbox_battery.png', 'Dyness Powerbox Pro (5.12kWh - 10.24kWh)', 'Hệ pin lưu trữ treo tường sang trọng Dyness Powerbox Pro, mở rộng song song tới 50kWh+')">
+            <div class="brand-logo-badge">
+              <img src="products/dyness_dark.svg" alt="Dyness Battery">
+            </div>
+            <div class="tier1-badge">Mở Rộng Linh Hoạt</div>
+            <img src="products/dyness_powerbox_battery.png" alt="Dyness Powerbox Pro" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Pin Treo Tường Đẳng Cấp" data-en="Wall-mounted ESS">Pin Treo Tường Đẳng Cấp</span>
+            <h4 class="product-title">Dyness Powerbox Pro</h4>
+            <div class="product-model-code">Powerbox Pro 5.12kWh / 10.24kWh / 16kWh</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Treo Tường & Đặt Sàn" data-en="Wall & Floor Mount">Treo Tường & Đặt Sàn</span>
+              <span class="highlight-pill blue trans" data-vi="Song Song Tới 50kWh+" data-en="Parallel to 50kWh+">Song Song Tới 50kWh+</span>
+              <span class="highlight-pill gold trans" data-vi="Smart BMS Đa Cấp" data-en="Smart BMS">Smart BMS Đa Cấp</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Dung lượng module" data-en="Module Capacity">Dung lượng module</td>
+                <td class="spec-value">5.12 kWh / 10.24 kWh (Mở rộng linh hoạt)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Điện áp định mức" data-en="Nominal Voltage">Điện áp định mức</td>
+                <td class="spec-value">51.2 V (Dải hoạt động 44.8V – 57.6V)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Độ xả sâu DOD" data-en="Depth of Discharge">Độ xả sâu DOD</td>
+                <td class="spec-value">95% (Khai thác tối đa năng lượng)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Cấp bảo vệ" data-en="Protection">Cấp bảo vệ</td>
+                <td class="spec-value">IP65 (Chống bụi và hơi ẩm)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">10 năm chính hãng Dyness</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Thiết kế thẩm mỹ nội thất:</strong> Kiểu dáng mỏng nhẹ, vỏ sơn tĩnh điện cao cấp, đèn LED hiển thị trạng thái sạc SOC trực quan, tích hợp hoàn hảo trong không gian phòng kỹ thuật hoặc gara xe gia đình.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Dyness" data-en="⚡ Quote Dyness">⚡ Nhận Báo Giá Dyness</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/dyness_powerbox_battery.png', 'Dyness Powerbox Pro', 'Thiết kế sang trọng như một món đồ nội thất công nghệ cao')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. Pylontech US5000 Lithium Module -->
+        <div class="product-card">
+          <div class="card-media-wrapper" onclick="openLightbox('products/pylontech_us5000_battery.png', 'Pylontech US5000 48V (4.8kWh)', 'Pin Lithium module chuẩn tủ rack 19-inch thương hiệu dẫn đầu phân khúc dân dụng toàn cầu')">
+            <div class="brand-logo-badge">
+              <img src="products/Pylontech.png" alt="Pylontech ESS">
+            </div>
+            <div class="tier1-badge">Chuẩn Rack 19-Inch</div>
+            <img src="products/pylontech_us5000_battery.png" alt="Pylontech US5000" class="card-media-img" loading="lazy">
+            <div class="zoom-hint">🔍 <span class="trans" data-vi="Phóng to ảnh" data-en="Zoom">Phóng to ảnh</span></div>
+          </div>
+          <div class="card-body">
+            <span class="product-category-tag trans" data-vi="Module Rack 19-Inch (4.8kWh)" data-en="19-Inch Rack Module (4.8kWh)">Module Rack 19-Inch (4.8kWh)</span>
+            <h4 class="product-title">Pylontech US5000</h4>
+            <div class="product-model-code">US5000-48V (4.8 kWh / 100Ah)</div>
+            
+            <div class="product-highlights">
+              <span class="highlight-pill trans" data-vi="Module Chuẩn Tủ Rack" data-en="Standard Rack Mount">Module Chuẩn Tủ Rack</span>
+              <span class="highlight-pill blue trans" data-vi="Tuổi Thọ &gt;6,000 Chu Kỳ" data-en="&gt;6,000 Cycles">Tuổi Thọ &gt;6,000 Chu Kỳ</span>
+              <span class="highlight-pill gold trans" data-vi="Chứng Chỉ TUV / CE" data-en="TUV / CE Certified">Chứng Chỉ TUV / CE</span>
+            </div>
+
+            <table class="specs-table">
+              <tr>
+                <td class="spec-label trans" data-vi="Dung lượng danh định" data-en="Nominal Capacity">Dung lượng danh định</td>
+                <td class="spec-value">4.8 kWh (48V – 100Ah)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Dòng nạp/xả khuyến nghị" data-en="Recommended Current">Dòng nạp/xả khuyến nghị</td>
+                <td class="spec-value">50A (Dòng xả đỉnh 100A - 200A)</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Độ xả sâu DOD" data-en="Depth of Discharge">Độ xả sâu DOD</td>
+                <td class="spec-value">95%</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Khả năng mở rộng" data-en="Scalability">Khả năng mở rộng</td>
+                <td class="spec-value">Xếp chồng song song tới 16 module trong 1 cụm</td>
+              </tr>
+              <tr>
+                <td class="spec-label trans" data-vi="Bảo hành" data-en="Warranty">Bảo hành</td>
+                <td class="spec-value">10 năm chính hãng</td>
+              </tr>
+            </table>
+
+            <button class="accordion-toggle" onclick="toggleAccordion(this)">
+              <span class="trans" data-vi="📊 Chi Tiết Kỹ Thuật Chuyên Sâu" data-en="📊 Detailed Engineering Specs">📊 Chi Tiết Kỹ Thuật Chuyên Sâu</span>
+              <span>▼</span>
+            </button>
+            <div class="accordion-content">
+              <strong>Hệ thống quản lý pin thông minh (BMS):</strong> Bảo vệ toàn diện chống nạp quá áp, xả quá sâu, quá dòng, ngắn mạch và quá nhiệt; tương thích với 99% các dòng Inverter Hybrid trên thế giới.
+            </div>
+
+            <div class="card-footer">
+              <a href="index.html#connect" class="btn-quote-item trans" data-vi="⚡ Nhận Báo Giá Pylontech" data-en="⚡ Quote Pylontech">⚡ Nhận Báo Giá Pylontech</a>
+              <button class="btn-quick-view" onclick="openLightbox('products/pylontech_us5000_battery.png', 'Pylontech US5000', 'Module lưu trữ chuyên nghiệp dành cho tủ kỹ thuật tiêu chuẩn')">🔍</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== REAL FIELD INSTALLATION SHOWCASE ==================== -->
+    <section class="field-installation-section">
+      <h3 class="field-installation-title trans" data-vi="🛠️ Hình Ảnh Thi Công Thực Tế Thiết Bị Tại Công Trình" data-en="🛠️ Real Equipment Field Installation Photos">
+        🛠️ Hình Ảnh Thi Công Thực Tế Thiết Bị Tại Công Trình
+      </h3>
+      <p class="field-installation-desc trans" data-vi="Minh chứng năng lực thi công cơ điện tinh gọn, đấu nối tủ điện bảo vệ đạt chuẩn IEC, tích hợp hoàn hảo Inverter Hybrid và khối pin lưu trữ Lithium." data-en="Real proof of our engineering excellence, IEC-standard switchgear wiring, seamless integration of Hybrid Inverters and Lithium ESS packs.">
+        Minh chứng năng lực thi công cơ điện tinh gọn, đấu nối tủ điện bảo vệ đạt chuẩn IEC, tích hợp hoàn hảo Inverter Hybrid và khối pin lưu trữ Lithium.
+      </p>
+
+      <div class="field-grid">
+        <div class="field-card" onclick="openLightbox('products/chu_nghia_inverter_pin.jpg', 'Dự Án Chú Nghĩa: Inverter Hybrid + Khối Pin Lưu Trữ Lithium 16kWh', 'Hệ thống vận hành độc lập 24/7 không lo mất điện')" title="Xem ảnh lớn">
+          <img src="products/chu_nghia_inverter_pin.jpg" alt="Hệ Inverter Hybrid và Pin lưu trữ Lithium" loading="lazy">
+          <div class="field-card-info">
+            <div class="field-card-title trans" data-vi="Dự Án Chú Nghĩa - Cụm Inverter Hybrid & Pin Lithium" data-en="Mr. Nghia Project - Hybrid Inverter & Lithium ESS">Dự Án Chú Nghĩa - Cụm Inverter Hybrid & Pin Lithium</div>
+            <div class="field-card-meta trans" data-vi="Biến tần Hybrid kết nối đồng bộ Pack pin Lithium 16kWh qua cáp giao tiếp CAN bus và tủ điện ATS chuyển mạch tự động." data-en="Hybrid inverter synced with 16kWh Lithium battery pack via CAN bus and automatic transfer switch ATS cabinet.">Biến tần Hybrid kết nối đồng bộ Pack pin Lithium 16kWh qua cáp giao tiếp CAN bus và tủ điện ATS chuyển mạch tự động.</div>
+          </div>
+        </div>
+
+        <div class="field-card" onclick="openLightbox('products/anh_thanh_cafe_inverter.jpg', 'Dự Án Mộc Ngư Coffee: Inverter Hòa Lưới Bám Tải & Tủ Điện Bảo Vệ', 'Hệ thống Zero-Export tối ưu chi phí tiền điện kinh doanh ban ngày')" title="Xem ảnh lớn">
+          <img src="products/anh_thanh_cafe_inverter.jpg" alt="Inverter hòa lưới và tủ điện Mộc Ngư Coffee" loading="lazy">
+          <div class="field-card-info">
+            <div class="field-card-title trans" data-vi="Mộc Ngư Coffee - Inverter Hòa Lưới & Tủ Bảo Vệ" data-en="Moc Ngu Coffee - Grid-Tied Inverter & Switchgear">Mộc Ngư Coffee - Inverter Hòa Lưới & Tủ Bảo Vệ</div>
+            <div class="field-card-meta trans" data-vi="Nghiệm thu biến tần hòa lưới bám tải tích hợp thiết bị chống sét lan truyền Type II và cầu chì cắt lọc DC bảo vệ an toàn." data-en="Commissioning grid-tied zero-export inverter integrated with Type II surge protection and DC disconnect switches.">Nghiệm thu biến tần hòa lưới bám tải tích hợp thiết bị chống sét lan truyền Type II và cầu chì cắt lọc DC bảo vệ an toàn.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. BRAND ECOSYSTEM DIRECTORY ==================== -->
+    <section id="brands" class="brand-ecosystem-section">
+      <h3 class="brand-ecosystem-title trans" data-vi="🤝 Hệ Sinh Thái 13 Thương Hiệu Dẫn Đầu Đồng Hành" data-en="🤝 Ecosystem of 13 Global Leading Tier-1 Partners">
+        🤝 Hệ Sinh Thái 13 Thương Hiệu Dẫn Đầu Đồng Hành
+      </h3>
+      <p class="brand-ecosystem-subtitle trans" data-vi="Chúng tôi thiết lập quan hệ đối tác chiến lược trực tiếp với các nhà sản xuất năng lượng mặt trời hàng đầu thế giới để đảm bảo nguồn thiết bị chính hãng, CO/CQ đầy đủ và chế độ bảo hành kích hoạt trực tiếp từ nhà máy." data-en="We establish direct strategic partnerships with world-class solar manufacturers to guarantee authentic equipment, full CO/CQ certification, and factory-direct warranty activation.">
+        Chúng tôi thiết lập quan hệ đối tác chiến lược trực tiếp với các nhà sản xuất năng lượng mặt trời hàng đầu thế giới để đảm bảo nguồn thiết bị chính hãng, CO/CQ đầy đủ và chế độ bảo hành kích hoạt trực tiếp từ nhà máy.
+      </p>
+
+      <div class="brands-grid">
+        <!-- 1. JA Solar -->
+        <div class="brand-partner-card">
+          <img src="products/jasolar.svg" alt="JA Solar" class="brand-partner-logo">
+          <div class="brand-partner-name">JA Solar</div>
+          <div class="brand-partner-tier trans" data-vi="Tấm Pin Tier-1 Toàn Cầu" data-en="Tier-1 Solar Panels">Tấm Pin Tier-1 Toàn Cầu</div>
+        </div>
+
+        <!-- 2. TCL Solar -->
+        <div class="brand-partner-card">
+          <img src="products/TCL.png" alt="TCL Solar" class="brand-partner-logo">
+          <div class="brand-partner-name">TCL Solar</div>
+          <div class="brand-partner-tier trans" data-vi="Tấm Pin TOPCon G12" data-en="G12 TOPCon Modules">Tấm Pin TOPCon G12</div>
+        </div>
+
+        <!-- 3. Canadian Solar -->
+        <div class="brand-partner-card">
+          <img src="products/canadiansolar.png" alt="Canadian Solar" class="brand-partner-logo">
+          <div class="brand-partner-name">Canadian Solar</div>
+          <div class="brand-partner-tier trans" data-vi="Thương Hiệu Canada Tier-1" data-en="Canadian Tier-1 Brand">Thương Hiệu Canada Tier-1</div>
+        </div>
+
+        <!-- 4. LONGi Solar -->
+        <div class="brand-partner-card">
+          <img src="products/longi.png" alt="LONGi Solar" class="brand-partner-logo">
+          <div class="brand-partner-name">LONGi Solar</div>
+          <div class="brand-partner-tier trans" data-vi="Công Nghệ Cell HPBC" data-en="HPBC Cell Pioneer">Công Nghệ Cell HPBC</div>
+        </div>
+
+        <!-- 5. Solis Inverter -->
+        <div class="brand-partner-card">
+          <img src="products/Solis.png" alt="Solis Ginlong" class="brand-partner-logo">
+          <div class="brand-partner-name">Solis Ginlong</div>
+          <div class="brand-partner-tier trans" data-vi="Top 3 Biến Tần Toàn Cầu" data-en="Top 3 Global Inverters">Top 3 Biến Tần Toàn Cầu</div>
+        </div>
+
+        <!-- 6. Deye -->
+        <div class="brand-partner-card">
+          <img src="products/Deye.png" alt="Deye ESS" class="brand-partner-logo">
+          <div class="brand-partner-name">Deye</div>
+          <div class="brand-partner-tier trans" data-vi="Biến Tần Hybrid Quốc Dân" data-en="Top Hybrid ESS Inverter">Biến Tần Hybrid Quốc Dân</div>
+        </div>
+
+        <!-- 7. GoodWe -->
+        <div class="brand-partner-card">
+          <img src="products/goodwe.png" alt="GoodWe" class="brand-partner-logo">
+          <div class="brand-partner-name">GoodWe</div>
+          <div class="brand-partner-tier trans" data-vi="Chuẩn Cao Cấp Châu Âu" data-en="European Quality Standard">Chuẩn Cao Cấp Châu Âu</div>
+        </div>
+
+        <!-- 8. Luxpower -->
+        <div class="brand-partner-card">
+          <img src="products/Luxpower.png" alt="Luxpower" class="brand-partner-logo">
+          <div class="brand-partner-name">Luxpower</div>
+          <div class="brand-partner-tier trans" data-vi="Biến Tần Đa Nhiệm Bền Bỉ" data-en="Multi-mode Inverters">Biến Tần Đa Nhiệm Bền Bỉ</div>
+        </div>
+
+        <!-- 9. Sungrow -->
+        <div class="brand-partner-card">
+          <img src="products/sungrow.png" alt="Sungrow" class="brand-partner-logo">
+          <div class="brand-partner-name">Sungrow</div>
+          <div class="brand-partner-tier trans" data-vi="Số 1 Thế Giới Về Biến Tần" data-en="Global #1 Inverter Brand">Số 1 Thế Giới Về Biến Tần</div>
+        </div>
+
+        <!-- 10. INVT Solar -->
+        <div class="brand-partner-card">
+          <img src="products/invt.svg" alt="INVT Solar" class="brand-partner-logo">
+          <div class="brand-partner-name">INVT Solar</div>
+          <div class="brand-partner-tier trans" data-vi="Tập Đoàn Tự Động Hóa" data-en="Automation Powerhouse">Tập Đoàn Tự Động Hóa</div>
+        </div>
+
+        <!-- 11. Power Brick SC -->
+        <div class="brand-partner-card">
+          <img src="products/powerbrick.svg" alt="Power Brick SC" class="brand-partner-logo">
+          <div class="brand-partner-name">Power Brick SC</div>
+          <div class="brand-partner-tier trans" data-vi="Pin Lưu Trữ Khủng 16kWh" data-en="16kWh Heavy Duty ESS">Pin Lưu Trữ Khủng 16kWh</div>
+        </div>
+
+        <!-- 12. Dyness -->
+        <div class="brand-partner-card">
+          <img src="products/dyness_dark.svg" alt="Dyness" class="brand-partner-logo">
+          <div class="brand-partner-name">Dyness</div>
+          <div class="brand-partner-tier trans" data-vi="Pin Treo Tường LiFePO4" data-en="Wall-mount LiFePO4 ESS">Pin Treo Tường LiFePO4</div>
+        </div>
+
+        <!-- 13. Pylontech -->
+        <div class="brand-partner-card">
+          <img src="products/Pylontech.png" alt="Pylontech" class="brand-partner-logo">
+          <div class="brand-partner-name">Pylontech</div>
+          <div class="brand-partner-tier trans" data-vi="Tiên Phong Pin Chuẩn Rack" data-en="Rackmount ESS Pioneer">Tiên Phong Pin Chuẩn Rack</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <h3 class="trans" data-vi="Bạn Cần Tư Vấn & Lựa Chọn Cấu Hình Thiết Bị Phù Hợp?" data-en="Need Expert Advice on the Best Equipment Configuration?">
+        Bạn Cần Tư Vấn & Lựa Chọn Cấu Hình Thiết Bị Phù Hợp?
+      </h3>
+      <p class="trans" data-vi="Kỹ sư Điện Mặt Trời Xanh sẽ khảo sát diện tích mái thực tế, phân tích biểu đồ tiêu thụ điện và lập báo giá cấu hình thiết bị tối ưu hiệu suất, an toàn và dòng tiền đầu tư." data-en="Our engineers will inspect your roof, evaluate your consumption load curve, and engineer the optimal hardware configuration for maximum yield, safety, and ROI.">
+        Kỹ sư Điện Mặt Trời Xanh sẽ khảo sát diện tích mái thực tế, phân tích biểu đồ tiêu thụ điện và lập báo giá cấu hình thiết bị tối ưu hiệu suất, an toàn và dòng tiền đầu tư.
+      </p>
+      <div class="cta-actions">
+        <a href="index.html#connect" class="cta-btn-primary trans" data-vi="⚡ Đăng Ký Khảo Sát & Nhận Báo Giá Miễn Phí" data-en="⚡ Request Free Survey & Quotation">
+          ⚡ Đăng Ký Khảo Sát & Nhận Báo Giá Miễn Phí
+        </a>
+        <a href="tel:+84787691089" class="cta-btn-secondary trans" data-vi="📞 Hotline: 0787 691 089" data-en="📞 Hotline: +84 787 691 089">
+          📞 Hotline: 0787 691 089
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Đóng">&times;</button>
+      <img id="lightboxImg" src="" alt="Hình ảnh sản phẩm catalogue">
+      <div id="lightboxCap" class="lightbox-caption"></div>
+      <div id="lightboxSub" class="lightbox-sub"></div>
+    </div>
+  </div>
+
+  <!-- Floating Contact & Social Icons -->
+  <div class="floating-contact-group">
+    <a href="https://www.tiktok.com/@dienmattroixanh" target="_blank" rel="noopener noreferrer" class="floating-social-icon tiktok" title="TikTok" aria-label="TikTok">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61579131363617" target="_blank" rel="noopener noreferrer" class="floating-social-icon facebook" title="Facebook" aria-label="Facebook">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="https://zalo.me/0787691089" target="_blank" rel="noopener noreferrer" class="floating-zalo" title="Chat Zalo">
+      <span>💬</span> <span class="trans" data-vi="Chat Zalo Kỹ Sư" data-en="Chat on Zalo">Chat Zalo Kỹ Sư</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-copy trans" data-vi="&copy; 2026 Công ty TNHH Điện mặt trời XANH. Hệ thống Catalogue Thiết Bị Chính Hãng Tier-1." data-en="&copy; 2026 Dien Mat Troi Xanh Co., Ltd. Official Tier-1 Solar Equipment Catalogue.">
+        &copy; 2026 Công ty TNHH Điện mặt trời XANH. Hệ thống Catalogue Thiết Bị Chính Hãng Tier-1.
+      </div>
+      <div class="footer-links">
+        <a href="index.html" class="trans" data-vi="Trang Chủ" data-en="Home">Trang Chủ</a>
+        <a href="du-an-thuc-te.html" class="trans" data-vi="Dự Án Thực Tế" data-en="Real Projects">Dự Án Thực Tế</a>
+        <a href="index.html#connect" class="trans" data-vi="Liên Hệ & Khảo Sát" data-en="Contact & Survey">Liên Hệ & Khảo Sát</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'vi';
+
+    function changeLang(lang) {
+      currentLang = lang;
+      document.getElementById('btn-vi').classList.remove('active');
+      document.getElementById('btn-en').classList.remove('active');
+      document.getElementById('btn-' + lang).classList.add('active');
+
+      const elements = document.querySelectorAll('.trans');
+      elements.forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) {
+          el.innerHTML = text;
+        }
+      });
+    }
+
+    function filterCategory(category, button) {
+      const tabs = document.querySelectorAll('.filter-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      if (button) button.classList.add('active');
+
+      const blocks = document.querySelectorAll('.product-category-block');
+      blocks.forEach(block => {
+        if (category === 'all') {
+          block.style.display = 'block';
+        } else {
+          if (block.getAttribute('data-category') === category) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function toggleAccordion(btn) {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('span:last-child');
+      if (content.classList.contains('active')) {
+        content.classList.remove('active');
+        if (arrow) arrow.textContent = '▼';
+      } else {
+        content.classList.add('active');
+        if (arrow) arrow.textContent = '▲';
+      }
+    }
+
+    function openLightbox(src, title, subtitle) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCap');
+      const sub = document.getElementById('lightboxSub');
+      if (modal && img && cap) {
+        img.src = src;
+        cap.textContent = title || '';
+        if (sub) sub.textContent = subtitle || '';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox(event) {
+      const modal = document.getElementById('lightboxModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Check URL Hash for category filtering (e.g. san-pham.html#inverters)
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ['panels', 'inverters', 'batteries'].includes(hash)) {
+        const btn = document.querySelector(`.filter-tab[onclick*="'${hash}'"]`);
+        if (btn) {
+          filterCategory(hash, btn);
+        }
+        const target = document.getElementById(hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 200);
+        }
+      } else if (hash === 'brands') {
+        scrollToSection('brands');
+      }
+    });
+  </script>
+</body>
+</html>
