@@ -402,6 +402,10 @@
       object-fit: contain;
       mix-blend-mode: multiply;
     }
+    .brand-logo-badge img.logo-compact {
+      height: 16px;
+      max-width: 65px;
+    }
     .tier1-badge {
       position: absolute;
       top: 14px;
@@ -700,6 +704,12 @@
       object-fit: contain;
       margin-bottom: 12px;
       mix-blend-mode: multiply;
+    }
+    .brand-partner-logo.logo-compact {
+      height: 30px;
+      max-width: 100px;
+      margin-top: 9px;
+      margin-bottom: 21px;
     }
     .brand-partner-name {
       font-weight: 700;
@@ -1090,7 +1100,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/jasolar_deepblue_panel.jpg', 'JA Solar DeepBlue 4.0 Pro 615Wp - 625Wp', 'Tấm pin hai mặt kính N-Type TOPCon Bycium+ hiệu suất 23.0%')">
             <div class="brand-logo-badge">
-              <img src="products/jasolar.svg" alt="JA Solar">
+              <img src="products/jasolar.svg" alt="JA Solar" onerror="this.onerror=null; this.src='jasolar.svg';">
             </div>
             <div class="tier1-badge">Tier-1 Bloomberg</div>
             <img src="products/jasolar_deepblue_panel.jpg" alt="JA Solar DeepBlue 4.0 Pro" class="card-media-img" loading="lazy">
@@ -1153,7 +1163,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/tcl_g12_panel.jpg', 'TCL Solar G12 N-Type TOPCon 620W - 625Wp', 'Dòng pin công suất lớn kích thước wafer 210mm G12 chuyên dụng cho nhà xưởng C&I và dự án mái lớn')">
             <div class="brand-logo-badge">
-              <img src="products/TCL.png" alt="TCL Solar">
+              <img src="products/TCL.png" alt="TCL Solar" class="logo-compact" style="height: 16px; max-width: 65px; object-fit: contain;" onerror="this.onerror=null; this.src='TCL.png';">
             </div>
             <div class="tier1-badge">Tier-1 Bloomberg</div>
             <img src="products/tcl_g12_panel.jpg" alt="TCL Solar G12 Module" class="card-media-img" loading="lazy">
@@ -1213,7 +1223,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/canadian_solar_hiku6_panel.png', 'Canadian Solar BiHiKu6 / TOPHiKu6 575W - 610W', 'Tấm pin cao cấp N-type TOPCon thương hiệu Canada bảo hành toàn cầu')">
             <div class="brand-logo-badge">
-              <img src="products/canadiansolar.png" alt="Canadian Solar">
+              <img src="products/canadiansolar.png" alt="Canadian Solar" onerror="this.onerror=null; this.src='canadiansolar.png';">
             </div>
             <div class="tier1-badge">Tier-1 Bloomberg</div>
             <img src="products/canadian_solar_hiku6_panel.png" alt="Canadian Solar BiHiKu6" class="card-media-img" loading="lazy">
@@ -1273,7 +1283,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/longi_himo6_panel.jpg', 'LONGi Hi-MO 6 Explorer 575W - 585W', 'Tấm pin công nghệ HPBC độc quyền không thanh dẫn mặt trước, thẩm mỹ sang trọng')">
             <div class="brand-logo-badge">
-              <img src="products/longi.png" alt="LONGi Solar">
+              <img src="products/longi.png" alt="LONGi Solar" onerror="this.onerror=null; this.src='longi.png';">
             </div>
             <div class="tier1-badge">Tier-1 Bloomberg</div>
             <img src="products/longi_himo6_panel.jpg" alt="LONGi Hi-MO 6 Explorer" class="card-media-img" loading="lazy">
@@ -1350,7 +1360,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis S6-EH1P6K-L-PRO (6kW Hybrid 1 Pha)', 'Biến tần Hybrid thông minh đa nhiệm dân dụng chuẩn IP66, hiệu suất 97.6%')">
             <div class="brand-logo-badge">
-              <img src="products/Solis.png" alt="Solis Inverter">
+              <img src="products/Solis.png" alt="Solis Inverter" onerror="this.onerror=null; this.src='Solis.png';">
             </div>
             <div class="tier1-badge">Top 3 Toàn Cầu</div>
             <img src="products/solis_s6_inverter.png" alt="Solis S6 Hybrid Inverter" class="card-media-img" loading="lazy">
@@ -1411,7 +1421,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis S6-EH3P10K / S6-EH3P15K (10kW - 15kW 3 Pha)', 'Biến tần Hybrid 3 pha công suất cao, hỗ trợ phụ tải lệch pha 100%')">
             <div class="brand-logo-badge">
-              <img src="products/Solis.png" alt="Solis Inverter">
+              <img src="products/Solis.png" alt="Solis Inverter" onerror="this.onerror=null; this.src='Solis.png';">
             </div>
             <div class="tier1-badge">3 Pha Cao Cấp</div>
             <img src="products/solis_s6_inverter.png" alt="Solis S6 3P Hybrid Inverter" class="card-media-img" loading="lazy">
@@ -1470,7 +1480,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/solis_s6_inverter.png', 'Solis 110K / 125K Commercial String Inverter', 'Biến tần hòa lưới công nghiệp quy mô lớn hiệu suất cực đại 98.7% với 10 MPPT')">
             <div class="brand-logo-badge">
-              <img src="products/Solis.png" alt="Solis Inverter">
+              <img src="products/Solis.png" alt="Solis Inverter" onerror="this.onerror=null; this.src='Solis.png';">
             </div>
             <div class="tier1-badge">Công Nghiệp C&I</div>
             <img src="products/solis_s6_inverter.png" alt="Solis 125kW Inverter" class="card-media-img" loading="lazy">
@@ -1529,7 +1539,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/deye_hybrid_inverter.png', 'Deye SUN-5K ~ 12K Hybrid Inverter (Low Voltage 48V)', 'Biến tần Hybrid 3 pha điện áp thấp an toàn hàng đầu thế giới với màn hình cảm ứng màu')">
             <div class="brand-logo-badge">
-              <img src="products/Deye.png" alt="Deye Hybrid">
+              <img src="products/Deye.png" alt="Deye Hybrid" onerror="this.onerror=null; this.src='Deye.png';">
             </div>
             <div class="tier1-badge">Deye Cloud</div>
             <img src="products/deye_hybrid_inverter.png" alt="Deye Hybrid Inverter" class="card-media-img" loading="lazy">
@@ -1588,7 +1598,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/goodwe_hybrid_inverter.png', 'GoodWe ET / EH Series Hybrid Inverter', 'Biến tần GoodWe Hybrid phân khúc cao cấp xuất khẩu Châu Âu, tương thích giám sát GoodWe SEMS')">
             <div class="brand-logo-badge">
-              <img src="products/goodwe.png" alt="GoodWe Inverter">
+              <img src="products/goodwe.png" alt="GoodWe Inverter" onerror="this.onerror=null; this.src='goodwe.png';">
             </div>
             <div class="tier1-badge">GoodWe SEMS</div>
             <img src="products/goodwe_hybrid_inverter.png" alt="GoodWe Hybrid Inverter" class="card-media-img" loading="lazy">
@@ -1647,7 +1657,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/luxpower_sna5000_inverter.png', 'Luxpower SNA 5000 WPV Hybrid Inverter', 'Biến tần Hybrid thông minh đa chế độ Off-Grid và On-Grid bền bỉ, dễ cấu hình')">
             <div class="brand-logo-badge">
-              <img src="products/Luxpower.png" alt="Luxpower Inverter">
+              <img src="products/Luxpower.png" alt="Luxpower Inverter" onerror="this.onerror=null; this.src='Luxpower.png';">
             </div>
             <div class="tier1-badge">Quốc Dân Việt Nam</div>
             <img src="products/luxpower_sna5000_inverter.png" alt="Luxpower SNA 5000" class="card-media-img" loading="lazy">
@@ -1706,7 +1716,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/sungrow_inverter.png', 'Sungrow Residential & Commercial Series', 'Biến tần thương hiệu số 1 thế giới Sungrow, công nghệ kiểm soát sóng hài chuẩn IEEE')">
             <div class="brand-logo-badge">
-              <img src="products/sungrow.png" alt="Sungrow Inverter">
+              <img src="products/sungrow.png" alt="Sungrow Inverter" onerror="this.onerror=null; this.src='sungrow.png';">
             </div>
             <div class="tier1-badge">Số 1 Thế Giới</div>
             <img src="products/sungrow_inverter.png" alt="Sungrow Inverter" class="card-media-img" loading="lazy">
@@ -1765,7 +1775,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/invt_imars_inverter.jpg', 'INVT Solar iMars Inverter Series', 'Biến tần hòa lưới và lưu trữ iMars của tập đoàn công nghệ tự động hóa INVT')">
             <div class="brand-logo-badge">
-              <img src="products/invt.svg" alt="INVT Solar">
+              <img src="products/invt.svg" alt="INVT Solar" onerror="this.onerror=null; this.src='invt.svg';">
             </div>
             <div class="tier1-badge">Tự Động Hóa INVT</div>
             <img src="products/invt_imars_inverter.jpg" alt="INVT iMars Inverter" class="card-media-img" loading="lazy">
@@ -1842,7 +1852,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/powerbrick_16kwh_battery.jpg', 'Power Brick SC 16kWh (51.2V - 314Ah) LiFePO4', 'Pack pin lưu trữ công suất khủng 16kWh dòng xả 150A-200A, thiết bị chuẩn trong hồ sơ đánh giá năng lực')">
             <div class="brand-logo-badge">
-              <img src="products/powerbrick.svg" alt="Power Brick SC">
+              <img src="products/powerbrick.svg" alt="Power Brick SC" onerror="this.onerror=null; this.src='powerbrick.svg';">
             </div>
             <div class="tier1-badge">Dung Lượng Khủng 16kWh</div>
             <img src="products/powerbrick_16kwh_battery.jpg" alt="Power Brick SC 16kWh Battery" class="card-media-img" loading="lazy">
@@ -1905,7 +1915,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/dyness_powerbox_battery.png', 'Dyness Powerbox Pro (5.12kWh - 10.24kWh)', 'Hệ pin lưu trữ treo tường sang trọng Dyness Powerbox Pro, mở rộng song song tới 50kWh+')">
             <div class="brand-logo-badge">
-              <img src="products/dyness_dark.svg" alt="Dyness Battery">
+              <img src="products/dyness_dark.svg" alt="Dyness Battery" onerror="this.onerror=null; this.src='dyness_dark.svg';">
             </div>
             <div class="tier1-badge">Mở Rộng Linh Hoạt</div>
             <img src="products/dyness_powerbox_battery.png" alt="Dyness Powerbox Pro" class="card-media-img" loading="lazy">
@@ -1964,7 +1974,7 @@
         <div class="product-card">
           <div class="card-media-wrapper" onclick="openLightbox('products/pylontech_us5000_battery.png', 'Pylontech US5000 48V (4.8kWh)', 'Pin Lithium module chuẩn tủ rack 19-inch thương hiệu dẫn đầu phân khúc dân dụng toàn cầu')">
             <div class="brand-logo-badge">
-              <img src="products/Pylontech.png" alt="Pylontech ESS">
+              <img src="products/Pylontech.png" alt="Pylontech ESS" class="logo-compact" style="height: 16px; max-width: 65px; object-fit: contain;" onerror="this.onerror=null; this.src='Pylontech.png';">
             </div>
             <div class="tier1-badge">Chuẩn Rack 19-Inch</div>
             <img src="products/pylontech_us5000_battery.png" alt="Pylontech US5000" class="card-media-img" loading="lazy">
@@ -2032,16 +2042,16 @@
       </p>
 
       <div class="field-grid">
-        <div class="field-card" onclick="openLightbox('products/chu_nghia_inverter_pin.jpg', 'Dự Án Chú Nghĩa: Inverter Hybrid + Khối Pin Lưu Trữ Lithium 16kWh', 'Hệ thống vận hành độc lập 24/7 không lo mất điện')" title="Xem ảnh lớn">
-          <img src="products/chu_nghia_inverter_pin.jpg" alt="Hệ Inverter Hybrid và Pin lưu trữ Lithium" loading="lazy">
+        <div class="field-card" onclick="openLightbox('image/chu_nghia_inverter_pin.jpg', 'Dự Án Chú Nghĩa: Inverter Hybrid + Khối Pin Lưu Trữ Lithium 16kWh', 'Hệ thống vận hành độc lập 24/7 không lo mất điện')" title="Xem ảnh lớn">
+          <img src="image/chu_nghia_inverter_pin.jpg" alt="Hệ Inverter Hybrid và Pin lưu trữ Lithium" loading="lazy" onerror="this.src='products/chu_nghia_inverter_pin.jpg';">
           <div class="field-card-info">
             <div class="field-card-title trans" data-vi="Dự Án Chú Nghĩa - Cụm Inverter Hybrid & Pin Lithium" data-en="Mr. Nghia Project - Hybrid Inverter & Lithium ESS">Dự Án Chú Nghĩa - Cụm Inverter Hybrid & Pin Lithium</div>
             <div class="field-card-meta trans" data-vi="Biến tần Hybrid kết nối đồng bộ Pack pin Lithium 16kWh qua cáp giao tiếp CAN bus và tủ điện ATS chuyển mạch tự động." data-en="Hybrid inverter synced with 16kWh Lithium battery pack via CAN bus and automatic transfer switch ATS cabinet.">Biến tần Hybrid kết nối đồng bộ Pack pin Lithium 16kWh qua cáp giao tiếp CAN bus và tủ điện ATS chuyển mạch tự động.</div>
           </div>
         </div>
 
-        <div class="field-card" onclick="openLightbox('products/anh_thanh_cafe_inverter.jpg', 'Dự Án Mộc Ngư Coffee: Inverter Hòa Lưới Bám Tải & Tủ Điện Bảo Vệ', 'Hệ thống Zero-Export tối ưu chi phí tiền điện kinh doanh ban ngày')" title="Xem ảnh lớn">
-          <img src="products/anh_thanh_cafe_inverter.jpg" alt="Inverter hòa lưới và tủ điện Mộc Ngư Coffee" loading="lazy">
+        <div class="field-card" onclick="openLightbox('image/anh_thanh_cafe_inverter.jpg', 'Dự Án Mộc Ngư Coffee: Inverter Hòa Lưới Bám Tải & Tủ Điện Bảo Vệ', 'Hệ thống Zero-Export tối ưu chi phí tiền điện kinh doanh ban ngày')" title="Xem ảnh lớn">
+          <img src="image/anh_thanh_cafe_inverter.jpg" alt="Inverter hòa lưới và tủ điện Mộc Ngư Coffee" loading="lazy" onerror="this.src='products/anh_thanh_cafe_inverter.jpg';">
           <div class="field-card-info">
             <div class="field-card-title trans" data-vi="Mộc Ngư Coffee - Inverter Hòa Lưới & Tủ Bảo Vệ" data-en="Moc Ngu Coffee - Grid-Tied Inverter & Switchgear">Mộc Ngư Coffee - Inverter Hòa Lưới & Tủ Bảo Vệ</div>
             <div class="field-card-meta trans" data-vi="Nghiệm thu biến tần hòa lưới bám tải tích hợp thiết bị chống sét lan truyền Type II và cầu chì cắt lọc DC bảo vệ an toàn." data-en="Commissioning grid-tied zero-export inverter integrated with Type II surge protection and DC disconnect switches.">Nghiệm thu biến tần hòa lưới bám tải tích hợp thiết bị chống sét lan truyền Type II và cầu chì cắt lọc DC bảo vệ an toàn.</div>
@@ -2062,91 +2072,91 @@
       <div class="brands-grid">
         <!-- 1. JA Solar -->
         <div class="brand-partner-card">
-          <img src="products/jasolar.svg" alt="JA Solar" class="brand-partner-logo">
+          <img src="products/jasolar.svg" alt="JA Solar" class="brand-partner-logo" onerror="this.onerror=null; this.src='jasolar.svg';">
           <div class="brand-partner-name">JA Solar</div>
           <div class="brand-partner-tier trans" data-vi="Tấm Pin Tier-1 Toàn Cầu" data-en="Tier-1 Solar Panels">Tấm Pin Tier-1 Toàn Cầu</div>
         </div>
 
         <!-- 2. TCL Solar -->
         <div class="brand-partner-card">
-          <img src="products/TCL.png" alt="TCL Solar" class="brand-partner-logo">
+          <img src="products/TCL.png" alt="TCL Solar" class="brand-partner-logo logo-compact" style="height: 30px; max-width: 100px; margin-top: 9px; margin-bottom: 21px; object-fit: contain;" onerror="this.onerror=null; this.src='TCL.png';">
           <div class="brand-partner-name">TCL Solar</div>
           <div class="brand-partner-tier trans" data-vi="Tấm Pin TOPCon G12" data-en="G12 TOPCon Modules">Tấm Pin TOPCon G12</div>
         </div>
 
         <!-- 3. Canadian Solar -->
         <div class="brand-partner-card">
-          <img src="products/canadiansolar.png" alt="Canadian Solar" class="brand-partner-logo">
+          <img src="products/canadiansolar.png" alt="Canadian Solar" class="brand-partner-logo" onerror="this.onerror=null; this.src='canadiansolar.png';">
           <div class="brand-partner-name">Canadian Solar</div>
           <div class="brand-partner-tier trans" data-vi="Thương Hiệu Canada Tier-1" data-en="Canadian Tier-1 Brand">Thương Hiệu Canada Tier-1</div>
         </div>
 
         <!-- 4. LONGi Solar -->
         <div class="brand-partner-card">
-          <img src="products/longi.png" alt="LONGi Solar" class="brand-partner-logo">
+          <img src="products/longi.png" alt="LONGi Solar" class="brand-partner-logo" onerror="this.onerror=null; this.src='longi.png';">
           <div class="brand-partner-name">LONGi Solar</div>
           <div class="brand-partner-tier trans" data-vi="Công Nghệ Cell HPBC" data-en="HPBC Cell Pioneer">Công Nghệ Cell HPBC</div>
         </div>
 
         <!-- 5. Solis Inverter -->
         <div class="brand-partner-card">
-          <img src="products/Solis.png" alt="Solis Ginlong" class="brand-partner-logo">
+          <img src="products/Solis.png" alt="Solis Ginlong" class="brand-partner-logo" onerror="this.onerror=null; this.src='Solis.png';">
           <div class="brand-partner-name">Solis Ginlong</div>
           <div class="brand-partner-tier trans" data-vi="Top 3 Biến Tần Toàn Cầu" data-en="Top 3 Global Inverters">Top 3 Biến Tần Toàn Cầu</div>
         </div>
 
         <!-- 6. Deye -->
         <div class="brand-partner-card">
-          <img src="products/Deye.png" alt="Deye ESS" class="brand-partner-logo">
+          <img src="products/Deye.png" alt="Deye ESS" class="brand-partner-logo" onerror="this.onerror=null; this.src='Deye.png';">
           <div class="brand-partner-name">Deye</div>
           <div class="brand-partner-tier trans" data-vi="Biến Tần Hybrid Quốc Dân" data-en="Top Hybrid ESS Inverter">Biến Tần Hybrid Quốc Dân</div>
         </div>
 
         <!-- 7. GoodWe -->
         <div class="brand-partner-card">
-          <img src="products/goodwe.png" alt="GoodWe" class="brand-partner-logo">
+          <img src="products/goodwe.png" alt="GoodWe" class="brand-partner-logo" onerror="this.onerror=null; this.src='goodwe.png';">
           <div class="brand-partner-name">GoodWe</div>
           <div class="brand-partner-tier trans" data-vi="Chuẩn Cao Cấp Châu Âu" data-en="European Quality Standard">Chuẩn Cao Cấp Châu Âu</div>
         </div>
 
         <!-- 8. Luxpower -->
         <div class="brand-partner-card">
-          <img src="products/Luxpower.png" alt="Luxpower" class="brand-partner-logo">
+          <img src="products/Luxpower.png" alt="Luxpower" class="brand-partner-logo" onerror="this.onerror=null; this.src='Luxpower.png';">
           <div class="brand-partner-name">Luxpower</div>
           <div class="brand-partner-tier trans" data-vi="Biến Tần Đa Nhiệm Bền Bỉ" data-en="Multi-mode Inverters">Biến Tần Đa Nhiệm Bền Bỉ</div>
         </div>
 
         <!-- 9. Sungrow -->
         <div class="brand-partner-card">
-          <img src="products/sungrow.png" alt="Sungrow" class="brand-partner-logo">
+          <img src="products/sungrow.png" alt="Sungrow" class="brand-partner-logo" onerror="this.onerror=null; this.src='sungrow.png';">
           <div class="brand-partner-name">Sungrow</div>
           <div class="brand-partner-tier trans" data-vi="Số 1 Thế Giới Về Biến Tần" data-en="Global #1 Inverter Brand">Số 1 Thế Giới Về Biến Tần</div>
         </div>
 
         <!-- 10. INVT Solar -->
         <div class="brand-partner-card">
-          <img src="products/invt.svg" alt="INVT Solar" class="brand-partner-logo">
+          <img src="products/invt.svg" alt="INVT Solar" class="brand-partner-logo" onerror="this.onerror=null; this.src='invt.svg';">
           <div class="brand-partner-name">INVT Solar</div>
           <div class="brand-partner-tier trans" data-vi="Tập Đoàn Tự Động Hóa" data-en="Automation Powerhouse">Tập Đoàn Tự Động Hóa</div>
         </div>
 
         <!-- 11. Power Brick SC -->
         <div class="brand-partner-card">
-          <img src="products/powerbrick.svg" alt="Power Brick SC" class="brand-partner-logo">
+          <img src="products/powerbrick.svg" alt="Power Brick SC" class="brand-partner-logo" onerror="this.onerror=null; this.src='powerbrick.svg';">
           <div class="brand-partner-name">Power Brick SC</div>
           <div class="brand-partner-tier trans" data-vi="Pin Lưu Trữ Khủng 16kWh" data-en="16kWh Heavy Duty ESS">Pin Lưu Trữ Khủng 16kWh</div>
         </div>
 
         <!-- 12. Dyness -->
         <div class="brand-partner-card">
-          <img src="products/dyness_dark.svg" alt="Dyness" class="brand-partner-logo">
+          <img src="products/dyness_dark.svg" alt="Dyness" class="brand-partner-logo" onerror="this.onerror=null; this.src='dyness_dark.svg';">
           <div class="brand-partner-name">Dyness</div>
           <div class="brand-partner-tier trans" data-vi="Pin Treo Tường LiFePO4" data-en="Wall-mount LiFePO4 ESS">Pin Treo Tường LiFePO4</div>
         </div>
 
         <!-- 13. Pylontech -->
         <div class="brand-partner-card">
-          <img src="products/Pylontech.png" alt="Pylontech" class="brand-partner-logo">
+          <img src="products/Pylontech.png" alt="Pylontech" class="brand-partner-logo logo-compact" style="height: 30px; max-width: 100px; margin-top: 9px; margin-bottom: 21px; object-fit: contain;" onerror="this.onerror=null; this.src='Pylontech.png';">
           <div class="brand-partner-name">Pylontech</div>
           <div class="brand-partner-tier trans" data-vi="Tiên Phong Pin Chuẩn Rack" data-en="Rackmount ESS Pioneer">Tiên Phong Pin Chuẩn Rack</div>
         </div>
