@@ -475,6 +475,214 @@
       color: var(--text-muted);
       line-height: 1.55;
       font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    /* ======================================================== */
+    /* System Animation Containers & Interactive Visuals (Bright Day Theme) */
+    /* ======================================================== */
+    .system-anim-box {
+      width: 100%;
+      height: 156px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      position: relative;
+      background: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 55%, #f0fdf4 100%);
+      border: 1px solid #7dd3fc;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(14, 165, 233, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.35s ease;
+    }
+
+    .service-card:hover .system-anim-box {
+      border-color: #0284c7;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.22), inset 0 0 12px rgba(255, 255, 255, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .system-anim-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Floating Status Pill inside Animation (Crisp Day Frosted Glass) */
+    .anim-status-pill {
+      position: absolute;
+      bottom: 7px;
+      left: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      border-radius: 20px;
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.25px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .anim-status-pill {
+      background: #ffffff;
+      border-color: #16a34a;
+      color: #15803d;
+      box-shadow: 0 4px 14px rgba(22, 163, 74, 0.22);
+    }
+
+    .anim-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      display: inline-block;
+      animation: statusDotPulse 1.4s infinite ease-in-out;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    @keyframes statusDotPulse {
+      0%, 100% { transform: scale(0.85); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #22c55e; }
+    }
+
+    /* Service Card Meta Header */
+    .service-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .service-card-meta .service-icon {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .service-card-meta h3 {
+      margin-bottom: 2px;
+    }
+
+    .service-subtag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .service-card:nth-child(2) .service-subtag { color: #16a34a; }
+    .service-card:nth-child(3) .service-subtag { color: #d97706; }
+    .service-card:nth-child(4) .service-subtag { color: #0284c7; }
+
+    /* Keyframes for SVG Animations */
+    @keyframes sunSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes sunCoronaPulse {
+      0%, 100% { transform: scale(1); opacity: 0.45; }
+      50% { transform: scale(1.18); opacity: 0.85; }
+    }
+
+    @keyframes rayDashMove {
+      from { stroke-dashoffset: 24; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes electricFlowForward {
+      from { stroke-dashoffset: 28; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes electricFlowReverse {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: 28; }
+    }
+
+    @keyframes ledBlinkGreen {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; filter: drop-shadow(0 0 5px #22c55e); }
+    }
+
+    @keyframes acWavePulse {
+      0% { opacity: 0; transform: translateY(0) scale(0.85); }
+      50% { opacity: 0.85; }
+      100% { opacity: 0; transform: translateY(7px) scale(1.15); }
+    }
+
+    @keyframes gearSpinCw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes gearSpinCcw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes batteryBar1 {
+      0%, 100% { opacity: 0.25; fill: #334155; }
+      15%, 85% { opacity: 1; fill: #10b981; filter: drop-shadow(0 0 4px #10b981); }
+    }
+
+    @keyframes batteryBar2 {
+      0%, 25%, 100% { opacity: 0.25; fill: #334155; }
+      35%, 85% { opacity: 1; fill: #10b981; filter: drop-shadow(0 0 4px #10b981); }
+    }
+
+    @keyframes batteryBar3 {
+      0%, 45%, 100% { opacity: 0.25; fill: #334155; }
+      55%, 85% { opacity: 1; fill: #10b981; filter: drop-shadow(0 0 4px #10b981); }
+    }
+
+    @keyframes batteryBar4 {
+      0%, 65%, 100% { opacity: 0.25; fill: #334155; }
+      75%, 85% { opacity: 1; fill: #10b981; filter: drop-shadow(0 0 4px #10b981); }
+    }
+
+    @keyframes shieldGlow {
+      0%, 100% { filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+      50% { filter: drop-shadow(0 0 7px rgba(245, 158, 11, 0.9)); }
+    }
+
+    @keyframes waterRippleAnim {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+
+    @keyframes impellerFastSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes waterSprayArcs {
+      0% { stroke-dashoffset: 36; opacity: 0.3; }
+      50% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: -36; opacity: 0.3; }
+    }
+
+    @keyframes dropletDrop {
+      0% { transform: translateY(0); opacity: 1; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(16px); opacity: 0; }
+    }
+
+    @keyframes cropBreeze {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(2.5deg); }
     }
 
     /* Detailed Turnkey Installation Packages Section */
@@ -2200,27 +2408,480 @@
     <p class="section-subtitle trans" data-vi="Được thiết kế tối ưu cho hộ gia đình, doanh nghiệp nhà xưởng và phục vụ sản xuất nông nghiệp." data-en="Custom engineered for residential homes, commercial enterprises, and agriculture.">Được thiết kế tối ưu cho hộ gia đình, doanh nghiệp nhà xưởng và phục vụ sản xuất nông nghiệp.</p>
     
     <div class="service-grid">
+      <!-- 1. Hệ Điện Mặt Trời Dân Dụng (Residential Solar On-Grid) -->
       <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3 class="trans" data-vi="Điện Mặt Trời Dân Dụng" data-en="Residential Solar">Điện Mặt Trời Dân Dụng</h3>
+                <div class="system-anim-box anim-residential">
+          <svg viewBox="0 0 320 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="resSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="55%" stop-color="#7dd3fc"/>
+                <stop offset="100%" stop-color="#e0f2fe"/>
+              </linearGradient>
+              <radialGradient id="sunGlow1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="panelRes" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1e3a8a"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+              <linearGradient id="lawnRes" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#22c55e"/>
+                <stop offset="100%" stop-color="#15803d"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="155" fill="url(#resSky)"/>
+            
+            <!-- Soft White Clouds in Sunny Sky -->
+            <path d="M 85 22 Q 95 15 110 18 Q 125 14 135 22 Q 142 25 138 31 L 80 31 Q 75 25 85 22 Z" fill="#ffffff" opacity="0.65"/>
+            <path d="M 230 16 Q 240 10 252 13 Q 264 10 274 16 Q 280 20 276 25 L 225 25 Q 220 20 230 16 Z" fill="#ffffff" opacity="0.55"/>
+
+            <!-- Daytime Lush Green Lawn -->
+            <path d="M 0 138 Q 160 134 320 138 L 320 155 L 0 155 Z" fill="url(#lawnRes)"/>
+            <line x1="0" y1="138" x2="320" y2="138" stroke="#86efac" stroke-width="1.2" opacity="0.8"/>
+
+            <!-- Radiant Daytime Sun & Rotating Corona -->
+            <g transform="translate(42, 34)">
+              <circle cx="0" cy="0" r="26" fill="url(#sunGlow1)" style="animation: sunCoronaPulse 3s infinite ease-in-out; transform-origin: 0 0;"/>
+              <circle cx="0" cy="0" r="14" fill="#fbbf24"/>
+              <circle cx="0" cy="0" r="10" fill="#fef08a"/>
+              <g style="animation: sunSpin 20s infinite linear; transform-origin: 0 0;">
+                <line x1="0" y1="-18" x2="0" y2="-24" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="0" y1="18" x2="0" y2="24" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-18" y1="0" x2="-24" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="18" y1="0" x2="24" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-13" y1="-13" x2="-18" y2="-18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="13" y1="13" x2="18" y2="18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="13" y1="-13" x2="18" y2="-18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-13" y1="13" x2="-18" y2="18" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- Warm Golden Solar Beams to Roof -->
+            <path d="M 54 44 L 145 68" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1.2s infinite linear; opacity: 0.85;"/>
+            <path d="M 52 50 L 165 74" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1.2s infinite linear; opacity: 0.8;"/>
+            <path d="M 46 54 L 185 78" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1.2s infinite linear; opacity: 0.75;"/>
+
+            <!-- Crisp Modern White Villa Architecture -->
+            <rect x="145" y="80" width="135" height="58" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+            <!-- Modern Slate Tile Roof -->
+            <polygon points="135,80 215,40 290,80" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+            
+            <!-- High-Efficiency Rooftop Solar Panels (Deep Sapphire Blue) -->
+            <polygon points="144,77 174,62 190,62 160,77" fill="url(#panelRes)" stroke="#38bdf8" stroke-width="1.2"/>
+            <polygon points="166,77 196,62 212,62 182,77" fill="url(#panelRes)" stroke="#38bdf8" stroke-width="1.2"/>
+            <polygon points="188,77 218,62 234,62 204,77" fill="url(#panelRes)" stroke="#38bdf8" stroke-width="1.2"/>
+            <polygon points="210,77 240,62 256,62 226,77" fill="url(#panelRes)" stroke="#38bdf8" stroke-width="1.2"/>
+
+            <!-- Clean Wall-Mount Inverter Box -->
+            <rect x="133" y="92" width="14" height="22" rx="2" fill="#ffffff" stroke="#64748b" stroke-width="1.2"/>
+            <rect x="135" y="95" width="10" height="5" rx="1" fill="#0284c7"/>
+            <circle cx="140" cy="106" r="2" fill="#16a34a" style="animation: ledBlinkGreen 1.2s infinite ease-in-out;"/>
+            
+            <!-- DC Solar Cable (Roof to Inverter) -->
+            <path d="M 152 77 L 140 77 L 140 92" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 152 77 L 140 77 L 140 92" stroke="#fef08a" stroke-width="2" stroke-dasharray="4,6" style="animation: electricFlowForward 1s infinite linear;"/>
+
+            <!-- AC Power Flow (Inverter to House) -->
+            <path d="M 140 114 L 140 126 L 165 126" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 140 114 L 140 126 L 165 126" stroke="#86efac" stroke-width="2" stroke-dasharray="4,6" style="animation: electricFlowForward 0.8s infinite linear;"/>
+
+            <!-- Sky Reflection Glass Windows -->
+            <rect x="165" y="92" width="22" height="20" rx="2" fill="#bae6fd" stroke="#64748b" stroke-width="1.2"/>
+            <line x1="176" y1="92" x2="176" y2="112" stroke="#64748b" stroke-width="1"/>
+            <line x1="165" y1="102" x2="187" y2="102" stroke="#64748b" stroke-width="1"/>
+            
+            <rect x="238" y="92" width="22" height="20" rx="2" fill="#bae6fd" stroke="#64748b" stroke-width="1.2"/>
+            <line x1="249" y1="92" x2="249" y2="112" stroke="#64748b" stroke-width="1"/>
+            <line x1="238" y1="102" x2="260" y2="102" stroke="#64748b" stroke-width="1"/>
+
+            <!-- Main Entry Door -->
+            <rect x="202" y="100" width="18" height="38" rx="1" fill="#78350f" stroke="#451a03"/>
+            <circle cx="215" cy="120" r="1.5" fill="#fef08a"/>
+
+            <!-- Operating AC Breeze Pulse -->
+            <rect x="262" y="94" width="14" height="10" rx="1.5" fill="#f1f5f9" stroke="#64748b"/>
+            <path d="M 278 96 Q 285 99 278 102" stroke="#0284c7" stroke-width="1.6" fill="none" style="animation: acWavePulse 1.6s infinite ease-out;"/>
+          </svg>
+        </div>
+<div class="service-card-meta">
+          <div class="service-icon">🏠</div>
+          <div>
+            <h3 class="trans" data-vi="Điện Mặt Trời Dân Dụng" data-en="Residential Solar">Điện Mặt Trời Dân Dụng</h3>
+            <span class="service-subtag trans" data-vi="Hệ Hòa Lưới Bám Tải 5kW - 10kW" data-en="Zero-Export Grid-Tied 5-10kW">Hệ Hòa Lưới Bám Tải 5kW - 10kW</span>
+          </div>
+        </div>
         <p class="trans" data-vi="Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên." data-en="Custom rooftop systems designed to maximize daytime solar production and drastically cut monthly electricity bills.">Hệ thống điện mặt trời áp mái dân dụng giúp cắt giảm bậc thang tiền điện giá cao và làm mát ngôi nhà tự nhiên.</p>
         <a href="san-pham.html#inverters" class="service-product-btn trans" data-vi="⚡ Xem Thiết Bị Cho Hộ Gia Đình →" data-en="⚡ View Residential Equipment →">⚡ Xem Thiết Bị Cho Hộ Gia Đình →</a>
       </div>
+
+      <!-- 2. Nhà Xưởng & Doanh Nghiệp (Commercial & Industrial Solar) -->
       <div class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3 class="trans" data-vi="Nhà Xưởng & Doanh Nghiệp" data-en="Commercial & Industrial">Nhà Xưởng & Doanh Nghiệp</h3>
+                <div class="system-anim-box anim-commercial">
+          <svg viewBox="0 0 320 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ciSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="50%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#e0f2fe"/>
+              </linearGradient>
+              <radialGradient id="sunGlow2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="panelCi" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1d4ed8"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="155" fill="url(#ciSky)"/>
+            
+            <!-- Soft White Clouds in Sky -->
+            <path d="M 140 18 Q 150 12 165 15 Q 175 11 185 18 Q 192 22 188 28 L 135 28 Q 130 22 140 18 Z" fill="#ffffff" opacity="0.6"/>
+
+            <!-- High Irradiance Daytime Sun -->
+            <g transform="translate(38, 30)">
+              <circle cx="0" cy="0" r="26" fill="url(#sunGlow2)" style="animation: sunCoronaPulse 2.5s infinite ease-in-out; transform-origin: 0 0;"/>
+              <circle cx="0" cy="0" r="14" fill="#f59e0b"/>
+              <circle cx="0" cy="0" r="10" fill="#fef08a"/>
+              <g style="animation: sunSpin 25s infinite linear; transform-origin: 0 0;">
+                <line x1="0" y1="-17" x2="0" y2="-23" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="0" y1="17" x2="0" y2="23" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-17" y1="0" x2="-23" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="17" y1="0" x2="23" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-12" y1="-12" x2="-16" y2="-16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="12" x2="16" y2="16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="-12" x2="16" y2="-16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-12" y1="12" x2="-16" y2="16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- High Solar Irradiance Beams -->
+            <path d="M 50 38 L 125 58" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1s infinite linear; opacity: 0.85;"/>
+            <path d="M 48 46 L 195 58" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1s infinite linear; opacity: 0.8;"/>
+            <path d="M 44 52 L 255 58" stroke="#ea580c" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1s infinite linear; opacity: 0.75;"/>
+
+            <!-- Industrial Paved Courtyard / Road -->
+            <path d="M 0 138 L 320 138 L 320 155 L 0 155 Z" fill="#64748b"/>
+            <line x1="0" y1="146" x2="320" y2="146" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="10,8" opacity="0.9"/>
+
+            <!-- Factory Warehouse Structure (Clean Architectural Light Panels) -->
+            <rect x="75" y="85" width="220" height="53" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="130" y1="85" x2="130" y2="138" stroke="#e2e8f0" stroke-width="1"/>
+            <line x1="185" y1="85" x2="185" y2="138" stroke="#e2e8f0" stroke-width="1"/>
+            <line x1="240" y1="85" x2="240" y2="138" stroke="#e2e8f0" stroke-width="1"/>
+
+            <!-- Industrial Double-Gable Factory Roof -->
+            <polygon points="70,85 115,54 160,85 205,54 250,85 295,54 295,85" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+
+            <!-- High-Capacity Solar Arrays on Factory Roof -->
+            <polygon points="78,83 115,57 152,83" fill="url(#panelCi)" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="115" y1="57" x2="115" y2="83" stroke="#93c5fd" stroke-width="0.8"/>
+            <line x1="96" y1="70" x2="134" y2="70" stroke="#93c5fd" stroke-width="0.8"/>
+            
+            <polygon points="168,83 205,57 242,83" fill="url(#panelCi)" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="205" y1="57" x2="205" y2="83" stroke="#93c5fd" stroke-width="0.8"/>
+            <line x1="186" y1="70" x2="224" y2="70" stroke="#93c5fd" stroke-width="0.8"/>
+
+            <!-- Industrial Central Inverter Rack (125kW+) -->
+            <rect x="276" y="88" width="16" height="44" rx="2" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+            <rect x="279" y="92" width="10" height="5" rx="1" fill="#38bdf8"/>
+            <rect x="279" y="100" width="10" height="12" fill="#0369a1"/>
+            <line x1="281" y1="104" x2="287" y2="104" stroke="#22c55e" stroke-width="1.5"/>
+            <line x1="281" y1="108" x2="287" y2="108" stroke="#34d399" stroke-width="1.5"/>
+
+            <!-- High Voltage Busway Power Flow -->
+            <path d="M 242 83 L 284 83 L 284 88" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 242 83 L 284 83 L 284 88" stroke="#7dd3fc" stroke-width="2" stroke-dasharray="4,6" style="animation: electricFlowForward 0.8s infinite linear;"/>
+
+            <path d="M 276 120 L 195 120" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 276 120 L 195 120" stroke="#34d399" stroke-width="2" stroke-dasharray="4,6" style="animation: electricFlowForward 0.7s infinite linear;"/>
+
+            <!-- Factory Gears (Mechanical Output) -->
+            <g transform="translate(118, 114)">
+              <g style="animation: gearSpinCw 6s infinite linear; transform-origin: 0 0;">
+                <circle cx="0" cy="0" r="11" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="4" fill="#1e293b"/>
+                <line x1="0" y1="-14" x2="0" y2="14" stroke="#475569" stroke-width="3"/>
+                <line x1="-14" y1="0" x2="14" y2="0" stroke="#475569" stroke-width="3"/>
+              </g>
+              <g transform="translate(20, -2)" style="animation: gearSpinCcw 4.5s infinite linear; transform-origin: 0 0;">
+                <circle cx="0" cy="0" r="8" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
+                <circle cx="0" cy="0" r="3" fill="#1e293b"/>
+                <line x1="0" y1="-11" x2="0" y2="11" stroke="#334155" stroke-width="2.5"/>
+                <line x1="-11" y1="0" x2="11" y2="0" stroke="#334155" stroke-width="2.5"/>
+              </g>
+            </g>
+
+            <!-- Factory Conveyor Line -->
+            <rect x="155" y="115" width="46" height="6" rx="2" fill="#334155" stroke="#64748b" stroke-width="1"/>
+            <circle cx="165" cy="111" r="3" fill="#f59e0b"/>
+            <circle cx="180" cy="111" r="3" fill="#16a34a"/>
+
+            <!-- Factory Ventilation Turbine -->
+            <circle cx="205" cy="48" r="4.5" fill="#64748b"/>
+            <line x1="205" y1="52" x2="205" y2="56" stroke="#64748b" stroke-width="2"/>
+            <path d="M 201 48 Q 205 45 209 48" stroke="#0284c7" stroke-width="1.5" style="animation: sunSpin 2s infinite linear; transform-origin: 205px 48px;"/>
+          </svg>
+        </div>
+<div class="service-card-meta">
+          <div class="service-icon">🏢</div>
+          <div>
+            <h3 class="trans" data-vi="Nhà Xưởng & Doanh Nghiệp" data-en="Commercial & Industrial">Nhà Xưởng & Doanh Nghiệp</h3>
+            <span class="service-subtag trans" data-vi="Hệ Doanh Nghiệp 15kWp - 50kWp+" data-en="C&I Systems 15kWp - 50kWp+">Hệ Doanh Nghiệp 15kWp - 50kWp+</span>
+          </div>
+        </div>
         <p class="trans" data-vi="Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG." data-en="Large-scale rooftop integrations to reduce manufacturing overhead and achieve ESG green compliance goals.">Tích hợp quy mô lớn cho nhà máy, xí nghiệp giúp tiết kiệm chi phí vận hành và đạt chứng chỉ xanh ESG.</p>
         <a href="san-pham.html#panels" class="service-product-btn trans" data-vi="🏢 Xem Tấm Pin & Inverter 125kW →" data-en="🏢 View C&I Panels & 125kW Inverter →">🏢 Xem Tấm Pin & Inverter 125kW →</a>
       </div>
+
+      <!-- 3. Hệ Thống Lưu Trữ Hybrid (Battery Backup & Hybrid) -->
       <div class="service-card">
-        <div class="service-icon">🔋</div>
-        <h3 class="trans" data-vi="Hệ Thống Lưu Trữ Hybrid" data-en="Battery Backup & Hybrid">Hệ Thống Lưu Trữ Hybrid</h3>
+                <div class="system-anim-box anim-hybrid">
+          <svg viewBox="0 0 320 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="hybSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="55%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#e0f2fe"/>
+              </linearGradient>
+              <radialGradient id="sunGlow3" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="panelHyb" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="100%" stop-color="#10b981"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="155" fill="url(#hybSky)"/>
+            
+            <!-- Soft White Clouds in Sky -->
+            <path d="M 80 18 Q 90 12 102 15 Q 112 11 122 17 Q 128 21 125 26 L 75 26 Q 70 20 80 18 Z" fill="#ffffff" opacity="0.6"/>
+
+            <!-- Daytime Radiant Sun Generating Power -->
+            <g transform="translate(32, 28)">
+              <circle cx="0" cy="0" r="22" fill="url(#sunGlow3)" style="animation: sunCoronaPulse 3s infinite ease-in-out; transform-origin: 0 0;"/>
+              <circle cx="0" cy="0" r="12" fill="#f59e0b"/>
+              <circle cx="0" cy="0" r="8" fill="#fef08a"/>
+              <g style="animation: sunSpin 18s infinite linear; transform-origin: 0 0;">
+                <line x1="0" y1="-14" x2="0" y2="-19" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+                <line x1="0" y1="14" x2="0" y2="19" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+                <line x1="-14" y1="0" x2="-19" y2="0" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+                <line x1="14" y1="0" x2="19" y2="0" stroke="#d97706" stroke-width="2" stroke-linecap="round"/>
+                <line x1="-10" y1="-10" x2="-14" y2="-14" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10" y1="10" x2="14" y2="14" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+                <line x1="10" y1="-10" x2="14" y2="-14" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+                <line x1="-10" y1="10" x2="-14" y2="14" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- Daytime Solar Power Flow Arc in Sky -->
+            <path d="M 46 28 Q 160 12 280 26" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3" style="animation: electricFlowForward 2s infinite linear; opacity: 0.6;"/>
+
+            <!-- Lush Green Ground Lawn -->
+            <path d="M 0 138 L 320 138 L 320 155 L 0 155 Z" fill="#16a34a"/>
+            <line x1="0" y1="138" x2="320" y2="138" stroke="#86efac" stroke-width="1.2" opacity="0.8"/>
+
+            <!-- Rooftop Solar Structure (Left Villa Roof) -->
+            <polygon points="15,86 55,60 95,86" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+            <polygon points="22,84 55,63 88,84" fill="url(#panelHyb)" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="55" y1="63" x2="55" y2="84" stroke="#a7f3d0" stroke-width="0.8"/>
+            <rect x="25" y="86" width="60" height="52" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+
+            <!-- Central Smart Hybrid Inverter (Wall Unit) -->
+            <rect x="130" y="55" width="38" height="42" rx="3" fill="#ffffff" stroke="#10b981" stroke-width="1.8"/>
+            <!-- LCD Screen with Energy Bolt Graphic -->
+            <rect x="135" y="60" width="28" height="12" rx="1.5" fill="#064e3b"/>
+            <path d="M 150 62 L 146 67 L 149 67 L 147 71 L 153 65 L 149 65 Z" fill="#34d399"/>
+            <path d="M 143 78 L 155 78 M 151 75 L 155 78 L 151 81" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M 155 84 L 143 84 M 147 81 L 143 84 L 147 87" stroke="#10b981" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="163" cy="91" r="2" fill="#16a34a" style="animation: ledBlinkGreen 1.2s infinite ease-in-out;"/>
+
+            <!-- Flow: Solar Panels to Hybrid Inverter -->
+            <path d="M 88 84 L 130 84" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M 88 84 L 130 84" stroke="#fef08a" stroke-width="2.2" stroke-dasharray="4,6" style="animation: electricFlowForward 0.8s infinite linear;"/>
+
+            <!-- Lithium Battery LiFePO4 Rack (Charging Active in Daytime) -->
+            <rect x="127" y="104" width="44" height="34" rx="3" fill="#1e293b" stroke="#10b981" stroke-width="1.8"/>
+            <!-- LED Indicator Header -->
+            <rect x="131" y="107" width="36" height="5.5" rx="1" fill="#0f172a"/>
+            <circle cx="143" cy="109.7" r="1.5" fill="#10b981"/>
+            <circle cx="149" cy="109.7" r="1.5" fill="#10b981"/>
+            <circle cx="155" cy="109.7" r="1.5" fill="#34d399"/>
+            
+            <!-- 4 Active Animated Battery Charge Bars (Cycling Up under Solar Charging) -->
+            <rect x="133" y="116" width="32" height="3" rx="1" fill="#334155" style="animation: batteryBar1 3.5s infinite;"/>
+            <rect x="133" y="121" width="32" height="3" rx="1" fill="#334155" style="animation: batteryBar2 3.5s infinite;"/>
+            <rect x="133" y="126" width="32" height="3" rx="1" fill="#334155" style="animation: batteryBar3 3.5s infinite;"/>
+            <rect x="133" y="131" width="32" height="3" rx="1" fill="#334155" style="animation: batteryBar4 3.5s infinite;"/>
+
+            <!-- Flow: Hybrid Inverter <-> Battery (Daytime Active Charging) -->
+            <line x1="149" y1="97" x2="149" y2="104" stroke="#10b981" stroke-width="2.5"/>
+            <line x1="149" y1="97" x2="149" y2="104" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="2,3" style="animation: electricFlowReverse 0.6s infinite linear;"/>
+
+            <!-- Villa Living Quarters (Powered by Daytime Sun) -->
+            <polygon points="205,78 250,48 295,78" fill="#334155" stroke="#1e293b" stroke-width="1.5"/>
+            <rect x="215" y="78" width="70" height="60" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+            
+            <!-- Flow: Inverter to Home Loads -->
+            <path d="M 168 76 L 215 76" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 168 76 L 215 76" stroke="#86efac" stroke-width="2" stroke-dasharray="4,6" style="animation: electricFlowForward 0.7s infinite linear;"/>
+
+            <!-- Sky Reflection Windows -->
+            <rect x="225" y="88" width="18" height="18" rx="2" fill="#bae6fd" stroke="#64748b" stroke-width="1.2"/>
+            <rect x="257" y="88" width="18" height="18" rx="2" fill="#bae6fd" stroke="#64748b" stroke-width="1.2"/>
+            <rect x="241" y="108" width="18" height="30" fill="#78350f"/>
+          </svg>
+        </div>
+<div class="service-card-meta">
+          <div class="service-icon">🔋</div>
+          <div>
+            <h3 class="trans" data-vi="Hệ Thống Lưu Trữ Hybrid" data-en="Battery Backup & Hybrid">Hệ Thống Lưu Trữ Hybrid</h3>
+            <span class="service-subtag trans" data-vi="Hybrid 5kW - 10kW (Lưu 10-16kWh)" data-en="Hybrid 5-10kW (10-16kWh Storage)">Hybrid 5kW - 10kW (Lưu 10-16kWh)</span>
+          </div>
+        </div>
         <p class="trans" data-vi="Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm." data-en="Store excess solar energy into lithium batteries for uninterrupted 24/7 power during outages and evening peaks.">Lưu trữ điện dư vào pin Lithium để duy trì dòng điện ổn định 24/7 khi mất điện lưới hoặc sử dụng vào ban đêm.</p>
         <a href="san-pham.html#batteries" class="service-product-btn trans" data-vi="🔋 Xem Pin Lưu Trữ Lithium 16kWh →" data-en="🔋 View 16kWh Lithium Battery Packs →">🔋 Xem Pin Lưu Trữ Lithium 16kWh →</a>
       </div>
+
+      <!-- 4. Bơm Tưới Nông Nghiệp (Agricultural Solar Pumping) -->
       <div class="service-card">
-        <div class="service-icon">🌾</div>
-        <h3 class="trans" data-vi="Bơm Tưới Nông Nghiệp" data-en="Agricultural Solar Pumping">Bơm Tưới Nông Nghiệp</h3>
+                <div class="system-anim-box anim-pumping">
+          <svg viewBox="0 0 320 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pumpSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0284c7"/>
+                <stop offset="50%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#bae6fd"/>
+              </linearGradient>
+              <radialGradient id="sunGlow4" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#fbbf24" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#0284c7"/>
+              </linearGradient>
+              <linearGradient id="panelPump" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1d4ed8"/>
+                <stop offset="100%" stop-color="#2563eb"/>
+              </linearGradient>
+            </defs>
+            <rect width="320" height="155" fill="url(#pumpSky)"/>
+            
+            <!-- Soft White Farm Clouds -->
+            <path d="M 140 18 Q 150 12 165 15 Q 175 11 185 18 Q 192 22 188 28 L 135 28 Q 130 22 140 18 Z" fill="#ffffff" opacity="0.65"/>
+
+            <!-- Radiant Tropical Noon Sun Driving Pump -->
+            <g transform="translate(38, 28)">
+              <circle cx="0" cy="0" r="26" fill="url(#sunGlow4)" style="animation: sunCoronaPulse 2.8s infinite ease-in-out; transform-origin: 0 0;"/>
+              <circle cx="0" cy="0" r="14" fill="#f59e0b"/>
+              <circle cx="0" cy="0" r="10" fill="#fef08a"/>
+              <g style="animation: sunSpin 22s infinite linear; transform-origin: 0 0;">
+                <line x1="0" y1="-17" x2="0" y2="-23" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="0" y1="17" x2="0" y2="23" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-17" y1="0" x2="-23" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="17" y1="0" x2="23" y2="0" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-12" y1="-12" x2="-16" y2="-16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="12" x2="16" y2="16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="-12" x2="16" y2="-16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="-12" y1="12" x2="-16" y2="16" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+            </g>
+
+            <!-- Warm Solar Rays to Ground Mount Array -->
+            <path d="M 50 36 L 95 65" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4" style="animation: rayDashMove 1s infinite linear; opacity: 0.85;"/>
+
+            <!-- Red Basalt Soil & Lush Grass Line -->
+            <path d="M 0 134 Q 80 130 160 134 Q 240 138 320 132 L 320 155 L 0 155 Z" fill="#9a3412"/>
+            <path d="M 0 134 Q 80 130 160 134 Q 240 138 320 132" stroke="#16a34a" stroke-width="3" fill="none"/>
+
+            <!-- Ground Mount Solar Panel Frame (Galvanized Steel) -->
+            <line x1="40" y1="95" x2="52" y2="70" stroke="#64748b" stroke-width="2.5"/>
+            <line x1="85" y1="95" x2="85" y2="70" stroke="#64748b" stroke-width="2.5"/>
+            <line x1="38" y1="95" x2="88" y2="95" stroke="#475569" stroke-width="2.5"/>
+            <polygon points="32,78 72,55 98,68 58,91" fill="url(#panelPump)" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="65" y1="66" x2="65" y2="84" stroke="#93c5fd" stroke-width="1"/>
+
+            <!-- Solar Pump VFD Inverter Cabinet (Weatherproof White) -->
+            <rect x="110" y="68" width="22" height="30" rx="2" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+            <!-- LCD Screen with Frequency Indicator Level Bars -->
+            <rect x="114" y="73" width="14" height="7" rx="1" fill="#0369a1"/>
+            <line x1="116" y1="78" x2="118" y2="78" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="120" y1="76" x2="122" y2="76" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="124" y1="74" x2="126" y2="74" stroke="#34d399" stroke-width="1.5"/>
+            <circle cx="121" cy="88" r="2" fill="#16a34a" style="animation: ledBlinkGreen 1.2s infinite ease-in-out;"/>
+
+            <!-- Cable from Panels to Inverter -->
+            <path d="M 78 80 L 110 80" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 78 80 L 110 80" stroke="#fef08a" stroke-width="2" stroke-dasharray="3,5" style="animation: electricFlowForward 0.8s infinite linear;"/>
+
+            <!-- Underground Borehole Well Cutout -->
+            <rect x="135" y="112" width="45" height="38" rx="2" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+            <rect x="136" y="122" width="43" height="27" fill="url(#waterGrad)" opacity="0.85"/>
+            <path d="M 136 122 Q 146 120 157 122 T 179 122" stroke="#ffffff" stroke-width="1.5" fill="none" style="animation: waterRippleAnim 2s infinite ease-in-out;"/>
+
+            <!-- Stainless Steel Submersible Pump Body -->
+            <rect x="148" y="126" width="16" height="20" rx="2" fill="#e2e8f0" stroke="#0284c7" stroke-width="1.2"/>
+            <!-- Spinning Impeller Rotor -->
+            <g transform="translate(156, 136)">
+              <circle cx="0" cy="0" r="4" fill="#0284c7"/>
+              <g style="animation: impellerFastSpin 1.2s infinite linear; transform-origin: 0 0;">
+                <line x1="-3" y1="0" x2="3" y2="0" stroke="#fff" stroke-width="1.2"/>
+                <line x1="0" y1="-3" x2="0" y2="3" stroke="#fff" stroke-width="1.2"/>
+              </g>
+            </g>
+
+            <!-- High-Pressure Water Pipe Rising from Pump -->
+            <path d="M 156 126 L 156 86 L 210 86 L 210 74" stroke="#0284c7" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M 156 126 L 156 86 L 210 86 L 210 74" stroke="#e0f2fe" stroke-width="2" stroke-dasharray="4,6" fill="none" style="animation: electricFlowReverse 0.6s infinite linear;"/>
+
+            <!-- Rotary Sprinkler Head -->
+            <rect x="207" y="70" width="6" height="5" rx="1" fill="#f59e0b"/>
+            <circle cx="210" cy="70" r="2.5" fill="#38bdf8"/>
+
+            <!-- Arching Glistening Water Sprays Over Farm -->
+            <path d="M 210 70 Q 240 42 275 80" stroke="#0284c7" stroke-width="2.2" fill="none" stroke-dasharray="4,6" style="animation: waterSprayArcs 1.5s infinite linear;"/>
+            <path d="M 210 70 Q 250 32 300 90" stroke="#38bdf8" stroke-width="2" fill="none" stroke-dasharray="4,6" style="animation: waterSprayArcs 1.8s infinite linear;"/>
+
+            <!-- Falling Glistening Droplets -->
+            <circle cx="250" cy="62" r="1.5" fill="#38bdf8" style="animation: dropletDrop 1.2s infinite ease-in;"/>
+            <circle cx="270" cy="72" r="1.5" fill="#38bdf8" style="animation: dropletDrop 1.4s infinite ease-in 0.3s;"/>
+            <circle cx="290" cy="80" r="1.5" fill="#38bdf8" style="animation: dropletDrop 1.1s infinite ease-in 0.6s;"/>
+
+            <!-- Lush Green Coffee / Fruit Trees in Sunny Orchard -->
+            <g transform="translate(240, 108)" style="animation: cropBreeze 3s infinite ease-in-out; transform-origin: 240px 132px;">
+              <line x1="0" y1="24" x2="0" y2="8" stroke="#522504" stroke-width="2.5"/>
+              <ellipse cx="0" cy="4" rx="10" ry="12" fill="#15803d"/>
+              <ellipse cx="-4" cy="2" rx="6" ry="8" fill="#22c55e" opacity="0.9"/>
+              <circle cx="2" cy="2" r="1.5" fill="#dc2626"/>
+              <circle cx="-3" cy="6" r="1.5" fill="#dc2626"/>
+            </g>
+            <g transform="translate(275, 110)" style="animation: cropBreeze 3.4s infinite ease-in-out 0.5s; transform-origin: 275px 132px;">
+              <line x1="0" y1="22" x2="0" y2="7" stroke="#522504" stroke-width="2.5"/>
+              <ellipse cx="0" cy="3" rx="11" ry="13" fill="#166534"/>
+              <ellipse cx="3" cy="0" rx="7" ry="9" fill="#15803d" opacity="0.9"/>
+              <circle cx="0" cy="3" r="1.5" fill="#dc2626"/>
+            </g>
+            <g transform="translate(305, 114)" style="animation: cropBreeze 2.8s infinite ease-in-out 0.2s; transform-origin: 305px 132px;">
+              <line x1="0" y1="18" x2="0" y2="6" stroke="#522504" stroke-width="2"/>
+              <ellipse cx="0" cy="2" rx="9" ry="11" fill="#15803d"/>
+            </g>
+          </svg>
+        </div>
+<div class="service-card-meta">
+          <div class="service-icon">🌾</div>
+          <div>
+            <h3 class="trans" data-vi="Bơm Tưới Nông Nghiệp" data-en="Agricultural Solar Pumping">Bơm Tưới Nông Nghiệp</h3>
+            <span class="service-subtag trans" data-vi="Hệ Bơm Năng Lượng 3HP - 10HP" data-en="Solar Pumping 3HP - 10HP">Hệ Bơm Năng Lượng 3HP - 10HP</span>
+          </div>
+        </div>
         <p class="trans" data-vi="Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu." data-en="Direct solar pumping systems for farms, orchards, and irrigation in remote regions with unstable or absent grid power.">Hệ thống cấp điện cho máy bơm tưới rẫy, vườn sầu riêng, cà phê tại các khu vực xa lưới điện hoặc nguồn điện yếu.</p>
         <a href="san-pham.html#inverters" class="service-product-btn trans" data-vi="🌾 Xem Biến Tần & Tấm Pin Bơm Nước →" data-en="🌾 View Pumping Inverters & Panels →">🌾 Xem Biến Tần & Tấm Pin Bơm Nước →</a>
       </div>
@@ -2234,7 +2895,7 @@
 
     <div class="package-grid">
             <!-- Package 1: Zero Export Residential (On-Grid) -->
-      <div class="package-card featured-project-card">
+      <div id="package-residential" class="package-card featured-project-card">
         <span class="package-badge badge-blue trans" data-vi="HỆ BÁM TẢI" data-en="ZERO EXPORT / GRID-TIED">HỆ BÁM TẢI</span>
         <h3 class="trans" data-vi="Gói Bám Tải 5kWp - 10kWp" data-en="Package 5kWp - 10kWp">Gói Bám Tải 5kWp - 10kWp</h3>
         <p class="trans" data-vi="Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày." data-en="Ideal for residential households with monthly bills from 1.5 - 3.5 million VND using appliances during daytime.">Phù hợp hộ gia đình có tiền điện 1.5 - 3.5 triệu/tháng, sử dụng nhiều máy lạnh, tủ lạnh vào ban ngày.</p>
@@ -2319,7 +2980,7 @@
       </div>
 
       <!-- Package 2: Hybrid Residential (Hybrid + Storage) -->
-      <div class="package-card featured-project-card">
+      <div id="package-hybrid" class="package-card featured-project-card">
         <span class="package-badge badge-green trans" data-vi="HỆ HYBRID CÓ LƯU TRỮ" data-en="HYBRID + STORAGE">HỆ HYBRID CÓ LƯU TRỮ</span>
         <h3 class="trans" data-vi="Hybrid 5kW - 10kW (Lưu 10-16kWh)" data-en="Hybrid 5kW - 10kW (Storage 10-16kWh)">Hybrid 5kW - 10kW (Storage 10-16kWh)</h3>
         <p class="trans" data-vi="Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị." data-en="Ensures seamless 24/7 power for homes and villas. Automatic transfer switch prevents disruption during blackouts.">Đảm bảo nguồn điện 24/7 cho gia đình. Tự động chuyển mạch khi mất điện lưới mà không làm ngắt quãng thiết bị.</p>
@@ -2446,7 +3107,7 @@
       </div>
 
       <!-- Package 3: Commercial Zero Export -->
-      <div class="package-card featured-project-card">
+      <div id="package-commercial" class="package-card featured-project-card">
         <span class="package-badge badge-blue trans" data-vi="HỆ DOANH NGHIỆP" data-en="COMMERCIAL / INDUSTRIAL">HỆ DOANH NGHIỆP</span>
         <h3 class="trans" data-vi="Gói Doanh Nghiệp 15kWp - 50kWp+" data-en="Package 15kWp - 50kWp+">Gói Doanh Nghiệp 15kWp - 50kWp+</h3>
         <p class="trans" data-vi="Dành cho nhà xưởng, cơ sở tôn giáo, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh." data-en="Tailored for factories, religious institutions, stores, and enterprises to offset high daytime peak commercial electricity rates.">Dành cho nhà xưởng, cơ sở tôn giáo, cửa hàng, khách sạn nhằm triệt tiêu điện giá cao giờ cao điểm kinh doanh.</p>
@@ -2486,7 +3147,7 @@
       </div>
 
       <!-- Package 4: Solar Pumping -->
-      <div class="package-card">
+      <div id="package-pumping" class="package-card">
         <span class="package-badge badge-amber trans" data-vi="BƠM NĂNG LƯỢNG MẶT TRỜI" data-en="AGRICULTURAL PUMPING">BƠM NĂNG LƯỢNG MẶT TRỜI</span>
         <h3 class="trans" data-vi="Hệ Bơm Tưới 3HP - 10HP" data-en="Solar Pumping 3HP - 10HP">Hệ Bơm Tưới 3HP - 10HP</h3>
         <p class="trans" data-vi="Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa." data-en="Automatic water pumping directly from sunlight for farms and orchards, eliminating fuel costs and grid connection fees.">Tưới tiêu tự động theo ánh nắng mặt trời cho rẫy cà phê, sầu riêng, không tốn chi phí dầu máy hay kéo điện xa.</p>
